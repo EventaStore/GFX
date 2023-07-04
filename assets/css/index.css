@@ -338,6 +338,21 @@ textarea {
   @apply border-CS_Soft_border_color border-solid border-2 w-full flex flex-col justify-between px-7 py-5;
   
 }
+
+@keyframes my_zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.image-zoom {
+  animation: my_zoomIn 8s ;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 :root.dark {
   --bg-color: #18191B;
   --text-color: #edededde;

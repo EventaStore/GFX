@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -25,7 +25,6 @@ const Footer = () => {
                                             Every service is rigorously screened and constantly rated to ensure you get the best service.
                                         </p>
                                     </div>
-
                                 </div>
                             </div>
                             <div
@@ -34,20 +33,16 @@ const Footer = () => {
                             >
                                 <h4 className="text-2xl py-4">Company</h4>
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    {
-                                        [
-                                            { name: 'ABOUT US', url: '/about' },
-                                            { name: 'Contact Us', url: '/contact' },
-                                            { name: 'OUR TEAM', url: '#' },
-                                            { name: 'OUR WORKS', url: '#' }
-                                          ].
-                                            map((e, index) =>
-                                                <li key={index}>
-                                                    <a href={e.url}>{e.name}</a>
-                                                </li>
-                                            )
-                                    }
-
+                                    {[
+                                        { name: 'ABOUT US', url: '/about' },
+                                        { name: 'Contact Us', url: '/contact' },
+                                        { name: 'OUR TEAM', url: '#' },
+                                        { name: 'OUR WORKS', url: '#' }
+                                    ].map((e, index) => (
+                                        <li key={index}>
+                                            <a href={e.url}>{e.name}</a>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div
@@ -56,23 +51,20 @@ const Footer = () => {
                             >
                                 <h4 className="text-2xl py-4">POPULAR SERVICES</h4>
                                 <ul className="sec-footer footer-list mb-sm-5 mb-md-0">
-                                    {
-                                        [
-                                            'TIRE REPAIR',
-                                            'BRAKE REPAIR',
-                                            'ENGINE REPAIR',
-                                            'CHARGING REPAIR',
-                                            'COOLING SYSTEM',
-                                            'WHEEL ALIGNMENT',
-                                            'BATTERY STARTING',
-                                            'SUPSPENSION REPAIR'
-                                        ].
-                                            map((value, index) =>
-                                                <li key={index}>
-                                                    <a href="#">{value}</a>
-                                                </li>
-                                            )
-                                    }
+                                    {[
+                                        'TIRE REPAIR',
+                                        'BRAKE REPAIR',
+                                        'ENGINE REPAIR',
+                                        'CHARGING REPAIR',
+                                        'COOLING SYSTEM',
+                                        'WHEEL ALIGNMENT',
+                                        'BATTERY STARTING',
+                                        'SUPSPENSION REPAIR'
+                                    ].map((value, index) => (
+                                        <li key={index}>
+                                            <a href="#">{value}</a>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -83,13 +75,15 @@ const Footer = () => {
                     className="container pb-30  wow animate__animated animate__fadeInUp"
                     data-wow-delay="0"
                 >
-
                     <div className="flex flex-wrap-reverse justify-center sm:justify-between text-center items-center">
                         <div className="pb-10">
                             <p className="font-sm mb-0">
                                 &copy; 2023,{" "}
                                 <strong className="text-brand">
-                                    <a target="_blank" href="https://www.linkedin.com/in/ahmed-magdy-4737ba18a/">
+                                    <a
+                                        target="_blank"
+                                        href="https://www.linkedin.com/in/ahmed-magdy-4737ba18a/"
+                                    >
                                         Ahmed Magdy
                                     </a>
                                 </strong>
@@ -106,9 +100,7 @@ const Footer = () => {
                                     1900 - 6666<span>Working 8:00 - 22:00</span>
                                 </p>
                             </div>
-
                         </div>
-
                         <div className="pb-10">
                             <div className="mobile-social-icon">
                                 <h6>Follow Us</h6>
@@ -147,8 +139,6 @@ const Footer = () => {
                                 Up to 15% discount on your first subscribe
                             </p>
                         </div>
-
-
                     </div>
                 </div>
             </footer>

@@ -1,0 +1,408 @@
+{
+  "test": {
+    "page title": "title",
+    "page subtitle": "subtitle",
+    "elementor text editor 1": {
+      "h3": "text header",
+      "p1": "paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph ",
+      "p2": "paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph "
+    },
+    "elementor text editor 2": {
+      "h3": "text header 2",
+      "p1": "paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph ",
+      "p2": "paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph "
+    },
+    "plans": [
+      {
+        "name": "normal",
+        "recommended": false,
+        "price": "1000",
+        "duration": "6 month",
+        "features": [
+          "10GB Storage",
+          "10 Emails",
+          "10 Domains",
+          "1GB Bandwidth"
+        ]
+      },
+      {
+        "name": "best offer",
+        "recommended": true,
+        "price": "1700",
+        "duration": "3 year",
+        "features": [
+          "10GB Storage",
+          "10 Emails",
+          "10 Domains",
+          "1GB Bandwidth"
+        ]
+      },
+      {
+        "name": "Basic",
+        "recommended": false,
+        "price": "200",
+        "duration": "month",
+        "features": [
+          "10GB Storage",
+          "10 Emails",
+          "10 Domains",
+          "1GB Bandwidth"
+        ]
+      }
+    ]
+  },
+  "AC_Services": {
+    "page title": "",
+    "page subtitle": "",
+    "elementor text editor 1": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  "Service_Packages": {
+    "page title": "Service Packages",
+    "page subtitle": "Service Packages",
+    "elementor text editor 1": {
+      "h3": "Comprehensive Service Packages for Your Vehicle's Maintenance",
+      "p1": "Ensure Your Car's Performance and Longevity with Our Expertly Crafted Service Packages",
+      "p2": "Welcome to Arabdiag's Service Packages page! At Arabdiag, we understand the importance of regular vehicle maintenance to ensure your car runs at its peak performance and lasts for years to come. With our variety of expertly crafted service packages, you can confidently entrust your vehicle to our team of skilled technicians. Browse our service packages below and select the one that best meets your needs."
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "4 cylinder",
+        "recommended": false,
+        "price": "2500",
+        "duration": "per ( 1 year ) or ( 60k KM )",
+        "features": [
+          "Rotate tires",
+          "Inspect battery",
+          "Change engine oil",
+          "Replace oil filter",
+          "Replace air filter",
+          "Replace spark plugs", 
+          "Replace fuel filter",
+          "Inspect coolant hoses",
+          "Inspect tire condition",
+          "Replace cabin air filter",
+          "Check battery charging systems",
+          "Perform computerized car diagnostics",
+          "Check brake fluid level and refill if necessary",
+          "Ensure proper function of all lights, wipers, etc.",
+          "Inspect brake pads/linings and brake discs/drums and replace if damaged",
+          "Check power steering fluid level and refill if necessary",
+          "Check automatic or manual transmission fluid level and refill if necessary",
+          "Check for any error codes in the electronic control unit and take corrective action."
+        ]
+      },
+      {
+        "name": "6 cylinder",
+        "recommended": false,
+        "price": "3200",
+        "duration": "per ( 1 year ) or ( 60k KM )",
+        "features": [
+          "Change engine oil",
+          "Replace oil filter",
+          "Replace air filter",
+          "Replace fuel filter",
+          "Replace cabin air filter",
+          "Replace spark plugs",
+          "Check brake fluid level and refill if necessary",
+          "Perform computerized car diagnostics",
+          "Inspect brake pads/linings and brake discs/drums and replace if damaged",
+          "Inspect coolant hoses",
+          "Check battery charging systems",
+          "Inspect battery",
+          "Check power steering fluid level and refill if necessary",
+          "Check automatic or manual transmission fluid level and refill if necessary",
+          "Inspect tire condition",
+          "Rotate tires",
+          "Ensure proper function of all lights, wipers, etc.",
+          "Check for any error codes in the electronic control unit and take corrective action."
+        ]
+      },
+      {
+        "name": "8 cylinder",
+        "recommended": false,
+        "price": "3800",
+        "duration": "per ( 1 year ) or ( 60k KM )",
+        "features": [
+          "Change engine oil",
+          "Replace oil filter",
+          "Replace air filter",
+          "Replace fuel filter",
+          "Replace cabin air filter",
+          "Replace spark plugs",
+          "Check brake fluid level and refill if necessary",
+          "Perform computerized car diagnostics",
+          "Inspect brake pads/linings and brake discs/drums and replace if damaged",
+          "Inspect coolant hoses",
+          "Check battery charging systems",
+          "Inspect battery",
+          "Check power steering fluid level and refill if necessary",
+          "Check automatic or manual transmission fluid level and refill if necessary",
+          "Inspect tire condition",
+          "Rotate tires",
+          "Ensure proper function of all lights, wipers, etc.",
+          "Check for any error codes in the electronic control unit and take corrective action."
+        ]
+      }
+    ]
+  },
+  "Electric_CWP": {
+    "page title": "",
+    "page subtitle": "",
+    "elementor text editor 1": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  "EWP_NewCars": {
+    "page title": "",
+    "page subtitle": "",
+    "elementor text editor 1": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  "EWP_PreOwnedCars": {
+    "page title": "",
+    "page subtitle": "",
+    "elementor text editor 1": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  "EWP_LuxuryCars": {
+    "page title": "",
+    "page subtitle": "",
+    "elementor text editor 1": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "elementor text editor 2": {
+      "h3": "",
+      "p1": "",
+      "p2": ""
+    },
+    "plans": [
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "name": "",
+        "recommended": false,
+        "price": "",
+        "duration": "",
+        "features": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  }
+}

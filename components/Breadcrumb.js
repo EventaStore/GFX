@@ -9,13 +9,13 @@ const Breadcrumb = ({ parent, sub, parentURL, title, subChild, noBreadcrumb }) =
                         <a href={parentURL}>
                             {parent}
                         </a>
-                        <span className="text-CS_text_active">{sub}</span>
+                        <span className={!subChild?"text-CS_text_active":""}>{sub}</span>
                         {
                             subChild &&
-                            <span>{subChild}</span>
+                            <span className="text-CS_text_active">{subChild}</span>
                         }
                     </div>
-                    <h1 className="mt-5 ">
+                    <h1 className="mt-5">
                         {title}
                     </h1>
                 </div>

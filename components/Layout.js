@@ -5,10 +5,6 @@ import Header from "./header";
 import MobileMenu from "./MobileMenu";
 import '../util/i18n'
 import 'animate.css';
-import '../assets/css/tailwindcss.css';
-import '../assets/css/index.css';
-import '../assets/css/main.css';
-import '../globals.css';
 
 const Layout = ({
     children,
@@ -39,7 +35,7 @@ const Layout = ({
             <Header headerStyle={headerStyle} isToggled={isToggled} toggleClick={toggleClick} />
             <MobileMenu isToggled={isToggled} toggleClick={toggleClick} />
             <main className="main">
-                <Breadcrumb parent={parent} sub={sub} parentURL={parentURL} title={title} subChild={subChild} noBreadcrumb={noBreadcrumb} />
+                <Breadcrumb title={title} parent={parent} parentURL={parentURL} sub={sub} subChild={subChild} noBreadcrumb={noBreadcrumb} />
                 {children}
             </main>
             <Footer />

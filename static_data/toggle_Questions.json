@@ -1,0 +1,30 @@
+[
+    {
+        "Q":"What do Extended Warranties Cover? ",
+        "A":["An extended warranty is actually an insurance policy on your vehicle, a safeguard against expensive, unforeseen repairs. It covers repairs for an agreed-upon period of time and miles. True warranties, though, are included in the price of the product."]
+    },
+    {
+        "Q":"How Do I Check The Transmission Fluid Level? ",
+        "A":["Transmission fluid should be exchanged every 60,000 miles. By following your vehicle's manufacturer recommendations on transmission fluid exchanges, you are truly protecting your vehicle from preventable (and expensive) transmission damage."]
+    },
+    {
+        "Q":"How Often Should I Change My Oil?",
+        "A":[
+            "If your vehicle uses conventional oil, you should have it replaced every 3 months or 3,000 miles.",
+            "If your vehicle uses synthetic oil, you should have it replaced every 6 months or 5,000 miles."
+        ]
+    },
+    {
+        "Q":"What should I consider when buying an auto battery?",
+        "A":["Car batteries ideally last between 3-5 years depending on a number of factors.",
+            "To ensure optimal performance and maintenance, simply have your battery checked by an technicianduring every oil change."
+        ]
+    },
+    {
+        "Q":"What makes Certified Service technicians different? ",
+        "A":[
+             "Certified automotive technicians are held to measurable and strict standards in their line of work, and they are accountable to those standards individually",
+             "Autolane is dedicated to upholding those standards." 
+            ]
+    }
+]

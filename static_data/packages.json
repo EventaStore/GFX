@@ -1,0 +1,41 @@
+[
+  {
+    "name": "package 1",
+    "values": [
+      {
+        "href": "/AC_Services",
+        "text": "A/C Services"
+      },
+      {
+        "href": "/Service_Packages",
+        "text": "Service Packages"
+      }
+    ]
+  },
+  {
+    "name": "package 2",
+    "values": [
+      {
+        "href": "/Electric_CWP",
+        "text": "Electric Car Warranty Packages"
+      },
+      {
+        "href": "/EWP_NewCars",
+        "text": "Extended Warranty Packages – New Cars"
+      }
+    ]
+  },
+  {
+    "name": "package 3",
+    "values": [
+      {
+        "href": "/EWP_PreOwnedCars",
+        "text": "Extended Warranty Packages – Pre-Owned Cars"
+      },
+      {
+        "href": "/EWP_LuxuryCars",
+        "text": "Extended Warranty Packages – Luxury Cars"
+      }
+    ]
+  }
+]
