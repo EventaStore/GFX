@@ -4,6 +4,7 @@ import service_feature from "../static_data/service_feature.json";
 import service_content from "../static_data/services_content.json";
 import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Btnstyle from "../components/elements/Btnstyle";
 
 const Services = () => {
   const router = useRouter();
@@ -17,9 +18,9 @@ const Services = () => {
       setData(service_content[path]);
     }
   }, [path]);
-
+  const c = (content) => data ? data[content]:""
   return (
-    <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={data ? data['page title'] : ''}>
+    <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={c('page title')}>
       <section className='container grid grid-cols-1 lg:grid-cols-4 gap-12 pt-40'>
         <div className='col-span-3'>
           <div className="overflow-hidden">
@@ -30,10 +31,10 @@ const Services = () => {
                 autoplay={{ delay: 1000 }} // Set the autoplay options
               >
                 <SwiperSlide>
-                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={data['image 1']} />
+                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={c('image 1')} />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={data['image 2']} />
+                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={c('image 2')} />
                 </SwiperSlide>
               </Swiper>
             )}
@@ -51,10 +52,58 @@ const Services = () => {
           </div>
         </div>
         <div className='col-span-1 grid grid-cols-1 gap-3'>
-          <div className='bg-CS_card border-CS_Soft_border_color border-solid border-2'></div>
-          <div className='bg-CS_card border-CS_Soft_border_color border-solid border-2'></div>
-          <div className='bg-CS_card border-CS_Soft_border_color border-solid border-2'></div>
-          <div className='bg-CS_card border-CS_Soft_border_color border-solid border-2'></div>
+          <div className='contact-cart'>
+            <h3>
+              CONTACT US
+            </h3>
+            <p>
+              { data ? data['text editor 1']['h3'] :"" }
+            </p>
+            {data &&  <Btnstyle>{'GET SERVICE'}</Btnstyle>}
+          </div>
+          <div className='contact-cart'>
+            <h3>
+              CONTACT US
+            </h3>
+            <div>
+              <p>+ 1 123 456-7890</p>
+              <p>+ 1 123 456-7890</p>
+            </div>
+            <div>
+              <p>GFX@email.com</p>
+              <p>contact@email.com</p>
+            </div>
+          </div>
+          <div className='contact-cart'>
+            <h3>
+              ADDRESS
+            </h3>
+            <div>
+              <p>19 Frisk Drive, Middletown,nj,</p>
+              <p>3452 United States</p>
+            </div>
+            <div>
+              <p>31 S Division Street, Montour,ia,</p>
+              <p>4498 United States</p>
+            </div>
+          </div>
+          <div className='contact-cart'>
+            <h3>
+              OPEN HOURS
+            </h3>
+            <div className='flex justify-between'>
+              <p>Monday – Friday</p>
+              <p>8 am – 8 pm</p>
+            </div>
+            <div className='flex justify-between'>
+              <p>Saturday</p>
+              <p>8 am – 6 pm</p>
+            </div>
+            <div className='flex justify-between'>
+              <p>Sunday</p>
+              <p>Closed</p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

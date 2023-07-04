@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import AnimatedSentence from '../components/elements/SentenceAnimation';
 import useAnimatedElement from '../util/inView';
 import { useTranslation } from 'react-i18next';
+import team from "../static_data/team.json";
+import recent_works from "../static_data/recent_works.json";
 
 
 function About() {
@@ -110,12 +112,7 @@ function About() {
                 <div className='container'>
                     <AnimatedSentence className="text-5xl font-bold text-CS_text_color pb-10" sentence="OUR RECENT WORKS" useInView={elements[c++]} />
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {[
-                            "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/05/professional-vehicle-body-polishing-2021-09-01-12-15-02-utc.jpg",
-                            "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/05/professional-vehicle-body-polishing-2021-09-01-12-15-02-utc.jpg",
-                            "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/05/professional-vehicle-body-polishing-2021-09-01-12-15-02-utc.jpg",
-                            "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/05/professional-vehicle-body-polishing-2021-09-01-12-15-02-utc.jpg"
-                        ].map((e, i) => (
+                        {recent_works.map((e, i) => (
                             <div key={i} className={(elements[c].inView ? 'recent-works-card animate__animated animate__fadeInUp ' : ' opacity-0')} style={{ animationDelay: `${i * .05}s` }} >
                                 <div className="overflow-hidden">
                                     <img ref={elements[c++].ref}
@@ -135,193 +132,7 @@ function About() {
                 <div className='container'>
                     <AnimatedSentence className="text-5xl font-bold text-CS_text_color pb-10" sentence="EXPERT TEAM MEMBERS" useInView={elements[c++]} />
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {[
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-                            {
-                                name: "BOBBIE BROOKS",
-                                job: "Body Expert",
-                                socialData: [
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icons-linkedin.svg',
-                                        url: 'https://www.linkedin.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-facebook-white.svg',
-                                        url: 'https://www.facebook.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-twitter-white.svg',
-                                        url: 'https://www.twitter.com/johndoe',
-                                    },
-                                    {
-                                        socialData: '/assets/imgs/theme/icons/icon-instagram-white.svg',
-                                        url: 'https://www.instagram.com/johndoe',
-                                    },
-                                ],
-                                image: "https://promotors.templatekit.co/wp-content/uploads/sites/46/2022/06/repairman-in-workshop-2021-09-24-03-05-22-utc-1.jpg",
-                            },
-
-                        ].map((e, i) => (
+                        {team.map((e, i) => (
                             <div key={i} className={(elements[c].inView ? 'our-team-card overflow-hidden animate__animated animate__fadeInUp ' : ' opacity-0')} style={{ animationDelay: `${i * .05}s` }} >
                                 <img ref={elements[c++].ref}
                                     className={"h-96 w-full transition duration-500 brightness-90 object-cover"}
