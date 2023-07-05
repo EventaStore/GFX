@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import packages from '../static_data/packages.json'
 import Services from '../static_data/services.json'
+
 const Header = ({
     toggleClick,
 }) => {
@@ -50,11 +51,6 @@ const Header = ({
     const dir = currentLanguage === "ar" ? "rtl" : "ltr"
     return (<>
         <header dir={dir} className="header-area header-style-1 header-height-2">
-            <div className="mobile-promotion">
-                <span>
-                    Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left
-                </span>
-            </div>
             <div className="header-top header-top-ptb-1 d-none d-lg-block">
                 <div className="container">
                     <div className="row align-items-center">
@@ -75,18 +71,7 @@ const Header = ({
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-4">
-                            <div className="text-center">
-                                <div id="news-flash" className="d-inline-block">
-                                    <ul>
-                                        <li>
-                                            {t('Get great devices up to 50% off')}
-                                            <Link href="/shop-grid-right">
-                                                {t('view details')}
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
                         <div className="col-xl-2 col-lg-3">
                             <div className="header-info header-info-right">
@@ -150,13 +135,19 @@ const Header = ({
                     <div className="header-wrap header-space-between position-relative">
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
-                                <img src="/assets/imgs/theme/red_logo.png" alt="logo" />
+                                <img src={
+                                                    typeof window !== "undefined" && 
+                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                                } alt="logo" />
                             </Link>
                         </div>
                         <div className="header-nav d-none d-lg-flex">
                             <div className="logo logo-width-1">
                                 <Link href="/">
-                                    <img src="/assets/imgs/theme/red_logo.png" alt="logo" />
+                                    <img src={
+                                                    typeof window !== "undefined" && 
+                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                                } alt="logo" />
                                 </Link>
                             </div>
                             <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block  font-heading">

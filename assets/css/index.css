@@ -319,7 +319,7 @@ textarea {
 }
 
 .background-breadcrumb {
-  background-image: url(../imgs/theme/background-breadcrumb.png);
+  background-image: url(./background-breadcrumb.png);
   background-position: 100% 66%;
   background-repeat: no-repeat;
   background-size: 60% auto;

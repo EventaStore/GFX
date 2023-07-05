@@ -2,7 +2,9 @@ import { useState } from "react";
 import useClickOutside from "../util/outsideClick";
 import NestedMenu from "./elements/NestedMenu";
 import DLtoggle from "../components/elements/DLtoggle";
-
+import packages from '../static_data/packages.json'
+import Services from '../static_data/services.json'
+import getmode from '../util/storage'
 
 const MobileMenu = ({ isToggled, toggleClick }) => {
     const [isActive, setIsActive] = useState({
@@ -53,7 +55,10 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         <div className="mobile-header-logo">
                             <a href="#">
                                 <img
-                                    src="/assets/imgs/theme/red_logo.png"
+                                    src={
+                                        typeof window !== "undefined" && 
+                                        !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                    }
                                     alt="logo"
                                 />
                             </a>
@@ -111,110 +116,28 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         >
 
 
-                                            <li
-                                                className={
-                                                    isActive.key === 11
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(11)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">service 1</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 11
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">service</a>
-
-                                                    </ul>
-                                                    <ul>
-
-                                                        <a href="#">service</a>
-
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
-
-                                            <li
-                                                className={
-                                                    isActive.key === 12
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(12)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">service 2</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 12
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
-
-                                            <li
-                                                className={
-                                                    isActive.key === 13
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(13)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">service 3</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 13
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">service</a>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
+                                            <ul>
+                                                {Services.map((item, index) => (
+                                                    <li
+                                                        key={index}
+                                                        className={
+                                                            isActive.key === index + 11 ? "menu-item-has-children active" : "menu-item-has-children"
+                                                        }
+                                                    >
+                                                        <span className="menu-expand" onClick={() => handleToggle(index + 11)}>
+                                                            <i className="fi-rs-angle-small-down"></i>
+                                                        </span>
+                                                        <a href="#">{item.name}</a>
+                                                        <ul className={isActive.key === index + 11 ? "dropdown" : "d-none"}>
+                                                            {item.values.map((value, valueIndex) => (
+                                                                <li key={valueIndex}>
+                                                                    <a href={value.href}>{value.text}</a>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </li>
+                                                ))}
+                                            </ul>
 
 
 
@@ -243,115 +166,28 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                             }
                                         >
 
-
-
-
-
-
-                                            <li
-                                                className={
-                                                    isActive.key === 6
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(6)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">package 1</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 6
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
-
-                                            <li
-                                                className={
-                                                    isActive.key === 7
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(7)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">package 2</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 7
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
-
-                                            <li
-                                                className={
-                                                    isActive.key === 8
-                                                        ? "menu-item-has-children active"
-                                                        : "menu-item-has-children"
-                                                }
-                                            >
-                                                <span
-                                                    className="menu-expand"
-                                                    onClick={() => handleToggle(8)}
-                                                >
-                                                    <i className="fi-rs-angle-small-down"></i>
-                                                </span>
-                                                <a href="#">package 3</a>
-                                                <ul
-                                                    className={
-                                                        isActive.key === 8
-                                                            ? "dropdown"
-                                                            : "d-none"
-                                                    }
-                                                >
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                    <ul>
-                                                        <a href="#">Package</a>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-
-
-
-
+                                            <ul>
+                                                {packages.map((item, index) => (
+                                                    <li
+                                                        key={index}
+                                                        className={
+                                                            isActive.key === index + 6 ? "menu-item-has-children active" : "menu-item-has-children"
+                                                        }
+                                                    >
+                                                        <span className="menu-expand" onClick={() => handleToggle(index + 6)}>
+                                                            <i className="fi-rs-angle-small-down"></i>
+                                                        </span>
+                                                        <a href="#">{item.name}</a>
+                                                        <ul className={isActive.key === index + 6 ? "dropdown" : "d-none"}>
+                                                            {item.values.map((value, valueIndex) => (
+                                                                <li key={valueIndex}>
+                                                                    <a href={value.href}>{value.text}</a>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </ul>
                                     </li>
 
@@ -429,7 +265,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             </a>
                         </div>
                         <div className="py-6">
-                            <DLtoggle handleToggle={handleModeToggle} ckey={3}/>
+                            <DLtoggle handleToggle={handleModeToggle} ckey={3} />
                         </div>
 
                     </div>

@@ -7,7 +7,10 @@ import useAnimatedElement from '../util/inView';
 import { useTranslation } from 'react-i18next';
 import { React, useEffect, useState } from "react";
 import Contact from '../components/elements/Appointment'
+import HomeContent from '../static_data/home_content.json'
+import Services from '../static_data/services_content.json'
 import 'animate.css';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -27,6 +30,7 @@ export default function Home() {
       i18n.off('languageChanged', handleLanguageChanged);
     };
   }, [handleLanguageChanged]);
+  var entries = Object.values(Services);
 
   const threshold = .6
   const elements = useAnimatedElement(threshold)
@@ -45,12 +49,8 @@ export default function Home() {
           <div className="container wow animate__fadeIn animate__animated">
             <div className="flex flex-wrap">
               {
-                [
-                  ['12', '+', t('More than 12 years of operation in the field of Car Services')],
-                  ['22000', '+', t('International standard process and large factory system')],
-                  ['500000', '+', t('Employees in the whole system include many leading engineers')],
-                  ['99', '%', t('Service technology to satisfy customers needs and interests')]
-                ].map(
+                typeof window !== "undefined" &&
+                HomeContent['section1'].map(
                   (value, index) => (
                     <div key={index} className="p-5 w-full sm:w-1/2 lg:w-1/4">
                       <p className="text-CS_text_color text-6xl pb-4">
@@ -83,63 +83,28 @@ export default function Home() {
             <div className="flex flex-wrap pt-5">
 
               {
-                [
-                  [
-                    t('BRAKE REPAIR'),
-                    t('You get used to your brakes. Brake pads and rotors wear out from the immense friction and heat they encounter. Air gets into brake lines.…'),
-                    '/assets/imgs/homepage/sec3/Icon-6b.png',
-                    '/assets/imgs/homepage/sec3/Icon-6a.png'
-                  ],
-                  [
-                    t('ENGINE REPAIR'),
-                    t('The check engine usually indicates a need to replace one or more parts of your engine or exhaust system: the oxygen sensor, catalytic...'),
-                    '/assets/imgs/homepage/sec3/Icon-5b.png',
-                    '/assets/imgs/homepage/sec3/Icon-5a.png'
-                  ],
-                  [
-                    t('TIRE REPAIR'),
-                    t('You need new tires, and you have questions. What type of tire do I really need? What do terms like “all-season” and “all-terrain” really mean?...'),
-                    '/assets/imgs/homepage/sec3/Icon-4b.png',
-                    '/assets/imgs/homepage/sec3/Icon-4a.png'
-                  ],
-                  [
-                    t('COOLING SYSTEM'),
-                    t('An overheated engine that leaves you stranded on the side of the road is a hassle. But overheating is one of many signs of trouble...'),
-                    '/assets/imgs/homepage/sec3/Icon-3b.png',
-                    '/assets/imgs/homepage/sec3/Icon-3a.png'
-                  ],
-                  [
-                    t('BATTERY REPAIR'),
-                    t('Your vehicle just won’t start. You turn on the ignition, and all you get is the telltale clicking noise. Possibly followed by competing pronouncements...'),
-                    '/assets/imgs/homepage/sec3/Icon-2b.png',
-                    '/assets/imgs/homepage/sec3/Icon-2a.png'
-                  ],
-                  [
-                    t('STEERING REPAIR'),
-                    t('Your steering and suspension systems work together to keep your tires on the pavement and your vehicle under control – until a power steering...'),
-                    '/assets/imgs/homepage/sec3/Icon-1b.png',
-                    '/assets/imgs/homepage/sec3/Icon-1a.png'
-                  ],
+                typeof window !== "undefined" &&
+                entries.slice(0, 6).map((value, index) => {
+                  const truncatedText = value['text editor 1']['p1'].length > 140
+                    ? value['text editor 1']['p1'].substring(0, 140) + "..."
+                    : value['text editor 1']['p1'];
 
-                ].map((value, index) => (
-                  <div key={index} className="section_2_elemmt w-full sm:w-1/1 md:w-1/2 lg:w-1/3">
-                    <div className="div_before m-2 p-2">
-                      <img className="hidden img_active" src={value[2]} alt="Active Icon" />
-                      <img className="img_none_active" src={value[3]} alt="Inactive Icon" />
-                      <strong className="text-CS_text_color text-2xl">
-                        {value[0]}
-                      </strong>
-                      <p className="py-3">
-                        {value[1]}
-                      </p>
-                      <strong className="text-1xl gradient-animate">
-                        <span>
-                          {t('DETAILS SERVICE')}
-                        </span>
-                      </strong>
+                  return (
+                    <div key={index} className="section_2_elemmt w-full sm:w-1/1 md:w-1/2 lg:w-1/3">
+                      <div className="div_before m-2 p-2">
+                        <img className="hidden img_active" src={value.IconActive} alt="Active Icon" />
+                        <img className="img_none_active" src={value.IconInActive} alt="Inactive Icon" />
+                        <strong className="text-CS_text_color text-2xl">{value['page title']}</strong>
+                        <p className="py-3">
+                          {truncatedText}
+                        </p>
+                        <strong className="text-1xl gradient-animate">
+                          <span>DETAILS SERVICE</span>
+                        </strong>
+                      </div>
                     </div>
-                  </div>
-                ))
+                  );
+                })
               }
             </div>
 
@@ -172,7 +137,8 @@ export default function Home() {
                 <div className={(elements[c].inView ? 'animate__animated animate__bounceInUp animate__fast' : ' opacity-0')}>
                   <img ref={elements[c++].ref}
                     className={"hover:scale-110 hover:-rotate-1 transition-transform duration-300 w-full brightness-50 "}
-                    src="/assets/imgs/homepage/video-bg2.jpg" />
+                    src="/assets/imgs/homepage/video-bg2.jpg" 
+                    />
 
                 </div>
               </div>
@@ -212,32 +178,8 @@ export default function Home() {
               </div>
 
               {
-                [
-                  [
-                    t("PERSONAL"),
-                    t("49.99 DH"),
-                    t("per month"),
-                    [
-                      [t("Scheduled servicing"), true],
-                      [t("Component wear reminders"), true],
-                      [t("Introduce new revenue streams"), true],
-                      [t("All routine maintenance"), false],
-                      [t("24/7 customer service"), false],
-                    ]
-                  ],
-                  [
-                    t("PROFESSIONAL"),
-                    t("99.99 DH"),
-                    t("per month"),
-                    [
-                      [t("Scheduled servicing"), true],
-                      [t("Component wear reminders"), true],
-                      [t("Introduce new revenue streams"), true],
-                      [t("All routine maintenance"), true],
-                      [t("24/7 customer service"), true],
-                    ]
-                  ]
-                ].map((value, index) => (
+                typeof window !== "undefined" &&
+                HomeContent['section3'].map((value, index) => (
                   <div ref={elements[c].ref} key={index} className={"xl:w-1/3 lg:w-1/2 mx-auto lg:mx-0 p-2 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
                     <div className="bg-CS_card h-full w-full px-5 div_before">
                       <div className="flex justify-center items-center">
@@ -285,7 +227,7 @@ export default function Home() {
 
             <div className="w-1/1 sm:w-1/2">
               <div className="overflow-hidden h-full">
-                <img className="object-cover hover:scale-110 transition-transform duration-300 h-full w-full brightness-50" src="/assets/imgs/homepage/video-bg2.jpg" />
+                <img className="object-cover hover:scale-110 transition-transform duration-300 h-full w-full brightness-50" src="/assets/imgs/homepage/left-img.jpg" />
               </div>
             </div>
             <div className="w-1/1 sm:w-1/2 flex items-center justify-center">
@@ -339,7 +281,7 @@ export default function Home() {
             </div>
             <div className="w-1/1 sm:w-1/2">
               <div className="overflow-hidden h-full">
-                <img className="object-cover hover:scale-110 transition-transform duration-300 w-full h-full brightness-50" src="/assets/imgs/homepage/video-bg2.jpg" style={{ objectPosition: 'top right' }} alt="video" />
+                <img className="object-cover hover:scale-110 transition-transform duration-300 w-full h-full brightness-50" src="/assets/imgs/homepage/right-img.jpg" style={{ objectPosition: 'top right' }} alt="video" />
               </div>
             </div>
 
@@ -358,12 +300,8 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap w-full xl:w-2/3">
                 {
-                  [
-                    ['MAKE AN APPOINTMENT', 'GFX has made it easy to schedule an appointment online at a location near you in a few simple steps, easy schedule for customers.'],
-                    ['SELECT SERVICE', 'We specialize in car services and have more than 20 years of experience in cars. We are car guys from day one. We love and respect cars.'],
-                    ['CONFIRM REQUEST', 'Has your request been confirmed?\nReduce no-shows, save time, and focus on serving clients is our top criterion.'],
-                    ['GET YOUR CAR', 'It is a vehicle inspection that keeps your car in a reliable, safe and fully-functioning condition based on guidelines set out by the vehicle.']
-                  ].map((value, index) => (
+                  typeof window !== "undefined" &&
+                  HomeContent['section4'].map((value, index) => (
                     <div key={index} className="section_2_element w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
                       <div className="div_before m-2 p-2">
                         <strong className="text-CS_text_color text-2xl">

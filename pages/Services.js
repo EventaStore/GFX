@@ -3,12 +3,18 @@ import Layout from "../components/Layout";
 import service_feature from "../static_data/service_feature.json";
 import service_content from "../static_data/services_content.json";
 import { useRouter } from 'next/router';
+
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import Btnstyle from "../components/elements/Btnstyle";
 import useAnimatedElement from '../util/inView';
 import AnimatedSentence from '../components/elements/SentenceAnimation';
 import Recentwork from '../components/elements/recent_work'
 import FAQ from '../components/elements/FAQ'
+
+SwiperCore.use([Autoplay]);
 
 const Services = () => {
   const router = useRouter();
@@ -34,9 +40,9 @@ const Services = () => {
           <div className="overflow-hidden h-72">
             {data && (
               <Swiper
-                effect="fade" // Set the fading effect
-                loop={true} // Enable loop mode
-                autoplay={{ delay: 1000 }} // Set the autoplay options
+                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
+                effect='fade'
+                autoplay={{ delay: 4000 }}
               >
                 <SwiperSlide>
                   <img className="transition-transform duration-300 h-full w-full brightness-50" src={cp('image 1')} />

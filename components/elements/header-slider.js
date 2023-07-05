@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
-import 'swiper/swiper-bundle.css';
 import $ from 'jquery'
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 

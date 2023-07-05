@@ -1,0 +1,80 @@
+{
+    "section1": [["12", "+", "More than 12 years of operation in the field of Car Services"], ["22000", "+", "International standard process and large factory system"], ["500000", "+", "Employees in the whole system include many leading engineers"], ["99", "%", "Service technology to satisfy customers needs and interests"]],
+    "section2": [
+      [
+        "A/C Services",
+        "Look no further than our expert team of mechanics, who have years of experience in repairing and maintaining all types of car AC systems...",
+        "/assets/imgs/homepage/sec3/Icon-6b.png",
+        "/assets/imgs/homepage/sec3/Icon-6a.png",
+        "/ac"
+      ],
+      [
+        "Brake Repair",
+        "we specialize in providing top-notch brake repair services in Abu Dhabi. We understand the importance of maintaining your car's brakes to ensure...",
+        "/assets/imgs/homepage/sec3/Icon-5b.png",
+        "/assets/imgs/homepage/sec3/Icon-5a.png",
+        "/brake"
+      ],
+      [
+        "Electric Car Repair",
+        "it is essential to get your vehicle serviced by experts who understand the unique needs of electric cars. At GXF Auto, we have over 18 years ....",
+        "/assets/imgs/homepage/sec3/Icon-4b.png",
+        "/assets/imgs/homepage/sec3/Icon-4a.png",
+        "/electric"
+      ],
+      [
+        "GEARBOX REPAIR",
+        "If your vehicle's gearbox is causing you problems, you may be in need of gearbox repair services. A gearbox is an essential component of any vehicle's....",
+        "/assets/imgs/homepage/sec3/Icon-3b.png",
+        "/assets/imgs/homepage/sec3/Icon-3a.png",
+        "/gearbox"
+      ],
+      [
+        "Suspension Repair",
+        "Your vehicle's suspension system is responsible for ensuring a smooth and comfortable ride. However, if you're experiencing issues with your suspension,....",
+        "/assets/imgs/homepage/sec3/Icon-2b.png",
+        "/assets/imgs/homepage/sec3/Icon-2a.png",
+        "/gearbox"
+      ],
+      [
+        "Transmission Repair",
+        "Your vehicle's transmission is one of its most critical components. It's responsible for shifting gears and transferring power from the engine to the wheels.......",
+        "/assets/imgs/homepage/sec3/Icon-1b.png",
+        "/assets/imgs/homepage/sec3/Icon-1a.png",
+        "/transmission"
+      ]
+    ],
+    "section3": [
+      [
+        "PERSONAL",
+        "49.99 DH",
+        "per month",
+        [
+          ["Scheduled servicing", true],
+          ["Component wear reminders", true],
+          ["Introduce new revenue streams", true],
+          ["All routine maintenance", false],
+          ["24/7 customer service", false]
+        ]
+      ],
+      [
+        "PROFESSIONAL",
+        "99.99 DH",
+        "per month",
+        [
+          ["Scheduled servicing", true],
+          ["Component wear reminders", true],
+          ["Introduce new revenue streams", true],
+          ["All routine maintenance", true],
+          ["24/7 customer service", true]
+        ]
+      ]
+    ],
+    "section4": [
+      ["MAKE AN APPOINTMENT", "GFX has made it easy to schedule an appointment online at a location near you in a few simple steps, easy schedule for customers."],
+      ["SELECT SERVICE", "We specialize in car services and have more than 20 years of experience in cars. We are car guys from day one. We love and respect cars."],
+      ["CONFIRM REQUEST", "Has your request been confirmed?\nReduce no-shows, save time, and focus on serving clients is our top criterion."],
+      ["GET YOUR CAR", "It is a vehicle inspection that keeps your car in a reliable, safe and fully-functioning condition based on guidelines set out by the vehicle."]
+    ]
+  }
+  

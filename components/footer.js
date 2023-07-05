@@ -1,7 +1,7 @@
 import React from "react";
-import Link from 'next/link';
-
+import getmode from '../util/storage'
 const Footer = () => {
+    
     return (
         <>
             <div className="h-72" />
@@ -17,7 +17,11 @@ const Footer = () => {
                                     <div className="logo  mb-30">
                                         <a className="mb-15">
                                             <img
-                                                src="/assets/imgs/theme/red_logo.png"
+                                                src=
+                                                {
+                                                    typeof window !== "undefined" && 
+                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                                }
                                                 alt="logo"
                                             />
                                         </a>
@@ -35,9 +39,9 @@ const Footer = () => {
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
                                     {[
                                         { name: 'ABOUT US', url: '/about' },
-                                        { name: 'Contact Us', url: '/contact' },
                                         { name: 'OUR TEAM', url: '#' },
-                                        { name: 'OUR WORKS', url: '#' }
+                                        { name: 'OUR WORKS', url: '#' },
+                                        { name: 'FQA', url: '#' }
                                     ].map((e, index) => (
                                         <li key={index}>
                                             <a href={e.url}>{e.name}</a>
@@ -135,9 +139,7 @@ const Footer = () => {
                                     />
                                 </a>
                             </div>
-                            <p className="font-sm">
-                                Up to 15% discount on your first subscribe
-                            </p>
+                            
                         </div>
                     </div>
                 </div>

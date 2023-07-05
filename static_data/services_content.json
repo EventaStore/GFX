@@ -8,52 +8,58 @@
       "p2": "Living in Abu Dhabi, where the climate is harsh and temperatures can soar up to 50 degrees, it's important to keep your car's AC system in top shape. Our team can identify and fix any issues with your car's AC, ensuring that you enjoy a comfortable and cool ride in your vehicle."
     },
     "text editor 2": {
-      "h3": "If you're experiencing car AC problems in Abu Dhabi, such as contamination, leakages",
-      "p1": " evaporator failure, or compressor issues, look no further than Arabdiag Auto for expert repairs and maintenance. Our experienced team of mechanics is equipped with the latest tools and techniques to diagnose and fix any issues with your car's AC system.",
-      "p2": "Don't let a malfunctioning car AC ruin your driving experience - bring your vehicle to Arabdiag Auto for fast, reliable, and affordable AC servicing. We'll diagnose the problem, provide a comprehensive solution, and have you back on the road in no time. Contact us today to schedule an appointment."
+      "h3": "If you're experiencing car AC problems in Abu Dhabi, such as contamination, leakages, evaporator failure, or compressor issues, look no further than GXF Auto for expert repairs and maintenance.",
+      "p1": "Our experienced team of mechanics is equipped with the latest tools and techniques to diagnose and fix any issues with your car's AC system.",
+      "p2": "Don't let a malfunctioning car AC ruin your driving experience - bring your vehicle to GXF Auto for fast, reliable, and affordable AC servicing. We'll diagnose the problem, provide a comprehensive solution, and have you back on the road in no time. Contact us today to schedule an appointment."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/ac-services.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/ac-services-2.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/ac-services-2.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-6b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-6a.png",
+    "sectionLink": "/ac"
   },
   "brake": {
     "page title": "Brake Repair",
     "page subtitle": "55-Point Brake Inspection",
     "text editor 1": {
-      "h3": "Get the Best Car Brake Repair Services in Abu Dhabi at Arabdiag Auto",
-      "p1": "we specialize in providing top-notch brake repair services in Abu Dhabi. We understand the importance of maintaining your car's brakes to ensure optimum safety and performance. Our team of experts is equipped with the latest tools and techniques to diagnose and repair any brake-related issues your car may be experiencing.",
-      "p2": ""
+      "h3": "Get the Best Car Brake Repair Services in Abu Dhabi at GXF Auto",
+      "p1": "We specialize in providing top-notch brake repair services in Abu Dhabi. We understand the importance of maintaining your car's brakes to ensure optimum safety and performance. Our team of experts is equipped with the latest tools and techniques to diagnose and repair any brake-related issues your car may be experiencing."
     },
     "text editor 2": {
-      "h3": "At Arabdiag Auto",
+      "h3": "At GXF Auto",
       "p1": "Our team of diligent experts provides comprehensive brake services, including brake disc and pad replacement, antilock brake system repair, adaptive brake system repair, brake assist system repair, electronic stability program repair, and acceleration skid system repair. We conduct a thorough diagnosis of your car's brake system to identify any issues and provide effective solutions to ensure your safety.",
       "p2": "Trust us for all your brake repair and replacement needs in Abu Dhabi's Musaffah area."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/brake-repair-2.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-5b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-5a.png",
+    "sectionLink": "/brake"
   },
   "electric": {
     "page title": "Electric Car Repair",
     "page subtitle": "Professional Electrical Engineers",
     "text editor 1": {
       "h3": "If you are an electric car owner",
-      "p1": "it is essential to get your vehicle serviced by experts who understand the unique needs of electric cars. At Arabdiag Auto, we have over 18 years of experience in the automotive industry, and we specialize in electric car maintenance.",
+      "p1": "It is essential to get your vehicle serviced by experts who understand the unique needs of electric cars. At GXF Auto, we have over 18 years of experience in the automotive industry, and we specialize in electric car maintenance.",
       "p2": "As the number of electric cars in and around the UAE continues to rise, we have become one of the most trusted and reputed electric car service providers in MUSAFFAH ABU DHABI. We understand that electric car maintenance is different from fuel cars, and our technicians are specially trained to handle electric cars."
     },
     "text editor 2": {
-      "h3": "At Arabdiag Auto",
-      "p1": "we are committed to providing the best possible service to our customers. We offer competitive pricing, transparent communication, and a hassle-free service experience. So, if you are looking for reliable and professional electric car services in ABU DHABI, look no further than Arabdiag Auto.",
-      "p2": ""
+      "h3": "At GXF Auto",
+      "p1": "We are committed to providing the best possible service to our customers. We offer competitive pricing, transparent communication, and a hassle-free service experience. So, if you are looking for reliable and professional electric car services in ABU DHABI, look no further than GXF Auto."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/brake-repair-2.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-4b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-4a.png",
+    "sectionLink": "/electric"
   },
   "gearbox": {
-    "page title": "GEARBOX REPAIR",
-    "page subtitle": "GEARBOX REPAIR IN ABU DHABI",
+    "page title": "Gearbox Repair",
+    "page subtitle": "Gearbox Repair in Abu Dhabi",
     "text editor 1": {
       "h3": "Introduction to Gearbox Repair Services",
-      "p1": "If your vehicle's gearbox is causing you problems, you may be in need of gearbox repair services. A gearbox is an essential component of any vehicle's powertrain system, and if it fails, it can result in significant issues with the vehicle's performance. At our gearbox repair shop, we offer expert repair services for all types of gearboxes, including manual, automatic, and semi-automatic gearboxes.",
-      "p2": ""
+      "p1": "If your vehicle's gearbox is causing you problems, you may be in need of gearbox repair services. A gearbox is an essential component of any vehicle's powertrain system, and if it fails, it can result in significant issues with the vehicle's performance. At our gearbox repair shop, we offer expert repair services for all types of gearboxes, including manual, automatic, and semi-automatic gearboxes."
     },
     "text editor 2": {
       "h3": "Common Gearbox Problems",
@@ -61,15 +67,17 @@
       "p2": "If you're in need of gearbox repair services, don't hesitate to contact us today. We offer free consultations and estimates, and we're always happy to answer any questions you may have about our services. Whether you need a minor repair or a complete gearbox rebuild, we have the skills and expertise to get the job done right."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/brake-repair-2.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-3b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-3a.png",
+    "sectionLink": "/gearbox"
   },
   "suspension": {
     "page title": "Suspension Repair",
-    "page subtitle": "Suspension Repair At Arabdiag Auto",
+    "page subtitle": "Suspension Repair at GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Suspension Repair Services",
-      "p1": "Your vehicle's suspension system is responsible for ensuring a smooth and comfortable ride. However, if you're experiencing issues with your suspension, such as bouncing, swaying, or uneven tire wear, it may be time for suspension repair services. At our suspension repair shop, we offer expert repair and maintenance services for all types of suspension systems, including shocks, struts, and springs.",
-      "p2": "At our suspension repair shop, we offer a comprehensive range of suspension repair services to help get your vehicle back to its smooth and comfortable ride. Our services include shock and strut replacement, spring repair, wheel alignment, and more. We use only the highest quality parts and equipment to ensure that your vehicle's suspension is repaired correctly the first time."
+      "p1": "Your vehicle's suspension system is responsible for ensuring a smooth and comfortable ride. However, if you're experiencing issues with your suspension, such as bouncing, swaying, or uneven tire wear, it may be time for suspension repair services. At our suspension repair shop, we offer expert repair and maintenance services for all types of suspension systems, including shocks, struts, and springs."
     },
     "text editor 2": {
       "h3": "Common Suspension Problems",
@@ -77,15 +85,17 @@
       "p2": "If you're in need of suspension repair services, don't hesitate to contact us today. We offer free consultations and estimates, and we're always happy to answer any questions you may have about our services. Whether you need a minor repair or a complete suspension overhaul, we have the skills and expertise to get the job done right."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/brake-repair-2.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-2b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-2a.png",
+    "sectionLink": "/suspension"
   },
   "transmission": {
     "page title": "Transmission Repair",
-    "page subtitle": "Transmission Repair At Arabdiag Auto",
+    "page subtitle": "Transmission Repair at GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Transmission Repair Services",
-      "p1": "Your vehicle's transmission is one of its most critical components. It's responsible for shifting gears and transferring power from the engine to the wheels. If you're experiencing issues with your transmission, such as slipping gears, grinding noises, or leaking fluid, it's essential to seek transmission repair services as soon as possible. At our transmission repair shop, we offer expert repair and maintenance services for all types of transmissions, including manual, automatic, and semi-automatic transmissions.",
-      "p2": "There are many benefits to having your transmission repaired by a professional. Not only will your vehicle perform better, but you'll also save money on fuel and reduce the risk of more extensive and costly repairs in the future. In addition, a properly functioning transmission will also help to increase the resale value of your vehicle."
+      "p1": "Your vehicle's transmission is one of its most critical components. It's responsible for shifting gears and transferring power from the engine to the wheels. If you're experiencing issues with your transmission, such as slipping gears, grinding noises, or leaking fluid, it's essential to seek transmission repair services as soon as possible. At our transmission repair shop, we offer expert repair and maintenance services for all types of transmissions, including manual, automatic, and semi-automatic transmissions."
     },
     "text editor 2": {
       "h3": "Common Transmission Problems",
@@ -93,11 +103,14 @@
       "p2": "If you're in need of transmission repair services, don't hesitate to contact us today. We offer free consultations and estimates, and we're always happy to answer any questions you may have about our services. Whether you need a minor repair or a complete transmission rebuild, we have the skills and expertise to get the job done right."
     },
     "image 1": "https://autolane.qreativethemes.com/wp-content/uploads/2021/04/brake-repair-2.jpg",
-    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg"
+    "image 2": "https://autolane.qreativethemes.com/wp-content/uploads/2021/03/brake-repair.jpg",
+    "IconActive": "/assets/imgs/homepage/sec3/Icon-1b.png",
+    "IconInActive": "/assets/imgs/homepage/sec3/Icon-1a.png",
+    "sectionLink": "/transmission"
   },
   "software": {
     "page title": "Car Software Repair & Programming",
-    "page subtitle": "Car Software Repair & Programming At Arabdiag Auto",
+    "page subtitle": "Car Software Repair & Programming At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Car Software Repair & Programming",
       "p1": "Modern cars are equipped with advanced computer systems that control everything from the engine to the entertainment system. However, software problems can occur, causing issues with your car's performance and safety. At our car software repair and programming shop, we offer expert repair and programming services to keep your car running smoothly.",
@@ -113,7 +126,7 @@
   },
   "comfort_system": {
     "page title": "Comfort System Repair",
-    "page subtitle": "Comfort System Repair At Arabdiag Auto",
+    "page subtitle": "Comfort System Repair At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Car Comfort System Services",
       "p1": "Your vehicle's comfort system is responsible for ensuring a comfortable and enjoyable driving experience. From air conditioning to heating, sound systems, and more, a well-functioning comfort system is essential for a smooth and enjoyable ride. At our car comfort system services shop, we offer expert repair and maintenance services for all types of comfort systems to keep you comfortable on the road.",
@@ -129,11 +142,11 @@
   },
   "Axle_&_Driveshaft": {
     "page title": "Axle/ Driveshaft Repair",
-    "page subtitle": "Axle/ Driveshaft Repair At Arabdiag Auto",
+    "page subtitle": "Axle/ Driveshaft Repair At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Axle/Driveshaft Repair Services",
       "p1": "Your vehicle's axle and driveshaft are essential components that transfer power from the engine to the wheels. If you're experiencing issues with your axle or driveshaft, such as vibration, shaking, or noise, it's essential to seek repair services as soon as possible. At our axle/driveshaft repair shop, we offer expert repair and maintenance services for all types of axles and driveshafts.",
-      "p2": "At Arabdiag Auto, we pride ourselves on offering exceptional customer service and quality workmanship. Our team of experienced mechanics has years of experience working with all types of axles and driveshafts, and we use only the best parts and equipment. We also offer competitive pricing and a quick turnaround time, so you can get back on the road as soon as possible."
+      "p2": "At GXF Auto, we pride ourselves on offering exceptional customer service and quality workmanship. Our team of experienced mechanics has years of experience working with all types of axles and driveshafts, and we use only the best parts and equipment. We also offer competitive pricing and a quick turnaround time, so you can get back on the road as soon as possible."
     },
     "text editor 2": {
       "h3": "Common Axle/Driveshaft Problems",
@@ -145,7 +158,7 @@
   },
   "Body_and_repair_service": {
     "page title": "Body And Repair Service",
-    "page subtitle": "Body And Repair Service At Arabdiag Auto",
+    "page subtitle": "Body And Repair Service At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Body and Repair Services",
       "p1": "If your vehicle has been involved in an accident or has suffered damage from a hailstorm, it's essential to bring it in for repair services as soon as possible. At our body and repair services shop, we offer expert repair services for all types of damage, from minor dents and scratches to major collision repairs.",
@@ -177,7 +190,7 @@
   },
   "engine_cooling_system": {
     "page title": "Engine Cooling System Repair",
-    "page subtitle": "Engine Cooling System Repair At Arabdiag Auto",
+    "page subtitle": "Engine Cooling System Repair At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Engine Cooling System Repair",
       "p1": "Your vehicle's engine cooling system is responsible for regulating the temperature of your engine. If your engine is running too hot, it can cause damage and reduce the performance of your vehicle. At our engine cooling system repair shop, we offer expert repair services to keep your engine running smoothly.",
@@ -193,7 +206,7 @@
   },
   "engine_management_system": {
     "page title": "Engine Management System Repair",
-    "page subtitle": "Engine Management System Repair At Arabdiag Auto",
+    "page subtitle": "Engine Management System Repair At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Engine Management System Repair",
       "p1": "The Engine Management System, or EMS, is responsible for regulating the performance of your vehicle's engine. It controls various functions, including fuel injection, ignition timing, and emissions control. If you're experiencing issues with your EMS, such as poor performance or reduced fuel efficiency, it's essential to seek professional EMS service to get your vehicle running smoothly again.",
@@ -209,7 +222,7 @@
   },
   "pre-purchase_inspection": {
     "page title": "Pre-Purchase Inspection",
-    "page subtitle": "Pre-Purchase Inspection At Arabdiag Auto",
+    "page subtitle": "Pre-Purchase Inspection At GXF Auto",
     "text editor 1": {
       "h3": "Introduction to Pre-Purchase Inspection",
       "p1": "Buying a car is a significant investment, and it's essential to ensure that you're making the right choice. A pre-purchase inspection is a comprehensive evaluation of a vehicle's condition, performed by a professional mechanic, to identify any potential issues that may affect the vehicle's performance, safety, and value.",
