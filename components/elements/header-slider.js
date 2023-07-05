@@ -73,7 +73,7 @@ const ProductSlider = () => {
   var path = 'assets/imgs/homepage/slider'
   return (
     <>
-        <div className="wrapper object-contain" style={{ background: `url(./${path}/${mode}/death_star.png) center/contain no-repeat` }}>
+        <div className="wrapper object-contain">
         <div className="content">
           <div className="bg-shape">
             <img src={`${path}/${mode}/car-care.png`} alt="" />
@@ -193,7 +193,7 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img1">
                 <div className="product-slider__card">
-                  <img src={`${path}/${mode}/item-1-bg.png`}
+                  <img src={`${path}/${mode}/item-4-bg.png`}
                     alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">
@@ -260,7 +260,7 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img2">
                 <div className="product-slider__card">
-                  <img src={`${path}/${mode}/item-1-bg.png`}
+                  <img src={`${path}/${mode}/item-4-bg.png`}
                   
                   alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
@@ -354,7 +354,7 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img3">
                 <div className="product-slider__card">
-                  <img src={`${path}/${mode}/item-1-bg.png`}
+                  <img src={`${path}/${mode}/item-4-bg.png`}
                     alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">
@@ -434,6 +434,7 @@ const ProductSlider = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
