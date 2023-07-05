@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 import $ from 'jquery'
+import getmode from '../../util/storage'
+
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 const ProductSlider = () => {
@@ -14,7 +16,7 @@ const ProductSlider = () => {
         prevEl: '.swiper-button-prev'
       },
       autoplay: {
-        delay: 3000, 
+        delay: 3000,
         disableOnInteraction: false
       },
       pagination: {
@@ -23,7 +25,7 @@ const ProductSlider = () => {
       },
       on: {
         init: function () {
-          
+
           var index = this.activeIndex;
 
           var target = $('.product-slider__item').eq(index).data('target');
@@ -65,32 +67,37 @@ const ProductSlider = () => {
     };
   }, []); // Empty dependency array to run the effect only once
 
+  var mode = ""
+  if (typeof window !== "undefined")
+    mode = !getmode() ? "light" : "dark"
+  var path = 'assets/imgs/homepage/slider'
   return (
     <>
-      <div className="wrapper">
+        <div className={`wrapper ${mode}`} style={{ background: `url(./${path}/${mode}/death_star.png) center no-repeat` }}>
         <div className="content">
           <div className="bg-shape">
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405214/starwars/logo.webp" alt="" />
+            <img src={`${path}/${mode}/car-care.png`} alt="" />
           </div>
+
           <div className="product-img">
 
             <div className="product-img__item" id="img1">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405217/starwars/item-1.webp"
+              <img src={`${path}/${mode}/item-1.png`}
                 alt="star wars" className="product-img__img" />
             </div>
 
             <div className="product-img__item" id="img2">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405217/starwars/item-2.webp"
+                <img src={`${path}/${mode}/item-2.png`}
                 alt="star wars" className="product-img__img" />
             </div>
 
             <div className="product-img__item" id="img3">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405218/starwars/item-3.webp"
+                <img src={`${path}/${mode}/item-3.png`}
                 alt="star wars" className="product-img__img" />
             </div>
 
             <div className="product-img__item" id="img4">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405215/starwars/item-4.webp"
+                <img src={`${path}/${mode}/item-4.png`}
                 alt="star wars" className="product-img__img" />
             </div>
           </div>
@@ -113,7 +120,7 @@ const ProductSlider = () => {
             <div className="product-slider__wrp swiper-wrapper">
               <div className="product-slider__item swiper-slide" data-target="img4">
                 <div className="product-slider__card">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp"
+                  <img src={`${path}/${mode}/item-4-bg.png`}
                     alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">
@@ -186,7 +193,7 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img1">
                 <div className="product-slider__card">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-1-bg.webp"
+                  <img src={`${path}/${mode}/item-1-bg.png`}
                     alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">
@@ -253,8 +260,9 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img2">
                 <div className="product-slider__card">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-2-bg.webp"
-                    alt="star wars" className="product-slider__cover" />
+                  <img src={`${path}/${mode}/item-1-bg.png`}
+                  
+                  alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">
                       KYLO REN'S <br /> LIGHTSABER
@@ -346,7 +354,7 @@ const ProductSlider = () => {
 
               <div className="product-slider__item swiper-slide" data-target="img3">
                 <div className="product-slider__card">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405215/starwars/item-3-bg.webp"
+                  <img src={`${path}/${mode}/item-1-bg.png`}
                     alt="star wars" className="product-slider__cover" />
                   <div className="product-slider__content">
                     <h1 className="product-slider__title">

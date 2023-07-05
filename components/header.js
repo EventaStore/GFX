@@ -59,12 +59,12 @@ const Header = ({
                                 <ul dir="ltr">
                                     <li>
                                         <a className="text-CS_text_active" href="#">
-                                            01xxxxyyyy
+                                        +971563272736
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            01xxxxxxxx
+                                        +971505108831
                                         </a>
                                     </li>
                                 </ul>

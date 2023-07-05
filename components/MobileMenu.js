@@ -221,12 +221,12 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         <div className="my-3 p-4 border-l border-r border-b border-t border-solid rounded-md border-CS_Soft_border_color">
 
                             <div className="pb-3">
-                                <a href="#">01xxxxxxxx</a>
+                                <a href="#">+971563272736</a>
 
                             </div>
                             <div className="">
 
-                                <a href="#">01xxxxxxxx</a>
+                                <a href="#">+971505108831</a>
 
                             </div>
                         </div>

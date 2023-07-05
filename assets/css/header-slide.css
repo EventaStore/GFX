@@ -44,12 +44,13 @@ a {
   width: 100%;
   height: 100vh;
   min-height: 750px;
-  background: url(https://res.cloudinary.com/muhammederdem/image/upload/v1536405234/starwars/death_star.jpg) center no-repeat;
-  background-size: cover;
+  
+  background-size: contain;
   position: relative;
   overflow: hidden;
   display: flex;
 }
+
 @media screen and (max-width: 992px) {
   .wrapper {
     height: auto;
@@ -480,21 +481,6 @@ a {
 }
 .product-slider__fav:focus {
   outline: none;
-}
-.product-slider__fav .heart {
-  display: block;
-  position: absolute;
-  left: 0;
-  transform: translate(-50%, -50%) scale(0.7);
-  top: 50%;
-  pointer-events: none;
-  width: 100px;
-  height: 100px;
-  background: url("https://res.cloudinary.com/muhammederdem/image/upload/v1536405215/starwars/heart.png") no-repeat;
-  background-position: 0 0;
-  cursor: pointer;
-  transition: background-position 1s steps(28);
-  transition-duration: 0s;
 }
 .product-slider__fav .heart.is-active {
   transition-duration: 1s;
