@@ -5,6 +5,10 @@ import service_content from "../static_data/services_content.json";
 import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Btnstyle from "../components/elements/Btnstyle";
+import useAnimatedElement from '../util/inView';
+import AnimatedSentence from '../components/elements/SentenceAnimation';
+import Recentwork from '../components/elements/recent_work'
+import FAQ from '../components/elements/FAQ'
 
 const Services = () => {
   const router = useRouter();
@@ -18,12 +22,16 @@ const Services = () => {
       setData(service_content[path]);
     }
   }, [path]);
-  const c = (content) => data ? data[content]:""
+  const cp = (content) => data ? data[content] : ""
+  const threshold = .6
+  const elements = useAnimatedElement(threshold)
+  // return (<></>)
+  var c = 1
   return (
-    <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={c('page title')}>
+    <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={cp('page title')}>
       <section className='container grid grid-cols-1 lg:grid-cols-4 gap-12 pt-40'>
         <div className='col-span-3'>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden h-72">
             {data && (
               <Swiper
                 effect="fade" // Set the fading effect
@@ -31,17 +39,54 @@ const Services = () => {
                 autoplay={{ delay: 1000 }} // Set the autoplay options
               >
                 <SwiperSlide>
-                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={c('image 1')} />
+                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={cp('image 1')} />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={c('image 2')} />
+                  <img className="transition-transform duration-300 h-full w-full brightness-50" src={cp('image 2')} />
                 </SwiperSlide>
               </Swiper>
             )}
           </div>
-          <article className='py-8 text-CS_text_color opacity-80 text-lg'>
-            Sed lectus vestibulum mattis ullamcorper. Ante in nibh mauris cursus. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Nulla posuere sollicitudin aliquam ultrices sagittis. Cursus risus at ultrices mi tempus imperdiet. Ultricies mi quis hendrerit dolor magna eget est lorem. Sodales ut etiam sit amet nisl purus in mollis. Ultrices neque ornare aenean euismod elementum nisi quis. Vel turpis nunc eget lorem dolor sed viverra. Orci nulla pellentesque dignissim enim sit amet venenatis urna. Porttitor lacus luctus accumsan tortor posuere ac ut. Sed tempus urna et pharetra pharetra massa massa ultricies.
-          </article>
+
+          {
+            data && (
+
+              <>
+                <h2 className='mt-10'>
+                  <AnimatedSentence className="text-CS_text_color" sentence={data["text editor 1"]["h3"]} useInView={elements[c++]} />
+                </h2>
+                <article className='pt-4 text-CS_text_color opacity-80 text-lg'>
+                  {data["text editor 1"]["p1"]}
+                </article>
+                {
+                  data["text editor 1"]["p2"] &&
+                  <article className='pt-4 text-CS_text_color opacity-80 text-lg'>
+                    {data["text editor 1"]["p2"]}
+                  </article>
+                }
+                {
+                  data["text editor 2"] &&
+                  <>
+                    <h2 className='mt-10'>
+                      <AnimatedSentence className="text-CS_text_color" sentence={data["text editor 2"]["h3"]} useInView={elements[c++]} />
+                    </h2>
+                    <article className='pt-4 text-CS_text_color opacity-80 text-lg'>
+                      {data["text editor 2"]["p1"]}
+                    </article>
+                    {
+                      data["text editor 2"]["p2"] &&
+                      <article className='pt-4 text-CS_text_color opacity-80 text-lg'>
+                        {data["text editor 2"]["p2"]}
+                      </article>
+                    }
+                  </>
+                }
+
+
+              </>
+            )
+          }
+
           <div className='grid grid-cols-3 gap-3'>
             {service_feature.map((e, i) =>
               <div key={i} className='flex gap-3 items-center'>
@@ -57,9 +102,9 @@ const Services = () => {
               CONTACT US
             </h3>
             <p>
-              { data ? data['text editor 1']['h3'] :"" }
+              {data ? data['text editor 1']['h3'] : ""}
             </p>
-            {data &&  <Btnstyle>{'GET SERVICE'}</Btnstyle>}
+            {data && <Btnstyle>{'GET SERVICE'}</Btnstyle>}
           </div>
           <div className='contact-cart'>
             <h3>
@@ -105,6 +150,12 @@ const Services = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="pt-32">
+        <Recentwork />
+      </section>
+      <section className="pt-32">
+        <FAQ />
       </section>
     </Layout>
   );

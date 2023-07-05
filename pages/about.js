@@ -4,8 +4,7 @@ import AnimatedSentence from '../components/elements/SentenceAnimation';
 import useAnimatedElement from '../util/inView';
 import { useTranslation } from 'react-i18next';
 import team from "../static_data/team.json";
-import recent_works from "../static_data/recent_works.json";
-
+import Recentwork from '../components/elements/recent_work'
 
 function About() {
     // artical + img
@@ -109,24 +108,7 @@ function About() {
                 </div>
             </section>
             <section className="pt-32">
-                <div className='container'>
-                    <AnimatedSentence className="text-5xl font-bold text-CS_text_color pb-10" sentence="OUR RECENT WORKS" useInView={elements[c++]} />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {recent_works.map((e, i) => (
-                            <div key={i} className={(elements[c].inView ? 'recent-works-card animate__animated animate__fadeInUp ' : ' opacity-0')} style={{ animationDelay: `${i * .05}s` }} >
-                                <div className="overflow-hidden">
-                                    <img ref={elements[c++].ref}
-                                        className={"hover:scale-110 h-96 w-full transition duration-500 brightness-90 hover:brightness-50 object-cover"}
-                                        src={e} />
-                                </div>
-                                <span className="text-lg font-bold text-white text-center w-full">
-                                    OUR RECENT WORKS
-                                </span>
-                            </div>
-                        ))
-                        }
-                    </div>
-                </div>
+                <Recentwork/>
             </section>
             <section className="pt-32 pb-20">
                 <div className='container'>

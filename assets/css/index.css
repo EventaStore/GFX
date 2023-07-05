@@ -339,6 +339,17 @@ textarea {
   
 }
 
+.closeQ {
+  max-height: 70px;
+  transition: 0.10s ease-out;
+  transition: 0.7s;
+}
+.openQ {
+  max-height: 150px;
+  transition: 0.25s ease-in;
+}
+
+
 @keyframes my_zoomIn {
   0% {
     transform: scale(1);
