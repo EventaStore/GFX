@@ -73,7 +73,7 @@ const ProductSlider = () => {
   var path = 'assets/imgs/homepage/slider'
   return (
     <>
-        <div className={`wrapper ${mode}`} style={{ background: `url(./${path}/${mode}/death_star.png) center no-repeat` }}>
+        <div className="wrapper object-contain" style={{ background: `url(./${path}/${mode}/death_star.png) center/contain no-repeat` }}>
         <div className="content">
           <div className="bg-shape">
             <img src={`${path}/${mode}/car-care.png`} alt="" />
