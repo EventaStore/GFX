@@ -13,6 +13,7 @@ import useAnimatedElement from '../util/inView';
 import AnimatedSentence from '../components/elements/SentenceAnimation';
 import Recentwork from '../components/elements/recent_work'
 import FAQ from '../components/elements/FAQ'
+import Contact from '../components/elements/Appointment'
 
 SwiperCore.use([Autoplay]);
 
@@ -35,7 +36,7 @@ const Services = () => {
   var c = 1
   return (
     <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={cp('page title')}>
-      <section className='container grid grid-cols-1 lg:grid-cols-4 gap-12 pt-40'>
+      <section className='container grid grid-cols-1 lg:grid-cols-4 sm:gap-0 lg:gap-12 pt-40'>
         <div className='col-span-3'>
           <div className="overflow-hidden h-72">
             {data && (
@@ -93,7 +94,7 @@ const Services = () => {
             )
           }
 
-          <div className='grid grid-cols-3 gap-3'>
+          <div className='grid grid-cols-2 xl:grid-cols-3 gap-3 mt-16'>
             {service_feature.map((e, i) =>
               <div key={i} className='flex gap-3 items-center'>
                 <i className="fas fa-check-square text-CS_text_active text-xl" />
@@ -102,7 +103,7 @@ const Services = () => {
             )}
           </div>
         </div>
-        <div className='col-span-1 grid grid-cols-1 gap-3'>
+        <div className='col-span-1 grid grid-cols-1 gap-3 mt-16 lg:mt-0'>
           <div className='contact-cart'>
             <h3>
               CONTACT US
@@ -117,12 +118,12 @@ const Services = () => {
               CONTACT US
             </h3>
             <div>
-              <p>+ 1 123 456-7890</p>
-              <p>+ 1 123 456-7890</p>
+
+              <a href="tel:+971563272736"><p className='hover:text-slate-800'>+971 56 327 2736</p></a>
+              <a href="tel:+971505108831"><p className='hover:text-slate-800'>+971 50 510 8831</p></a>
             </div>
             <div>
               <p>GFX@email.com</p>
-              <p>contact@email.com</p>
             </div>
           </div>
           <div className='contact-cart'>
@@ -162,6 +163,9 @@ const Services = () => {
       </section>
       <section className="pt-32">
         <FAQ />
+      </section>
+      <section className="pt-44">
+        <Contact />
       </section>
     </Layout>
   );
