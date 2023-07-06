@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 import $ from 'jquery'
 import getmode from '../../util/storage'
+import Slider from '../../static_data/slider.json'
 
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
@@ -119,28 +120,7 @@ const ProductSlider = () => {
             <div className="product-slider__wrp swiper-wrapper text-CS_text_color">
 
 
-              {[
-                {
-                  'dataTarget': "img4",
-                  "h1": "STORMTROPER <br /> HELMET",
-                  "topic": "The majestic mountains stood tall, their peaks reaching towards the sky, as the sun cast a warm golden glow upon the lush green valleys below.",
-                },
-                {
-                  'dataTarget': "img3",
-                  "h1": "IMPERIAL ARMY’S <br /> TIE FIGHTER",
-                  "topic": "The bustling city streets echoed with the sounds of honking cars, chattering pedestrians, and the rhythmic footsteps of people hurrying to their destinations."
-                },
-                {
-                  'dataTarget': "img2",
-                  "h1": "KYLO REN'S <br /> LIGHTSABER",
-                  "topic": "The aromatic scent of freshly brewed coffee wafted through the air, enticing passersby to step into the cozy cafe and indulge in a rich, flavorful cup of warmth."
-                },
-                {
-                  'dataTarget': "img1",
-                  "h1": "IMPERIAL ARMY'S <br />DEATH STAR",
-                  "topic": "The gentle breeze rustled the leaves of the ancient oak tree, whispering secrets of the past and carrying with it the promise of a new day filled with endless possibilities."
-                },
-              ].map((e, i) => (
+              {Slider.map((e, i) => (
                 <div key={i} className="product-slider__item swiper-slide" data-target={e.dataTarget}>
                   <div className="product-slider__card">
                     <img src={`${path}/${mode}/item-4-bg.png`} alt="product img" className="product-slider__cover" />

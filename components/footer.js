@@ -1,15 +1,19 @@
 import React from "react";
 import getmode from '../util/storage'
 import Services from '../static_data/services.json'
+import { useTranslation } from 'react-i18next';
 const Footer = () => {
     const combinedValues = Services.reduce((values, obj) => {
         return values.concat(obj.values);
     }, []);
 
+    const { i18n, t } = useTranslation();
+    const currentLanguage = i18n.language;
+    const dir = currentLanguage === "ar" ? "rtl" : "ltr"
     return (
         <>
-            <div className="h-72" />
-            <footer className="main">
+            <div className="h-72"/>
+            <footer className="main" dir={dir}>
                 <section className="section-padding footer-mid border-b border-t border-solid border-CS_Soft_border_color my-4">
                     <div className="container pt-15 pb-20">
                         <div className="row">
@@ -30,7 +34,7 @@ const Footer = () => {
                                             />
                                         </a>
                                         <p className="font-lg text-heading">
-                                            Every service is rigorously screened and constantly rated to ensure you get the best service.
+                                            {t('Every service is rigorously screened and constantly rated to ensure you get the best service.')}
                                         </p>
                                     </div>
                                 </div>
@@ -48,7 +52,7 @@ const Footer = () => {
                                         { name: 'FQA', url: '/FQA' }
                                     ].map((e, index) => (
                                         <li key={index}>
-                                            <a href={e.url}>{e.name}</a>
+                                            <a href={e.url}>{t(e.name)}</a>
                                         </li>
                                     ))}
                                 </ul>
@@ -57,11 +61,11 @@ const Footer = () => {
                                 className="footer-a-widget col wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".2s"
                             >
-                                <h4 className="text-2xl py-4">POPULAR SERVICES</h4>
+                                <h4 className="text-2xl py-4">{t('POPULAR SERVICES')}</h4>
                                 <ul className="sec-footer columns-1 lg:columns-2 footer-list mb-sm-5 mb-md-0">
                                     {combinedValues.slice(0, 8).map((value, index) => (
                                         <li key={index}>
-                                            <a href={value.href}>{value.text}</a>
+                                            <a href={value.href}>{t(value.text)}</a>
                                         </li>
 
                                     ))}
@@ -77,20 +81,39 @@ const Footer = () => {
                 >
                     <div className="flex flex-wrap-reverse justify-center sm:justify-between text-center items-center">
                         <div className="pb-10">
-                            <p className="font-sm mb-0">
-                                &copy; 2023,{" "}
-                                <strong className="text-brand">
-                                    <a
-                                        target="_blank"
-                                        href="https://www.linkedin.com/in/ahmed-magdy-4737ba18a/"
-                                    >
-                                        Ahmed Magdy
-                                    </a>
-                                </strong>
-                                - All rights reserved
-                            </p>
+                            {
+                                currentLanguage == "en" &&
+                                <p className="font-sm mb-0">
+                                    &copy; 2023,{" "}
+                                    <strong className="text-brand">
+                                        <a
+                                            target="_blank"
+                                            href="https://www.linkedin.com/in/ahmed-magdy-4737ba18a/"
+                                        >
+                                            Ahmed Magdy
+                                        </a>
+                                    </strong>
+                                    - All rights reserved
+                                </p>
+                            }
+                            {
+                                currentLanguage == "ar" &&
+                                <p className="font-sm mb-0">
+                                    &copy; 2023,{" "}
+                                    <strong className="text-brand">
+                                        <a
+                                            target="_blank"
+                                            href="https://www.linkedin.com/in/ahmed-magdy-4737ba18a/"
+                                        >
+                                            أحمد مجدي
+                                        </a>
+                                    </strong>
+                                    - جميع الحقوق محفوظة
+                                </p>
+
+                            }
                         </div>
-                        
+
                         <div className="pb-10">
                             <div className="mobile-social-icon">
                                 <h6>Follow Us</h6>

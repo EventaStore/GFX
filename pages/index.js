@@ -31,7 +31,6 @@ export default function Home() {
     };
   }, [handleLanguageChanged]);
   var entries = Object.values(Services);
-  console.log(entries[0])
   const threshold = .6
   const elements = useAnimatedElement(threshold)
   // return (<></>)
@@ -56,11 +55,11 @@ export default function Home() {
                       <p className="text-CS_text_color text-6xl pb-4">
                         <Counter endValue={value[0]} duration={.5} useInView={elements[c++]} />
                         <span>
-                          {value[1]}
+                          {t(value[1])}
                         </span>
                       </p>
                       <p className="div_before pt-3">
-                        {value[2]}
+                        {t(value[2])}
                       </p>
                     </div>
                   ))
@@ -86,22 +85,22 @@ export default function Home() {
                 typeof window !== "undefined" &&
                 entries.slice(0, 6).map((value, index) => {
                   const truncatedText = value['text editor 1']['p1'].length > 140
-                    ? value['text editor 1']['p1'].substring(0, 140) + "..."
-                    : value['text editor 1']['p1'];
+                    ? t(value['text editor 1']['p1']).substring(0, 140) + "..."
+                    : t(value['text editor 1']['p1']);
 
                   return (
                     <div key={index} className="section_2_elemmt w-full sm:w-1/1 md:w-1/2 lg:w-1/3">
                       <div className="div_before m-2 p-2">
                         <img className="hidden img_active" src={value.IconActive} alt="Active Icon" />
                         <img className="img_none_active" src={value.IconInActive} alt="Inactive Icon" />
-                        <strong className="text-CS_text_color text-2xl">{value['page title']}</strong>
+                        <strong className="text-CS_text_color text-2xl">{t(value['page title'])}</strong>
                         <p className="py-3">
                           {truncatedText}
                         </p>
                         <strong className="text-1xl gradient-animate">
-                          <span> 
+                          <span>
                             <Link href={value.sectionLink}>
-                              DETAILS SERVICE
+                              {t("DETAILS SERVICE")}
                             </Link>
                           </span>
                         </strong>
@@ -134,7 +133,7 @@ export default function Home() {
                       fill="white"
                       d="M1004.42,1967.21a2,2,0,0,1,0,3.58l-33.526,16.76a2,2,0,0,1-2.894-1.79v-33.52a2,2,0,0,1,2.894-1.79Z"
                       transform="translate(-968 -1950.25)"
-                      >
+                    >
                     </path></svg>
                 </Btnstyle>
               </div>
@@ -142,8 +141,8 @@ export default function Home() {
                 <div className={(elements[c].inView ? 'animate__animated animate__bounceInUp animate__fast' : ' opacity-0')}>
                   <img ref={elements[c++].ref}
                     className={"hover:scale-110 hover:-rotate-1 transition-transform duration-300 w-full brightness-50 "}
-                    src="/assets/imgs/homepage/video-bg2.jpg" 
-                    />
+                    src="/assets/imgs/homepage/video-bg2.jpg"
+                  />
 
                 </div>
               </div>
@@ -170,7 +169,6 @@ export default function Home() {
                   </li>
                   <li className="li-list my-3 ">
                     <strong className="mx-2">
-
                       {t("CONVENIENT LOCATION")}
                     </strong>
                   </li>
@@ -181,47 +179,54 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+              <div className="xl:w-2/3 lg:w-1/1" >
+              <div className={`text-6xl font-bold relative top-1/2 left-1/2 transform ${currentLanguage !== 'ar' ? 'translate-x-52' : '-translate-x-52'}`}>
+                COME SOON
+                </div>
+                <div className="flex">
 
-              {
-                typeof window !== "undefined" &&
-                HomeContent['section3'].map((value, index) => (
-                  <div ref={elements[c].ref} key={index} className={"xl:w-1/3 lg:w-1/2 mx-auto lg:mx-0 p-2 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
-                    <div className="bg-CS_card h-full w-full px-5 div_before">
-                      <div className="flex justify-center items-center">
-                        <div className="border-b border-solid border-white py-4 w-max text-center">
-                          <p className="text-base">
-                            {value[0]}
-                          </p>
-                          <p className="text-5xl py-3">
-                            {value[1]}
-                          </p>
-                          <p className="text-sm">
-                            {value[2]}
-                          </p>
+                {
+                  typeof window !== "undefined" &&
+                  HomeContent['section3'].map((value, index) => (
+                    <div ref={elements[c].ref} key={index} className={"w-1/2 mx-auto lg:mx-0 p-2 opacity-10 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
+                      <div className="bg-CS_card h-full w-full px-5 div_before max-w-sm">
+                        <div className="flex justify-center items-center">
+                          <div className="border-b border-solid border-white py-4 w-max text-center">
+                            <p className="text-base">
+                              {value[0]}
+                            </p>
+                            <p className="text-5xl py-3">
+                              {value[1]}
+                            </p>
+                            <p className="text-sm">
+                              {value[2]}
+                            </p>
+                          </div>
                         </div>
+                        <ul>
+
+                          {
+                            value[3].map((value, index) => (
+                              <li key={index} className={"py-3 text-base flex justify-between " + (value[1] ? "" : "opacity-40")}>
+                                <span>
+                                  {value}
+                                </span>
+                                <strong>&#x2713;</strong>
+                              </li>
+                            ))
+                          }
+
+                        </ul>
+                        <Btnstyle className="my-5 w-full">
+                          {t("GET STARTED")}
+                        </Btnstyle>
                       </div>
-                      <ul>
 
-                        {
-                          value[3].map((value, index) => (
-                            <li key={index} className={"py-3 text-base flex justify-between " + (value[1] ? "" : "text-gray-600")}>
-                              <span>
-                                {value}
-                              </span>
-                              <strong>&#x2713;</strong>
-                            </li>
-                          ))
-                        }
-
-                      </ul>
-                      <Btnstyle className="my-5 w-full">
-                        {t("GET STARTED")}
-                      </Btnstyle>
                     </div>
-
-                  </div>
-                ))
-              }
+                  ))
+                }
+              </div>
+              </div>
 
             </div>
           </div>

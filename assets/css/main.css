@@ -7589,7 +7589,7 @@ span.fi-rs-apps {
 .main-menu>nav>ul>li>a i {
   font-size: 8px;
   position: relative;
-  margin-left: 4px;
+  
 }
 
 .main-menu>nav>ul>li>a.active {
@@ -7689,7 +7689,6 @@ span.fi-rs-apps {
   line-height: 1;
   display: block;
   position: relative;
-  float: left;
   padding-right: 10px;
 }
 

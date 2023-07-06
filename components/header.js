@@ -58,10 +58,10 @@ const Header = ({
                             <div className="header-info">
                                 <ul dir="ltr">
                                     <li>
-                                    <a href="tel:+971563272736">+971 56 327 2736</a>
+                                        <a href="tel:+971563272736">+971 56 327 2736</a>
                                     </li>
                                     <li>
-                                    <a href="tel:+971505108831">+971 50 510 8831</a>
+                                        <a href="tel:+971505108831">+971 50 510 8831</a>
                                     </li>
                                 </ul>
                             </div>
@@ -132,18 +132,18 @@ const Header = ({
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
                                 <img src={
-                                                    typeof window !== "undefined" && 
-                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
-                                                } alt="logo" />
+                                    typeof window !== "undefined" &&
+                                        !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                } alt="logo" />
                             </Link>
                         </div>
                         <div className="header-nav d-none d-lg-flex">
                             <div className="logo logo-width-1">
                                 <Link href="/">
                                     <img src={
-                                                    typeof window !== "undefined" && 
-                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
-                                                } alt="logo" />
+                                        typeof window !== "undefined" &&
+                                            !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                    } alt="logo" />
                                 </Link>
                             </div>
                             <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block  font-heading">
@@ -151,21 +151,20 @@ const Header = ({
                                     <ul>
                                         <li>
                                             <Link href="/" className={router.pathname == "/" ? "active" : ""}>
-
                                                 {t('home')}
                                             </Link>
                                         </li>
                                         <li className="position-static">
                                             <Link href="#">
                                                 {t('services')}
-                                                <i className={`fi-rs-angle-down p${dir[0]}-2`}></i>
+                                                <i className={`fi-rs-angle-down m${dir[0]}-2`}></i>
                                             </Link>
                                             <ul className="mega-menu">
                                                 {Services.map((item, index) =>
-                                                    <li className="sub-mega-menu sub-mega-menu-width-22" key={index}>
-                                                        <a className="menu-title" href="#">
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-right":"float-left"}`} key={index}>
+                                                        <h4 className="menu-title">
                                                             {t(item.name.toLowerCase())}
-                                                        </a>
+                                                        </h4>
                                                         <ul>
                                                             {item.values.map((value, index) =>
                                                                 <li key={index}>
@@ -184,14 +183,14 @@ const Header = ({
                                         <li className="position-static">
                                             <Link href="#">
                                                 {t("packages")}
-                                                <i className={`fi-rs-angle-down p${dir[0]}-2`}></i>
+                                                <i className={`fi-rs-angle-down m${dir[0]}-2`}></i>
                                             </Link>
                                             <ul className="mega-menu">
                                                 {packages.map((item, index) =>
-                                                    <li className="sub-mega-menu sub-mega-menu-width-22" key={index}>
-                                                        <a className="menu-title" href="#">
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-right":"float-left"}`} key={index}>
+                                                        <h4 className="menu-title" href="#">
                                                             {t(item.name)}
-                                                        </a>
+                                                        </h4>
                                                         <ul>
                                                             {item.values.map((value, index) =>
                                                                 <li key={index}>

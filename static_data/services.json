@@ -1,76 +1,84 @@
 [
   {
-    "name": "services 1",
+    "name": "Car Care",
     "values": [
       {
-        "href": "/ac",
-        "text": "AC Repair"
+        "href": "/car_polishing",
+        "text": "Car Polishing"
       },
       {
-        "href": "/brake",
-        "text": "Brake Repair"
+        "href": "/car_wash",
+        "text": "Car Wash"
       },
       {
-        "href": "/electric",
-        "text": "Electric Repair"
+        "href": "/tint",
+        "text": "Tint"
       },
       {
-        "href": "/gearbox",
-        "text": "Gearbox repair"
+        "href": "/ceramic_protection",
+        "text": "Ceramic Protection"
       },
       {
-        "href": "/gearbox",
-        "text": "Suspension Repair"
+        "href": "/car_accessories",
+        "text": "Car Accessories"
+      },
+      {
+        "href": "/car_screen",
+        "text": "Car Screen"
+      },
+      {
+        "href": "/upholstery",
+        "text": "Upholstery"
       }
     ]
   },
   {
-    "name": "services 2",
+    "name": "Mechanical Services",
     "values": [
+      {
+        "href": "/car_balance",
+        "text": "Car Balance"
+      },
+      {
+        "href": "/gearbox",
+        "text": "Gearbox Repair"
+      },
       {
         "href": "/transmission",
         "text": "Transmission Repair"
       },
       {
+        "href": "/axle_driveshaft",
+        "text": "Axle/Driveshaft"
+      },
+      {
+        "href": "/tire_repair",
+        "text": "Tire Repair"
+      },
+      {
+        "href": "/suspension",
+        "text": "Suspension Repair"
+      },
+      {
         "href": "/comfort_system",
-        "text": "Comfort System Repair"
+        "text": "comfort system"
       },
       {
-        "href": "/Axle_&_Driveshaft",
-        "text": "Axle/ Driveshaft Repair"
-      },
-      {
-        "href": "/Body_and_repair_service",
-        "text": "Body And Repair Service"
-      },
-      {
-        "href": "/engine_control_unit",
-        "text": "Engine Control Unit Repair"
+        "href": "/brake",
+        "text": "Brake Repair"
       }
     ]
   },
   {
-    "name": "services 3",
+    "name": "Electric Services",
     "values": [
       {
-        "href": "/engine_cooling_system",
-        "text": "Engine Cooling System Repair"
+        "href": "/ac",
+        "text": "A/C Repair"
       },
       {
-        "href": "/engine_management_system",
-        "text": "Engine Management System Repair"
-      },
-      {
-        "href": "/software",
-        "text": "Car Software Repair & Programming"
-      },
-      {
-        "href": "/pre-purchase_inspection",
-        "text": "Pre-purchase inspection"
-      },
-      {
-        "href": "/Body_and_repair_service",
-        "text": "Body And Repair Service"
+        "href": "/electric",
+        "text": "Electric Car"
       }
     ]
   }

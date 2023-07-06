@@ -6,7 +6,7 @@ const AnimatedSentence = ({ sentence, className, useInView }) => {
     const [words, setWords] = useState([]);
 
     useEffect(() => {
-        setWords(sentence.split(' '));
+        setWords((sentence??"").split(' '));
     }, [sentence]);
 
     return (

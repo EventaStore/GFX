@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
-import service_feature from "../static_data/service_feature.json";
 import service_content from "../static_data/services_content.json";
 import { useRouter } from 'next/router';
 
@@ -22,17 +21,19 @@ const Services = () => {
   const { asPath } = router;
   const path = asPath.substring(1);
 
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setData(service_content[path]);
-    }
-  }, [path]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     setData(service_content[path]);
+  //   }
+  // }, [path]);
+  const data = service_content[path]
   const cp = (content) => data ? data[content] : ""
   const threshold = .6
   const elements = useAnimatedElement(threshold)
-  // return (<></>)
+  if (!data)
+    return (<></>)
   var c = 1
   return (
     <Layout parent="Home" sub="service" subChild={path} parentURL="/" title={cp('page title')}>
@@ -89,19 +90,9 @@ const Services = () => {
                   </>
                 }
 
-
-              </>
+             </>
             )
           }
-
-          <div className='grid grid-cols-2 xl:grid-cols-3 gap-3 mt-16'>
-            {service_feature.map((e, i) =>
-              <div key={i} className='flex gap-3 items-center'>
-                <i className="fas fa-check-square text-CS_text_active text-xl" />
-                <p>{e}</p>
-              </div>
-            )}
-          </div>
         </div>
         <div className='col-span-1 grid grid-cols-1 gap-3 mt-16 lg:mt-0'>
           <div className='contact-cart'>
@@ -123,7 +114,7 @@ const Services = () => {
               <a href="tel:+971505108831"><p className='hover:text-slate-800'>+971 50 510 8831</p></a>
             </div>
             <div>
-              <p>GFX@email.com</p>
+              <a href="mailto:gxfcar@gmail.com"><p>gxfcar@gmail.com</p></a>
             </div>
           </div>
           <div className='contact-cart'>
@@ -131,12 +122,9 @@ const Services = () => {
               ADDRESS
             </h3>
             <div>
-              <p>19 Frisk Drive, Middletown,nj,</p>
-              <p>3452 United States</p>
-            </div>
-            <div>
-              <p>31 S Division Street, Montour,ia,</p>
-              <p>4498 United States</p>
+              <p>Forsan central mall</p>
+              <p>Khalifa A</p>
+              <p>Abu Dhabi</p>
             </div>
           </div>
           <div className='contact-cart'>
@@ -144,17 +132,37 @@ const Services = () => {
               OPEN HOURS
             </h3>
             <div className='flex justify-between'>
-              <p>Monday – Friday</p>
-              <p>8 am – 8 pm</p>
+              <p>Saturday – Thursday</p>
+              <p>10 am – 11 pm</p>
             </div>
             <div className='flex justify-between'>
-              <p>Saturday</p>
-              <p>8 am – 6 pm</p>
+              <p>Friday</p>
+              <p>2 pm – 11 pm</p>
             </div>
-            <div className='flex justify-between'>
-              <p>Sunday</p>
-              <p>Closed</p>
-            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pt-20">
+        <div className='container'>
+          <h2 className='mt-5'>
+            <AnimatedSentence className="text-CS_text_color" sentence={data["question"]} useInView={elements[c++]} />
+          </h2>
+          <div className='grid grid-cols-2 xl:grid-cols-3 gap-3 mt-16'>
+            {data.reasons.map((e, i) =>
+              <div ref={elements[c].ref}>
+                {elements[c++].inView &&
+                  <div key={i} className='border-CS_Soft_border_color bg-CS_bg_color border-solid border-2 p-3 wow animate__animated animate__slideInLeft h-full'
+                    style={{ animationDelay: `${i * 0.1}s` }}
+                  >
+                    <div className=''>
+                      <h5>{e.title}</h5>
+                      <br />
+                      <p>{e.description}</p>
+                    </div>
+                  </div>
+                }
+              </div>
+            )}
           </div>
         </div>
       </section>
