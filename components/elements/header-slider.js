@@ -97,7 +97,7 @@ const ProductSlider = () => {
             </div>
 
             <div className="product-img__item" id="img4">
-              <img src={`${path}/${mode}/item-4.png`}
+              <img src={`${path}/${mode}/item-6.png`}
                 alt="star wars" className="product-img__img" />
             </div>
           </div>
