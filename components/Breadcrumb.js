@@ -3,7 +3,7 @@
 const Breadcrumb = ({ parent, sub, parentURL, title, subChild, noBreadcrumb }) => {
     return (
         <>
-            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb}`}>
+            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb} py-20`}>
                 <div className="container">
                     <div className="breadcrumb">
                         <a href={parentURL}>

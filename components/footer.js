@@ -1,7 +1,11 @@
 import React from "react";
 import getmode from '../util/storage'
+import Services from '../static_data/services.json'
 const Footer = () => {
-    
+    const combinedValues = Services.reduce((values, obj) => {
+        return values.concat(obj.values);
+    }, []);
+
     return (
         <>
             <div className="h-72" />
@@ -19,8 +23,8 @@ const Footer = () => {
                                             <img
                                                 src=
                                                 {
-                                                    typeof window !== "undefined" && 
-                                                    !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                                    typeof window !== "undefined" &&
+                                                        !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                                 }
                                                 alt="logo"
                                             />
@@ -32,16 +36,16 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div
-                                className="footer-a-widget col  wow animate__animated animate__fadeInUp"
+                                className="footer-a-widget col wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".1s"
                             >
                                 <h4 className="text-2xl py-4">Company</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
+                                <ul className="footer-list mb-sm-5 mb-md-0">
                                     {[
                                         { name: 'ABOUT US', url: '/about' },
-                                        { name: 'OUR TEAM', url: '#' },
-                                        { name: 'OUR WORKS', url: '#' },
-                                        { name: 'FQA', url: '#' }
+                                        { name: 'OUR TEAM', url: '/team' },
+                                        { name: 'OUR WORKS', url: '/works' },
+                                        { name: 'FQA', url: '/FQA' }
                                     ].map((e, index) => (
                                         <li key={index}>
                                             <a href={e.url}>{e.name}</a>
@@ -50,24 +54,16 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div
-                                className="footer-a-widget col  wow animate__animated animate__fadeInUp"
+                                className="footer-a-widget col wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".2s"
                             >
                                 <h4 className="text-2xl py-4">POPULAR SERVICES</h4>
-                                <ul className="sec-footer footer-list mb-sm-5 mb-md-0">
-                                    {[
-                                        'TIRE REPAIR',
-                                        'BRAKE REPAIR',
-                                        'ENGINE REPAIR',
-                                        'CHARGING REPAIR',
-                                        'COOLING SYSTEM',
-                                        'WHEEL ALIGNMENT',
-                                        'BATTERY STARTING',
-                                        'SUPSPENSION REPAIR'
-                                    ].map((value, index) => (
+                                <ul className="sec-footer columns-1 lg:columns-2 footer-list mb-sm-5 mb-md-0">
+                                    {combinedValues.slice(0, 8).map((value, index) => (
                                         <li key={index}>
-                                            <a href="#">{value}</a>
+                                            <a href={value.href}>{value.text}</a>
                                         </li>
+
                                     ))}
                                 </ul>
                             </div>
@@ -94,17 +90,7 @@ const Footer = () => {
                                 - All rights reserved
                             </p>
                         </div>
-                        <div className="pb-10">
-                            <div className="hotline d-lg-inline-flex mr-30">
-                                <img
-                                    src="/assets/imgs/theme/icons/phone-call.svg"
-                                    alt="hotline"
-                                />
-                                <p>
-                                    1900 - 6666<span>Working 8:00 - 22:00</span>
-                                </p>
-                            </div>
-                        </div>
+                        
                         <div className="pb-10">
                             <div className="mobile-social-icon">
                                 <h6>Follow Us</h6>
@@ -128,18 +114,12 @@ const Footer = () => {
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="/assets/imgs/theme/icons/icon-pinterest-white.svg"
-                                        alt=""
-                                    />
-                                </a>
-                                <a href="#">
-                                    <img
                                         src="/assets/imgs/theme/icons/icon-youtube-white.svg"
                                         alt=""
                                     />
                                 </a>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

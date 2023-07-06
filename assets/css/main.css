@@ -2898,8 +2898,6 @@ label {
 }
 
 .page-header.breadcrumb-wrap {
-  padding: 70px;
-  
   border-bottom: 1px solid #ececec;
   font-family: "Quicksand", sans-serif;
 }
@@ -8721,11 +8719,8 @@ footer .hotline img {
 }
 
 .sec-footer {
-  -moz-column-count: 2;
   -moz-column-gap: 20px;
-  -webkit-column-count: 2;
   -webkit-column-gap: 20px;
-  column-count: 2;
   column-gap: 20px;
 }
 

@@ -58,14 +58,10 @@ const Header = ({
                             <div className="header-info">
                                 <ul dir="ltr">
                                     <li>
-                                        <a className="text-CS_text_active" href="#">
-                                        +971563272736
-                                        </a>
+                                    <a href="tel:+971563272736">+971 56 327 2736</a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                        +971505108831
-                                        </a>
+                                    <a href="tel:+971505108831">+971 50 510 8831</a>
                                     </li>
                                 </ul>
                             </div>
@@ -107,7 +103,7 @@ const Header = ({
                                         </ul>
                                     </li>
                                     <li>
-                                        <a className="language-dropdown-active" href="#" dir={dir}>
+                                        <a className="language-dropdown-active hidden" href="#" dir={dir}>
                                             {t('USD')} <i className="fi-rs-angle-small-down"></i>
                                         </a>
                                         <ul className="language-dropdown">

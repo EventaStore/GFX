@@ -1,19 +1,14 @@
-% menue href services , packages 
-% home services data
-% footer services , href
-
+# menue href services , packages 
+# home services data
+# footer services , href
+% phone pressed
 % home
     % OUR SERVICES  
-        % imgs
-    % MAINTENANCE & REPAIRS 
-        % vedio
-        % img
-    % CAR EXTERIOR CLEANING: BASIC DETAILING
-        % img
-    % RUBBING, WAXING, AND POLISHING
-        % img
+        % icons
+    % vedio , imgs
     % REQUEST AN APPOINTMENT ONLINE 
         % dashboard
+
 % service data
 % OUR team
 % OUR WORKS

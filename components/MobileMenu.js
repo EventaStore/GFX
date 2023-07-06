@@ -96,7 +96,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                     <li
                                         className={
                                             isActive.key >= 10 && isActive.key < 15
-                                                ? "menu-item-has-children"
+                                                ? "menu-item-has-children active"
                                                 : "menu-item-has-children"
                                         }
                                     >
@@ -110,8 +110,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         <ul
                                             className={
                                                 isActive.key >= 10 && isActive.key < 15
-                                                    ? "dropdown"
-                                                    : "d-none"
+                                                    ? "dropdown": "dropdown-close"
                                             }
                                         >
 
@@ -128,7 +127,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </span>
                                                         <a href="#">{item.name}</a>
-                                                        <ul className={isActive.key === index + 11 ? "dropdown" : "d-none"}>
+                                                        <ul className={isActive.key === index + 11 ? "dropdown": "dropdown-close"}>
                                                             {item.values.map((value, valueIndex) => (
                                                                 <li key={valueIndex}>
                                                                     <a href={value.href}>{value.text}</a>
@@ -161,8 +160,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         <ul
                                             className={
                                                 isActive.key >= 5 && isActive.key < 10
-                                                    ? "dropdown"
-                                                    : "d-none"
+                                                ? "dropdown": "dropdown-close"
                                             }
                                         >
 
@@ -178,7 +176,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </span>
                                                         <a href="#">{item.name}</a>
-                                                        <ul className={isActive.key === index + 6 ? "dropdown" : "d-none"}>
+                                                        <ul className={isActive.key === index + 6 ? "dropdown": "dropdown-close"}>
                                                             {item.values.map((value, valueIndex) => (
                                                                 <li key={valueIndex}>
                                                                     <a href={value.href}>{value.text}</a>
@@ -221,12 +219,11 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         <div className="my-3 p-4 border-l border-r border-b border-t border-solid rounded-md border-CS_Soft_border_color">
 
                             <div className="pb-3">
-                                <a href="#">+971563272736</a>
+                            <a href="tel:+971563272736">+971 56 327 2736</a>
 
                             </div>
-                            <div className="">
-
-                                <a href="#">+971505108831</a>
+                            <div >
+                            <a href="tel:+971505108831">+971 50 510 8831</a>
 
                             </div>
                         </div>
@@ -248,12 +245,6 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             <a href="">
                                 <img
                                     src="/assets/imgs/theme/icons/icon-instagram-white.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="">
-                                <img
-                                    src="/assets/imgs/theme/icons/icon-pinterest-white.svg"
                                     alt=""
                                 />
                             </a>

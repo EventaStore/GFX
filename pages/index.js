@@ -31,7 +31,7 @@ export default function Home() {
     };
   }, [handleLanguageChanged]);
   var entries = Object.values(Services);
-
+  console.log(entries[0])
   const threshold = .6
   const elements = useAnimatedElement(threshold)
   // return (<></>)
@@ -99,7 +99,11 @@ export default function Home() {
                           {truncatedText}
                         </p>
                         <strong className="text-1xl gradient-animate">
-                          <span>DETAILS SERVICE</span>
+                          <span> 
+                            <Link href={value.sectionLink}>
+                              DETAILS SERVICE
+                            </Link>
+                          </span>
                         </strong>
                       </div>
                     </div>
@@ -124,12 +128,13 @@ export default function Home() {
             <div className="relative div_before py-5 my-5 w-full">
               <div className="absolute inset-0 flex justify-center items-center">
 
-                <Btnstyle>
+                <Btnstyle className="border-CS_Soft_border_color">
                   <svg width="37.56" height="37.53" viewBox="0 0 37.56 37.53">
                     <path id="video-bn1" className="svg-video-play"
                       fill="white"
                       d="M1004.42,1967.21a2,2,0,0,1,0,3.58l-33.526,16.76a2,2,0,0,1-2.894-1.79v-33.52a2,2,0,0,1,2.894-1.79Z"
-                      transform="translate(-968 -1950.25)">
+                      transform="translate(-968 -1950.25)"
+                      >
                     </path></svg>
                 </Btnstyle>
               </div>
