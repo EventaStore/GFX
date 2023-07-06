@@ -191,7 +191,7 @@ export default function Home() {
                 {
                   typeof window !== "undefined" &&
                   HomeContent['section3'].map((value, index) => (
-                    <div ref={elements[c].ref} key={index} className={"w-1/2 mx-auto lg:mx-0 p-2 opacity-10 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
+                    <div ref={elements[c].ref} key={index} className={"w-1/2 lg:w-1/3 mx-auto lg:mx-0 p-2 opacity-10 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
                       <div className="bg-CS_card h-full w-full px-5 div_before max-w-sm">
                         <div className="flex justify-center items-center">
                           <div className="border-b border-solid border-white py-4 w-max text-center">
