@@ -180,9 +180,12 @@ export default function Home() {
                 </ul>
               </div>
               <div className="xl:w-2/3 lg:w-1/1" >
+                  {
+                    false && 
               <div className={`text-6xl font-bold relative top-1/2 left-1/2 transform ${currentLanguage !== 'ar' ? 'translate-x-52' : '-translate-x-52'}`}>
                 COME SOON
                 </div>
+                  }
                 <div className="flex">
 
                 {
