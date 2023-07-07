@@ -147,7 +147,7 @@ const Services = () => {
           <h2 className='mt-5'>
             <AnimatedSentence className="text-CS_text_color" sentence={data["question"]} useInView={elements[c++]} />
           </h2>
-          <div className='grid grid-cols-2 xl:grid-cols-3 gap-3 mt-16'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-16'>
             {data.reasons.map((e, i) =>
               <div ref={elements[c].ref}>
                 {elements[c++].inView &&
