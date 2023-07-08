@@ -157,11 +157,11 @@ const Header = ({
                                         <li className="position-static">
                                             <Link href="#">
                                                 {t('services')}
-                                                <i className={`fi-rs-angle-down m${dir[0]}-2`}></i>
+                                                <i className={`fi-rs-angle-down ${currentLanguage=='en'?"ml-2":"mr-2"}`}></i>
                                             </Link>
                                             <ul className="mega-menu">
                                                 {Services.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-right":"float-left"}`} key={index}>
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-left":"float-right"}`} key={index}>
                                                         <h4 className="menu-title">
                                                             {t(item.name.toLowerCase())}
                                                         </h4>
@@ -187,7 +187,7 @@ const Header = ({
                                             </Link>
                                             <ul className="mega-menu">
                                                 {packages.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-right":"float-left"}`} key={index}>
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-left":"float-right"}`} key={index}>
                                                         <h4 className="menu-title" href="#">
                                                             {t(item.name)}
                                                         </h4>

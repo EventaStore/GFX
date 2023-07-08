@@ -10261,6 +10261,9 @@ footer .hotline img {
   @apply scale-110
 }
 
+.text-shadow{
+  text-shadow: 0px 0px 100px var(--text-color)
+}
 
 /*# sourceMappingURL=main.css.map */
 

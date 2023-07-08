@@ -154,16 +154,15 @@ export default function Home() {
           <div className="container">
 
             <div className="flex flex-wrap">
-              <div className="xl:w-1/3 lg:w-1/1 pt-4 pb-3">
+              <div className="lg:w-1/1 xl:w-1/3 pt-4 pb-3">
                 <AnimatedSentence className="text-CS_text_color text-5xl" sentence={t("AFFORDABLE PRICING PLANS")} useInView={elements[c++]} />
                 <p ref={elements[c].ref} className={"text-lg my-5 " + (elements[c++].inView ? 'animate__animated animate__fadeInLeft animate__fast' : ' opacity-0')}>
                   {t('We provide the best car service, recommend the best products through an independent review process.')}
                 </p>
 
                 <ul ref={elements[c].ref} className={"text-base text-CS_text_color " + (elements[c++].inView ? 'animate__animated animate__fadeInLeft animate__fast animate__delay-.5s' : ' opacity-0')}>
-                  <li className="li-list ">
+                  <li className="li-list mr-3 rtl:ml-3">
                     <strong className="mx-2">
-
                       {t("SAME DAY SERVICE")}
                     </strong>
                   </li>
@@ -179,63 +178,55 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="xl:w-2/3 lg:w-1/1" >
-                  {
-                    false && 
-              <div className={`text-6xl font-bold relative top-1/2 left-1/2 transform ${currentLanguage !== 'ar' ? 'translate-x-52' : '-translate-x-52'}`}>
-                COME SOON
-                </div>
-                  }
-                <div className="flex">
-
-                {
-                  typeof window !== "undefined" &&
-                  HomeContent['section3'].map((value, index) => (
-                    <div ref={elements[c].ref} key={index} className={"w-1/1 lg:w-1/3 mx-auto lg:mx-0 p-2 opacity-10 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
-                      <div className="bg-CS_card h-full w-full px-5 div_before max-w-sm">
-                        <div className="flex justify-center items-center">
-                          <div className="border-b border-solid border-white py-4 w-max text-center">
-                            <p className="text-base">
-                              {value[0]}
-                            </p>
-                            <p className="text-5xl py-3">
-                              {value[1]}
-                            </p>
-                            <p className="text-sm">
-                              {value[2]}
-                            </p>
-                          </div>
+              {/*  */}
+              {
+                typeof window !== "undefined" &&
+                HomeContent['section3'].map((value, index) => (
+                  <div ref={elements[c].ref} key={index} className={"w-1/1 lg:w-1/2 xl:w-1/3 mx-auto lg:mx-0 p-2 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
+                    <div className={`text-shadow text-CS_text_color  text-6xl font-bold relative top-1/3 z-10 h-0 max-w-sm w-full text-center`}>{t('COMING SOON')}</div>
+                    <div className="bg-CS_card h-full w-full px-5 div_before max-w-sm opacity-10">
+                      <div className="flex justify-center items-center">
+                        <div className="border-b border-solid border-white py-4 w-max text-center">
+                          <p className="text-base">
+                            {value[0]}
+                          </p>
+                          <p className="text-5xl py-3">
+                            {value[1]}
+                          </p>
+                          <p className="text-sm">
+                            {value[2]}
+                          </p>
                         </div>
-                        <ul>
-
-                          {
-                            value[3].map((value, index) => (
-                              <li key={index} className={"py-3 text-base flex justify-between " + (value[1] ? "" : "opacity-40")}>
-                                <span>
-                                  {value}
-                                </span>
-                                <strong>&#x2713;</strong>
-                              </li>
-                            ))
-                          }
-
-                        </ul>
-                        <Btnstyle className="my-5 w-full">
-                          {t("GET STARTED")}
-                        </Btnstyle>
                       </div>
+                      <ul>
 
+                        {
+                          value[3].map((value, index) => (
+                            <li key={index} className={"py-3 text-base flex justify-between " + (value[1] ? "" : "opacity-40")}>
+                              <span>
+                                {value}
+                              </span>
+                              <strong>&#x2713;</strong>
+                            </li>
+                          ))
+                        }
+
+                      </ul>
+                      <Btnstyle className="my-5 w-full">
+                        {t("GET STARTED")}
+                      </Btnstyle>
                     </div>
-                  ))
-                }
-              </div>
-              </div>
 
+                  </div>
+
+                ))
+              }
             </div>
           </div>
         </section>
 
-        <section className="pt-72">
+
+        <section className="pt-72" dir={dir}>
           <div className="flex flex-wrap bg-CS_card">
 
             <div className="w-1/1 sm:w-1/2">
@@ -243,29 +234,28 @@ export default function Home() {
                 <img className="object-cover hover:scale-110 transition-transform duration-300 h-full w-full brightness-50" src="/assets/imgs/homepage/left-img.jpg" />
               </div>
             </div>
-            <div className="w-1/1 sm:w-1/2 flex items-center justify-center">
-              <div ref={elements[c].ref} className={"w-11/12 xl:w-4/5 2xl:w-3/5 " + (elements[c++].inView ? 'animate__animated animate__bounceInRight animate__fast' : 'opacity-0')}>
+            <div className="w-1/1 sm:w-1/2 flex items-center justify-center" >
+              <div ref={elements[c].ref} className={"w-11/12 xl:w-4/5 27xl:w-3/5 " + (elements[c++].inView ? 'animate__animated animate__bounceInRight animate__fast' : 'opacity-0')}>
                 <div className="w-1/1">
-                  <h1 className="text-4xl font-bold pb-5 pt-4 md:pt-0">CAR EXTERIOR CLEANING: BASIC DETAILING</h1>
+                  <h1 className="text-4xl font-bold pb-5 pt-4 md:pt-0">{t("CAR EXTERIOR CLEANING: BASIC DETAILING")}</h1>
                   <ul className="text-base text-CS_text_color grid grid-cols-1 lg:grid-cols-2 gap-1">
                     <li className="li-list">
-                      <strong>SAME DAY SERVICE</strong>
+                      <strong>{t("SAME DAY SERVICE")}</strong>
                     </li>
                     <li className="li-list">
-                      <strong>CONVENIENT LOCATION</strong>
+                      <strong>{t("CONVENIENT LOCATION")}</strong>
                     </li>
                     <li className="li-list">
-                      <strong>ONLINE APPOINTMENT</strong>
+                      <strong>{t("ONLINE APPOINTMENT")}</strong>
                     </li>
                     <li className="li-list">
-                      <strong>COMPLIMENTARY SHUTTLE</strong>
+                      <strong>{t("COMPLIMENTARY SHUTTLE")}</strong>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <Btnstyle className="my-5">GET SERVICE</Btnstyle>
+                  <Btnstyle className="my-5">{t("GET SERVICE")}</Btnstyle>
                 </div>
-
               </div>
             </div>
 
@@ -277,14 +267,14 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-center h-full">
                   <div className="w-1/1 lg:w-4/5 xl:w-2/3 2xl:w-1/2 p-4">
 
-                    <h1 className="text-4xl font-bold pb-5">RUBBING, WAXING, AND POLISHING</h1>
+                    <h1 className="text-4xl font-bold pb-5">{t("RUBBING, WAXING, AND POLISHING")}</h1>
                     <p className="text-base text-CS_text_color">
-                      Our technicians have undergone the most extensive and stringent car detail training program. And the only car that matters is yours because we will detail it to your complete satisfaction.
+                      {t("Our technicians have undergone the most extensive and stringent car detail training program. And the only car that matters is yours because we will detail it to your complete satisfaction.")}
                     </p>
                     <div>
 
                       <Btnstyle className="mt-5">
-                        GET SERVICE
+                        {t("GET SERVICE")}
                       </Btnstyle>
                     </div>
                   </div>
@@ -302,13 +292,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-40">
+        <section className="py-40" dir={dir}>
           <div className="container px-5">
             <div className="flex flex-wrap justify-between items-start">
               <div className="w-full xl:w-1/3 pt-4">
-                <AnimatedSentence className="text-CS_text_color text-5xl" sentence="HOW TO SERVICE YOUR CAR" useInView={elements[c++]} />
+                <AnimatedSentence className="text-CS_text_color text-5xl" sentence={t("HOW TO SERVICE YOUR CAR")} useInView={elements[c++]} />
                 <p className="text-lg my-5 animate__animated animate__fadeInLeft animate__fast">
-                  Rather than letting your services go by, take these steps to keep your car in good shape until you can afford a full service.
+                  {t("Rather than letting your services go by, take these steps to keep your car in good shape until you can afford a full service.")}
                 </p>
               </div>
               <div className="flex flex-wrap w-full xl:w-2/3">
@@ -321,10 +311,10 @@ export default function Home() {
                           <span className="text-CS_text_active font-bold">
                             {(index + 1).toString().padStart(2, '0')}  &nbsp;&nbsp;
                           </span>
-                          {value[0]}
+                          {t(value[0])}
                         </strong>
                         <p className="py-3">
-                          {value[1]}
+                          {t(value[1])}
                         </p>
                       </div>
                     </div>

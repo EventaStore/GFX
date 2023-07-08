@@ -188,8 +188,8 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  margin-right: 12px;
   background-color: var(--text-active);
+  @apply mr-4 rtl:ml-4; 
 }
 
 .section_2_elemmt:hover .img_active {
