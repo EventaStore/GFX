@@ -25,7 +25,6 @@ function ContactPage() {
 
     const threshold = .6
     const elements = useAnimatedElement(threshold)
-    // return (<></>)
     var c = 1
     var dir = isarabic ? "rtl" : "ltr"
     return (

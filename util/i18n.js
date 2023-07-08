@@ -13,7 +13,7 @@ import translationAR from './locales/ar.json';
   .use(initReactI18next)
   .init({
     lng: typeof window !== "undefined" ? localStorage.getItem('language') :"ar", // Set the default language
-    fallbackLng: 'ar', // Fallback language if translation not found
+    fallbackLng: 'en', // Fallback language if translation not found
     resources: {
       en: {
         translation: translationEN,

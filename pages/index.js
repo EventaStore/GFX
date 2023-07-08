@@ -21,7 +21,7 @@ export default function Home() {
   const [isarabic, setisarabic] = useState(ar);
 
   const handleLanguageChanged = () => {
-    setisarabic(currentLanguage === 'ar')
+    setisarabic(!(currentLanguage === 'ar'))
   };
 
   useEffect(() => {
@@ -33,12 +33,10 @@ export default function Home() {
   var entries = Object.values(Services);
   const threshold = .6
   const elements = useAnimatedElement(threshold)
-  // return (<></>)
   var c = 1
   var dir = isarabic ? "rtl" : "ltr"
   return (
     <>
-      {/* <IntroPopup /> */}
       <Layout noBreadcrumb="d-none">
         <section>
           <Header_slider />
