@@ -21,7 +21,7 @@ export default function Home() {
   const [isarabic, setisarabic] = useState(ar);
 
   const handleLanguageChanged = () => {
-    setisarabic(!isarabic)
+    setisarabic(currentLanguage === 'ar')
   };
 
   useEffect(() => {

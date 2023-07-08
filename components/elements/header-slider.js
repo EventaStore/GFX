@@ -3,10 +3,15 @@ import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper
 import $ from 'jquery'
 import getmode from '../../util/storage'
 import Slider from '../../static_data/slider.json'
+import { useTranslation } from 'react-i18next';
 
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 const ProductSlider = () => {
+
+  const { i18n, t } = useTranslation();
+
+  
   useEffect(() => {
     const swiper = new SwiperCore('.product-slider', {
       spaceBetween: 30,
@@ -151,12 +156,13 @@ const ProductSlider = () => {
                             </div>
                           </div>
 
-                          <span className="product-inf__title">DURABILITY</span>
+                          <span className="product-inf__title">{t('DURABILITY')}</span>
                         </div>
                       </div>
                       <div className="product-slider__bottom">
                         <button className="product-slider__cart">
-                          APPOINTMENT NOW
+                        {t('APPOINTMENT NOW')}
+                          
                         </button>
                       </div>
                     </div>
