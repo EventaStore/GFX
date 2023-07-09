@@ -330,7 +330,7 @@ textarea {
 
 .background-breadcrumb {
   background-image: url(./background-breadcrumb.png);
-  /* background-position: 100% 66%; */
+  background-position-y: 66%; 
   background-repeat: no-repeat;
   background-size: 60% auto;
   background-color: var(--card);

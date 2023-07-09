@@ -2917,15 +2917,19 @@ label {
 .breadcrumb span {
   position: relative;
   text-align: center;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
-
+.-l span::before{
+  content: "\f111"
+}
+.-r span::before{
+  content: "\f110"
+}
 .breadcrumb span::before {
-  content: "\f111";
   font-family: "uicons-regular-straight" !important;
   display: inline-block;
   font-size: 9px;
-  @apply mr-3 rtl:ml-3;
+  @apply mx-3;
   
 }
 

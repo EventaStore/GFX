@@ -9,7 +9,7 @@ const Breadcrumb = ({ parent, sub, parentURL, title, subChild, noBreadcrumb }) =
     return (
         <>
         <div dir={dir}>
-            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb} py-20 bg-right rtl:bg-left`} >
+            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb} py-20 ${currentLanguage === "ar"? "-r":"-l"} bg-right rtl:bg-left`} >
                 <div className="container">
                     <div className="breadcrumb">
                         <a href={parentURL}>

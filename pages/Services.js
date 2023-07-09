@@ -179,7 +179,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="pt-32" dir={dir} >
+      <section className="pt-32" >
         <Recentwork />
       </section>
       <section className="pt-32">
