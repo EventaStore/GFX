@@ -16,7 +16,11 @@ module.exports = {
         CS_Focus_field_color: 'var(--focus-field)',
         CS_btn_color: 'var(--btn-color)',
         CS_card: 'var(--card)',
-      }
+      },
+      backgroundPosition: {
+        '0-66': '0% 66%',
+        '100-66': '100% 66%',
+      },
     },
   },
   plugins: [],

@@ -2925,7 +2925,8 @@ label {
   font-family: "uicons-regular-straight" !important;
   display: inline-block;
   font-size: 9px;
-  margin-right: 10px
+  @apply mr-3 rtl:ml-3;
+  
 }
 
 /*****************************

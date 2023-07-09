@@ -2,6 +2,7 @@
 # home services data
 # footer services , href
 % phone pressed
+
 % home
     % OUR SERVICES  
         % icons
@@ -12,3 +13,5 @@
 % service data
 % OUR team
 % OUR WORKS
+
+% FAQ hadle style

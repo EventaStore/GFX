@@ -1,9 +1,15 @@
+import { useTranslation } from 'react-i18next';
 
 
 const Breadcrumb = ({ parent, sub, parentURL, title, subChild, noBreadcrumb }) => {
+    const { i18n, t } = useTranslation();
+    const currentLanguage = i18n.language;
+    const dir = currentLanguage === "ar" ? "rtl" : "ltr"
+
     return (
         <>
-            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb} py-20`}>
+        <div dir={dir}>
+            <div className={`background-breadcrumb page-header breadcrumb-wrap ${noBreadcrumb} py-20 bg-right rtl:bg-left`} >
                 <div className="container">
                     <div className="breadcrumb">
                         <a href={parentURL}>
@@ -20,6 +26,7 @@ const Breadcrumb = ({ parent, sub, parentURL, title, subChild, noBreadcrumb }) =
                     </h1>
                 </div>
             </div>
+        </div>
         </>
     );
 };
