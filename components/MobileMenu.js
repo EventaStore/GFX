@@ -247,7 +247,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                     alt=""
                                 />
                             </a>
-                            <a href="">
+                            <a href="https://www.instagram.com/invites/contact/?i=y0dl53yo9tw&utm_content=rsubpg1">
                                 <img
                                     src="/assets/imgs/theme/icons/icon-instagram-white.svg"
                                     alt=""

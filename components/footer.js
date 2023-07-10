@@ -113,10 +113,10 @@ const Footer = () => {
 
                             }
                         </div>
-
+                        <a href="tel:+971563272736" className="pb-5 w-full sm:w-40" dir="ltr">+971 56 327 2736</a>
                         <div className="pb-10">
                             <div className="mobile-social-icon">
-                                <h6>Follow Us</h6>
+                                <h6>{t('Follow Us')}</h6>
                                 <a href="#">
                                     <img
                                         src="/assets/imgs/theme/icons/icon-facebook-white.svg"
@@ -129,7 +129,7 @@ const Footer = () => {
                                         alt=""
                                     />
                                 </a>
-                                <a href="#">
+                                <a href="https://www.instagram.com/invites/contact/?i=y0dl53yo9tw&utm_content=rsubpg1" >
                                     <img
                                         src="/assets/imgs/theme/icons/icon-instagram-white.svg"
                                         alt=""

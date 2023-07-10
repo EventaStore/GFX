@@ -151,7 +151,7 @@ const Header = ({
                                     <ul>
                                         <li>
                                             <Link href="/" className={router.pathname == "/" ? "active" : ""}>
-                                                {t('home')}
+                                                {t('Home')}
                                             </Link>
                                         </li>
                                         <li className="position-static">
