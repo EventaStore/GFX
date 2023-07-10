@@ -5,3 +5,4 @@
 % translate contact us
 % redux
 % scroll
+% cockies
