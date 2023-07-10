@@ -1,17 +1,7 @@
-# menue href services , packages 
-# home services data
-# footer services , href
-% phone pressed
-
 % home
-    % OUR SERVICES  
-        % icons
     % vedio , imgs
     % REQUEST AN APPOINTMENT ONLINE 
         % dashboard
-
-% service data
-% OUR team
-% OUR WORKS
-
-% FAQ hadle style
+% translate contact us
+% redux
+% scroll

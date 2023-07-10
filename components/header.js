@@ -12,9 +12,9 @@ const Header = ({
 }) => {
 
     const [scroll, setScroll] = useState(0);
+    const router = useRouter();
     const { i18n, t } = useTranslation();
     const currentLanguage = i18n.language;
-    const router = useRouter();
 
     const toggleLanguage = () => {
         const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
@@ -163,7 +163,7 @@ const Header = ({
                                                 {Services.map((item, index) =>
                                                     <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-left":"float-right"}`} key={index}>
                                                         <h4 className="menu-title">
-                                                            {t(item.name.toLowerCase())}
+                                                            {t(item.name)}
                                                         </h4>
                                                         <ul>
                                                             {item.values.map((value, index) =>

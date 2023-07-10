@@ -28,13 +28,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #f1c40f;
 }
 
-.fa-moon {color: #f1c40f;}
 
-.fa-sun {color: #f39c12;}
 
-.checkbox-label .ball {
+.checkbox-label .ball, .lang-ball {
   background-color: #fff;
   width: 22px;
   height: 22px;
@@ -46,7 +45,12 @@
   filter: var(--indicator-filter);
 
 }
-
+.lang-ball.ar {
+  transform: translateX(0);
+}
+.lang-ball.en {
+  transform: translateX(24px);
+}
 .ball{
   transform: var(--transition-ball);
 }
@@ -349,14 +353,15 @@ textarea {
   
 }
 
-.closeQ {
-  max-height: 70px;
+.closeQ p {
+  max-height: 0px;
   transition: 0.10s ease-out;
   transition: 0.7s;
 }
-.openQ {
+.openQ p {
   max-height: 150px;
   transition: 0.25s ease-in;
+  @apply pb-3
 }
 
 
@@ -385,7 +390,6 @@ textarea {
   --card:#242527;
   --indicator-filter: invert(100%);
   --transition-ball: translateX(0);
-  
 }
 
 :root {

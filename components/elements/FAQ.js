@@ -11,13 +11,15 @@ const FAQElement = ({ question, answer }) => {
     const { t } = useTranslation();
     
     return (
-        <div className={`bg-CS_card p-5 mt-4 overflow-hidden w-full ${isOpen ? "openQ" : "closeQ"}`} onClick={toggleOpen}>
-            <div className={`text-xl mb-6 flex justify-between ${isOpen ? "text-CS_text_active" : ""}`}>{t(question)}
+        <div className={`bg-CS_card mt-4 overflow-hidden w-full ${isOpen ? "openQ" : "closeQ"}`} onClick={toggleOpen}>
+            <div className={`text-xl m-5 flex justify-between ${isOpen ? "text-CS_text_active" : ""}`}>{t(question)}
                 {isOpen ? <i className="fi-rs-angle-small-up"></i> : <i className="fi-rs-angle-small-right"></i>}
             </div>
-            <p>
+
+            <p className='m-5'>
                 {t(answer)}
             </p>
+
         </div>
     );
 

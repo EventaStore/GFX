@@ -5,18 +5,22 @@ import DLtoggle from "../components/elements/DLtoggle";
 import packages from '../static_data/packages.json'
 import Services from '../static_data/services.json'
 import getmode from '../util/storage'
+import { useTranslation } from 'react-i18next';
 
 const MobileMenu = ({ isToggled, toggleClick }) => {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
     });
-    const handleModeToggle = () => {
+    const { i18n,t } = useTranslation();
+    const currentLanguage = i18n.language;
 
-        const root = document.documentElement;
-        root.classList.toggle('light');
-
+    const toggleLanguage = () => {
+        const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+        i18n.changeLanguage(newLanguage);
+        localStorage.setItem('language', newLanguage)
     };
+
     const handleToggle = (key) => {
 
         if (isActive.key === key) {
@@ -40,7 +44,8 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
             status: false,
         });
     });
-
+    const dir = currentLanguage === "ar" ? "rtl" : "ltr"
+    const drop_dir = currentLanguage === 'en' ? " right-0" : " left-0"
     return (
         <>
             <div
@@ -50,14 +55,14 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         : "mobile-header-active mobile-header-wrapper-style"
                 }
             >
-                <div className="mobile-header-wrapper-inner bg-CS_bg_color">
+                <div className="mobile-header-wrapper-inner bg-CS_bg_color" dir={dir}>
                     <div className="mobile-header-top bg-CS_bg_color">
                         <div className="mobile-header-logo">
                             <a href="#">
                                 <img
                                     src={
-                                        typeof window !== "undefined" && 
-                                        !   getmode() ? "/assets/imgs/theme/light-logo.png": "/assets/imgs/theme/dark-logo.png"
+                                        typeof window !== "undefined" &&
+                                            !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                     }
                                     alt="logo"
                                 />
@@ -88,7 +93,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
 
-                                        <a href="#">Home</a>
+                                        <a href="#">{t("Home")}</a>
 
                                     </li>
 
@@ -101,16 +106,16 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <span
-                                            className="menu-expand"
+                                            className={`menu-expand ${drop_dir}`}
                                             onClick={() => handleToggle(10)}
                                         >
                                             <i className="fi-rs-angle-small-down"></i>
                                         </span>
-                                        <a href="#">Services</a>
+                                        <a href="#">{t('Services')}</a>
                                         <ul
                                             className={
                                                 isActive.key >= 10 && isActive.key < 15
-                                                    ? "dropdown": "dropdown-close"
+                                                    ? "dropdown" : "dropdown-close"
                                             }
                                         >
 
@@ -123,14 +128,14 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                                             isActive.key === index + 11 ? "menu-item-has-children active" : "menu-item-has-children"
                                                         }
                                                     >
-                                                        <span className="menu-expand" onClick={() => handleToggle(index + 11)}>
+                                                        <span className={`menu-expand ${drop_dir}`} onClick={() => handleToggle(index + 11)}>
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </span>
-                                                        <a href="#">{item.name}</a>
-                                                        <ul className={isActive.key === index + 11 ? "dropdown": "dropdown-close"}>
+                                                        <a href="#">{t(item.name)}</a>
+                                                        <ul className={isActive.key === index + 11 ? "dropdown" : "dropdown-close"}>
                                                             {item.values.map((value, valueIndex) => (
                                                                 <li key={valueIndex}>
-                                                                    <a href={value.href}>{value.text}</a>
+                                                                    <a href={value.href}>{t(value.text)}</a>
                                                                 </li>
                                                             ))}
                                                         </ul>
@@ -151,16 +156,16 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <span
-                                            className="menu-expand"
+                                            className={`menu-expand ${drop_dir}`}
                                             onClick={() => handleToggle(5)}
                                         >
                                             <i className="fi-rs-angle-small-down"></i>
                                         </span>
-                                        <a href="#">Packages</a>
+                                        <a href="#">{t('Packages')}</a>
                                         <ul
                                             className={
                                                 isActive.key >= 5 && isActive.key < 10
-                                                ? "dropdown": "dropdown-close"
+                                                    ? "dropdown" : "dropdown-close"
                                             }
                                         >
 
@@ -172,14 +177,14 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                                             isActive.key === index + 6 ? "menu-item-has-children active" : "menu-item-has-children"
                                                         }
                                                     >
-                                                        <span className="menu-expand" onClick={() => handleToggle(index + 6)}>
+                                                        <span className={`menu-expand ${drop_dir}`} onClick={() => handleToggle(index + 6)}>
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </span>
                                                         <a href="#">{item.name}</a>
-                                                        <ul className={isActive.key === index + 6 ? "dropdown": "dropdown-close"}>
+                                                        <ul className={isActive.key === index + 6 ? "dropdown" : "dropdown-close"}>
                                                             {item.values.map((value, valueIndex) => (
                                                                 <li key={valueIndex}>
-                                                                    <a href={value.href}>{value.text}</a>
+                                                                    <a href={value.href}>{t(value.text)}</a>
                                                                 </li>
                                                             ))}
                                                         </ul>
@@ -197,7 +202,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
 
-                                        <a href="/about">About Us</a>
+                                        <a href="/about">{t('About Us')}</a>
 
                                     </li>
 
@@ -209,7 +214,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
 
-                                        <a href="#">Contact</a>
+                                        <a href="#">{t('Contact')}</a>
 
                                     </li>
 
@@ -219,17 +224,17 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         <div className="my-3 p-4 border-l border-r border-b border-t border-solid rounded-md border-CS_Soft_border_color">
 
                             <div className="pb-3">
-                            <a href="tel:+971563272736">+971 56 327 2736</a>
+                                <a href="tel:+971563272736">+971 56 327 2736</a>
 
                             </div>
                             <div >
-                            <a href="tel:+971505108831">+971 50 510 8831</a>
+                                <a href="tel:+971505108831">+971 50 510 8831</a>
 
                             </div>
                         </div>
 
                         <div className="mobile-social-icon">
-                            <h6 className="pb-2">Follow Us</h6>
+                            <h6 className="pb-2">{t('Follow Us')}</h6>
                             <a href="">
                                 <img
                                     src="/assets/imgs/theme/icons/icon-facebook-white.svg"
@@ -255,8 +260,17 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                 />
                             </a>
                         </div>
-                        <div className="py-6">
-                            <DLtoggle handleToggle={handleModeToggle} ckey={3} />
+
+                        <div className="py-6" dir="ltr">
+                            <input onChange={toggleLanguage} type="checkbox" className="DL_checkbox checkbox w-min h-min" id="lang-checkbox" />
+                            <label htmlFor="lang-checkbox" className="checkbox-label flag-container">
+                                <img src="/assets/imgs/theme/flag-en.png" alt="" />
+                                <img src="/assets/imgs/theme/flag-ar.png" alt="" />
+                                <span className={`lang-ball ${currentLanguage}`}></span>
+                            </label>
+                        </div>
+                        <div className="py-6" dir="ltr">
+                            <DLtoggle ckey={3} />
                         </div>
 
                     </div>

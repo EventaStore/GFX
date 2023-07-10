@@ -49,7 +49,7 @@ const Services = () => {
 
   var c = 1
   return (
-    <Layout parent={t("home")} sub={t("services")} subChild={path} parentURL="/" title={cp('page title')} dir={dir}>
+    <Layout parent={t("Home")} sub={t("services")} subChild={path} parentURL="/" title={cp('page title')} dir={dir}>
       <section className='container grid grid-cols-1 lg:grid-cols-4 sm:gap-0 lg:gap-12 pt-40' dir={dir} >
         <div className='col-span-3'>
           <div className="overflow-hidden h-72">
