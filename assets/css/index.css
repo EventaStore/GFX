@@ -31,6 +31,12 @@
   color: #f1c40f;
 }
 
+.product-slider__cart > a:visited,.product-slider__cart > a:hover , .product-slider__cart > a {
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+
 
 
 .checkbox-label .ball, .lang-ball {

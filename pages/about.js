@@ -33,6 +33,9 @@ function About() {
     const threshold = .6
     const elements = useAnimatedElement(threshold)
     return (
+        <>
+        <title>Contact : gxf</title>
+
         <Layout parent="Home" sub="about" parentURL="/" title='About Us'>
             <section className="pt-20">
                 <div className='container'>
@@ -135,6 +138,7 @@ function About() {
 
             </section>
         </Layout>
+        </>
     );
 }
 

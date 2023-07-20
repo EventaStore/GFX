@@ -11,14 +11,20 @@
   "dependencies": {
     "animate": "^1.0.0",
     "animate.css": "^4.1.1",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "clsx": "^2.0.0",
     "i18next": "^23.2.6",
     "jquery": "^3.7.0",
+    "mongodb": "^5.7.0",
     "next": "13.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
+    "react-icons": "^4.10.1",
     "react-intersection-observer": "^9.5.2",
     "swiper": "^9.4.1",
+    "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {

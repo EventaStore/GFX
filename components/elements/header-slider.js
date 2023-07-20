@@ -161,7 +161,7 @@ const ProductSlider = () => {
                       </div>
                       <div className="product-slider__bottom">
                         <button className="product-slider__cart">
-                        {t('APPOINTMENT NOW')}
+                        <a href='#Contact'> {t('APPOINTMENT NOW')}</a>
                           
                         </button>
                       </div>

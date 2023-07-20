@@ -37,6 +37,9 @@ export default function Home() {
   var dir = isarabic ? "rtl" : "ltr"
   return (
     <>
+      <head>
+        <title>Home : gxf</title>
+      </head>
       <Layout noBreadcrumb="d-none">
         <section>
           <Header_slider />
@@ -159,7 +162,7 @@ export default function Home() {
                 </p>
 
                 <ul ref={elements[c].ref} className={"text-base text-CS_text_color " + (elements[c++].inView ? 'animate__animated animate__fadeInLeft animate__fast animate__delay-.5s' : ' opacity-0')}>
-                  <li className="li-list mr-3 rtl:ml-3">
+                  <li className="li-list ">
                     <strong className="mx-2">
                       {t("SAME DAY SERVICE")}
                     </strong>
@@ -252,7 +255,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <Btnstyle className="my-5">{t("GET SERVICE")}</Btnstyle>
+                  <Btnstyle href="/car_wash" className="my-5">{t("GET SERVICE")}</Btnstyle>
                 </div>
               </div>
             </div>
@@ -271,7 +274,7 @@ export default function Home() {
                     </p>
                     <div>
 
-                      <Btnstyle className="mt-5">
+                      <Btnstyle href="/car_polishing" className="mt-5">
                         {t("GET SERVICE")}
                       </Btnstyle>
                     </div>
@@ -322,7 +325,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-CS_bg_color py-10">
+        <section id="Contact" className="bg-CS_bg_color py-10">
           <Contact />
         </section>
       </Layout>

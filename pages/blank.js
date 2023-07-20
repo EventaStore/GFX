@@ -1,24 +1,24 @@
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper';
-import SwiperCore, { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/effect-fade';
-// Import Swiper styles
+import { useEffect, useState } from 'react';
 
-SwiperCore.use([Autoplay]);
-export default () => {
-    return (
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
-            effect='fade'
-          
-            autoplay={{ delay: 3000 }}
-        >
-            {Array.from({ length: 2 }).map((_, index) => (
-                <SwiperSlide key={index} >
-                    <div className={`py-16 my-12 text-white text-center transition ${index==0?" bg-gray-600":" bg-blue-900"}`}>Slide {index + 1}</div>
-                </SwiperSlide>
-            ))}
+export default function MyPage() {
+  const [data, setData] = useState(null);
 
-        </Swiper>
-    );
-};
+  useEffect(() => {
+    fetch('/api/data')
+      .then(response => response.json())
+      .then(data => {
+        // Set the received data to the state
+        setData(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
+  // Render your component with the fetched data
+  return (
+    <div>
+      {/* Render your data */}
+    </div>
+  );
+}

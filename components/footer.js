@@ -43,7 +43,7 @@ const Footer = () => {
                                 className="footer-a-widget col wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".1s"
                             >
-                                <h4 className="text-2xl py-4">Company</h4>
+                                <h4 className="text-2xl py-4">{t("Company")}</h4>
                                 <ul className="footer-list mb-sm-5 mb-md-0">
                                     {[
                                         { name: 'ABOUT US', url: '/about' },
