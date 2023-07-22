@@ -128,16 +128,18 @@ const Services = () => {
               <a href="mailto:gxfcar@gmail.com"><p>gxfcar@gmail.com</p></a>
             </div>
           </div>
-          <div className='contact-cart'>
-            <h3>
-              {t('ADDRESS')}
-            </h3>
-            <div>
-              <p>{t('Forsan central mall')}</p>
-              <p>{t('Khalifa A')}</p>
-              <p>{t('Abu Dhabi')}</p>
-            </div>
-          </div>
+          
+            <a className='contact-cart' href='https://maps.app.goo.gl/BhaDFFoPrS37Qfea6' target='_blank'>
+              <h3>
+                {t('ADDRESS')}
+              </h3>
+              <div>
+                <p>{t('Forsan central mall')}</p>
+                <p>{t('Khalifa A')}</p>
+                <p>{t('Abu Dhabi')}</p>
+              </div>
+            </a>
+          
           <div className='contact-cart'>
             <h3>
               {t('OPEN HOURS')}

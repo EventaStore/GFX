@@ -214,7 +214,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
 
-                                        <a href="#">{t('Contact')}</a>
+                                        <a href="/contact">{t('Contact')}</a>
 
                                     </li>
 

@@ -2,16 +2,21 @@ import React from 'react';
 import team from "../../static_data/team.json";
 import useAnimatedElement from '../../util/inView';
 import AnimatedSentence from '../../components/elements/SentenceAnimation';
+import { useTranslation } from 'react-i18next';
 
 
 const RecentWorksComponent = () => {
   const threshold = 0.6;
+  const { i18n, t } = useTranslation();
+  const currentLanguage = i18n.language;
+  const dir = currentLanguage === "ar" ? "rtl" : "ltr"
+  
   const elements = useAnimatedElement(threshold);
   let c = 0;
 
   return (
-    <div className='container'>
-    <AnimatedSentence className="text-5xl font-bold text-CS_text_color pb-10" sentence="EXPERT TEAM MEMBERS" useInView={elements[c++]} />
+    <div className='container' dir={dir}>
+    <AnimatedSentence className="text-5xl font-bold text-CS_text_color pb-10" sentence={t("EXPERT TEAM MEMBERS")} useInView={elements[c++]} />
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {team.map((e, i) => (
             <div key={i} className={(elements[c].inView ? 'our-team-card overflow-hidden animate__animated animate__fadeInUp ' : ' opacity-0')} style={{ animationDelay: `${i * .05}s` }} >

@@ -35,7 +35,7 @@ const Header = ({
         }
     };
     const getmode = () => {
-        return typeof window !== "undefined" ? localStorage.getItem('mode') == "true" : false
+        return typeof window !== "undefined" ? localStorage.getItem('mode') == "true" : true
     };
 
     setmode(getmode())
