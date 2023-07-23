@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { FiLoader } from 'react-icons/fi';
-
+import { useRouter } from 'next/router'; 
 const Bookings = () => {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const router = useRouter(); 
     useEffect(() => {
-        const authToken = 'mwaOU9folV6Julralll6P0EHQGXyjk1S0FDIbHbEi7Sblx87KFP3IEakRkMMkZs4"'; //localStorage.getItem('authToken'); 
+        const authToken = localStorage.getItem('authToken'); 
         if (authToken) {
             fetchBookings(authToken);
-        }
+        } else {
+            // No authToken found, redirect to the login page
+            router.push('/dashboard/login');
+          }
     }, []);
 
     const fetchBookings = async (authToken) => {
@@ -37,7 +40,7 @@ const Bookings = () => {
     const handleDeleteBooking = async (id) => {
         try {
             setLoading(true);
-            const authToken = 'mwaOU9folV6Julralll6P0EHQGXyjk1S0FDIbHbEi7Sblx87KFP3IEakRkMMkZs4"'; //localStorage.getItem('authToken'); 
+            const authToken = localStorage.getItem('authToken'); 
             if (authToken) {
                 const response = await fetch(`/api/deleteBook?id=${id}`, {
                     method: 'DELETE',
@@ -60,7 +63,6 @@ const Bookings = () => {
         }
     };
     if(bookings)
-console.log(bookings)
     return (
         <>
             {loading ? (

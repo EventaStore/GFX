@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router'; 
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [token, setToken] = useState('');
+  const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter(); 
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Here you can implement your login logic, e.g., making an API call to validate the credentials.
-    // For simplicity, this example just logs the email and password to the console.
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('token :', token);
+    setError('');
+
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('authToken', data.token);
+        router.push('/dashboard/bookList');
+      } else {
+        setError('Invalid credentials');
+      }
+    } catch (error) {
+      setError('An error occurred');
+    }
   };
 
   return (
@@ -20,29 +38,15 @@ const Login = () => {
         <h2 className="text-2xl font-semibold mb-6">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
-            <label htmlFor="token" className="block mb-1 font-medium">
-              Token
+            <label htmlFor="username" className="block mb-1 font-medium">
+              User Name
             </label>
             <input
               type="text"
-              id="email"
+              id="username"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="email" className="block mb-1 font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={username}
+              onChange={(e) => setusername(e.target.value)}
               required
             />
           </div>
