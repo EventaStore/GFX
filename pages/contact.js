@@ -47,7 +47,7 @@ function ContactPage() {
                             </div>
                         </div>
 
-                        <a className='contact-cart' href='https://maps.app.goo.gl/BhaDFFoPrS37Qfea6' target='_blank'>
+                        <a className='contact-cart' href='https://goo.gl/maps/CY1XvAoJK5CCDY9GA' target='_blank'>
                             <h3>
                                 {t('ADDRESS')}
                             </h3>
@@ -74,7 +74,7 @@ function ContactPage() {
                 </section>
                 <section className='my-14'>
                     <div className='container'>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.1490273511386!2d54.5649951!3d24.4108897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e476d9f5d5d0f%3A0x7babf6a3791a4e85!2z2YHYsdiz2KfZhiDYs9mG2KrYsdin2YQg2YXZiNmE!5e0!3m2!1sar!2seg!4v1688974492739!5m2!1sar!2seg"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14532.649913713043!2d54.5660142!3d24.4104223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4780ab3f4387%3A0xe225635fef6b1795!2sGXF%20Car%20Care!5e0!3m2!1sen!2seg!4v1690197282698!5m2!1sen!2seg"
                             className='google-map-location'
                             height="450"
                             allowFullScreen=""
