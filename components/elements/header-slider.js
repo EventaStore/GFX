@@ -147,12 +147,12 @@ const ProductSlider = () => {
                                     <stop offset="100%" stop="#cb2240" stopOpacity="1" />
                                   </linearGradient>
                                 </defs>
-                                <circle cx="50" cy="50" r="47" strokeDasharray="225, 300"
+                                <circle cx="50" cy="50" r="47" strokeDasharray="300, 300"
                                   stroke="#cb2240" strokeWidth="4" fill="none" />
                               </svg>
                             </div>
                             <div className="product-inf__percent-txt">
-                              75%
+                              100%
                             </div>
                           </div>
 
