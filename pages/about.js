@@ -36,7 +36,7 @@ function About() {
 
     return (
         <>
-            <title>Contact : gxf</title>
+            <title>Contact : Kamboosha</title>
 
             <Layout parent={t("Home")} sub={t("About")} parentURL="/" title={t('About Us')}>
                 <section className="pt-20" dir={dir}>
@@ -44,11 +44,11 @@ function About() {
                         <div className='flex flex-wrap'>
                             <div className='w-full lg:w-1/2 lg:pr-10'>
                                 <h3 className='wow animate__animated animate__slideInLeft'>
-                                    {t('Welcome to GXF Car Service Center!')}
+                                    {t('Welcome to Kamboosha Car Service Center!')}
                                 </h3>
                                 <article className='text-xl pt-5 wow animate__animated animate__slideInLeft animate__fast animate__delay-.5s'>
                                     {t(
-                                        "At GXF, we understand that your vehicle is more than just a means of transportation. It's a reflection of your personality and a valuable asset that deserves the best care. That's why we are here to provide you with top-notch car servicing and maintenance solutions."
+                                        "At Kamboosha, we understand that your vehicle is more than just a means of transportation. It's a reflection of your personality and a valuable asset that deserves the best care. That's why we are here to provide you with top-notch car servicing and maintenance solutions."
                                     )}
                                 </article>
                                 <article className='text-xl pt-5 wow animate__animated animate__slideInLeft animate__fast animate__delay-.5s'>
@@ -58,7 +58,7 @@ function About() {
                                 </article>
                                 <article className='text-xl pt-5 wow animate__animated animate__slideInLeft animate__fast animate__delay-.5s'>
                                     {t(
-                                        'At GXF Car Service Center, we prioritize your convenience and satisfaction. We offer a range of services tailored to meet your specific needs'
+                                        'At Kamboosha Car Service Center, we prioritize your convenience and satisfaction. We offer a range of services tailored to meet your specific needs'
                                     )}
                                 </article>
                             </div>
@@ -72,17 +72,17 @@ function About() {
                     <div className='container'>
                         <AnimatedSentence
                             className="text-4xl font-bold text-CS_text_color pb-10"
-                            sentence={t('GXF Car Service Center: Exceptional Service, Reliable Repairs')}
+                            sentence={t('Kamboosha Car Service Center: Exceptional Service, Reliable Repairs')}
                             useInView={elements[c++]}
                         />
                         <p className='text-xl'>
                             {t(
-                                'At GXF Car Service Center, we strive to provide exceptional customer service. Our friendly and knowledgeable staff is ready to assist you and answer any questions you may have. We believe in transparent communication and will always keep you informed about the status of your vehicle and any recommended repairs.'
+                                'At Kamboosha Car Service Center, we strive to provide exceptional customer service. Our friendly and knowledgeable staff is ready to assist you and answer any questions you may have. We believe in transparent communication and will always keep you informed about the status of your vehicle and any recommended repairs.'
                             )}
                         </p>
                         <p className='text-xl'>
                             {t(
-                                'Schedule your appointment today through our user-friendly website or give us a call. Experience reliable and professional car servicing with GXF Car Service Center. Your satisfaction is our priority.'
+                                'Schedule your appointment today through our user-friendly website or give us a call. Experience reliable and professional car servicing with Kamboosha Car Service Center. Your satisfaction is our priority.'
                             )}
                         </p>
                     </div>

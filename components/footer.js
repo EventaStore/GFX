@@ -117,7 +117,7 @@ const Footer = () => {
                         <div className="pb-10">
                             <div className="mobile-social-icon">
                                 <h6>{t('Follow Us')}</h6>
-                                <a href="https://www.facebook.com/gxfcar?mibextid=2JQ9o">
+                                <a href="https://www.facebook.com/Kambooshacar?mibextid=2JQ9o">
                                     <img
                                         src="/assets/imgs/theme/icons/icon-facebook-white.svg"
                                         alt=""
@@ -129,13 +129,13 @@ const Footer = () => {
                                         alt=""
                                     />
                                 </a>
-                                <a href="https://instagram.com/gxfcar?igshid=MzRlODBiNWFlZA==" >
+                                <a href="https://instagram.com/Kambooshacar?igshid=MzRlODBiNWFlZA==" >
                                     <img
                                         src="/assets/imgs/theme/icons/icon-instagram-white.svg"
                                         alt=""
                                     />
                                 </a>
-                                <a href="https://www.tiktok.com/@gxfcar?_t=8eHlOOrI3Nd&_r=1">
+                                <a href="https://www.tiktok.com/@Kambooshacar?_t=8eHlOOrI3Nd&_r=1">
                                     <img
                                         src="/assets/imgs/theme/icons/icons-tiktok-white.svg"
                                         alt=""

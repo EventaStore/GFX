@@ -10,10 +10,25 @@ import 'swiper/swiper-bundle.css';
 
 import 'swiper/swiper.min.css';
 
+import { Provider } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import StorageWrapper from "../components/ecommerce/storage-wrapper";
+import store from "../redux/store";
+
 function MyApp({ Component, pageProps }) {
 
     return (
-        <Component {...pageProps} />
+        <>
+        
+            <Provider store={store}>
+                <StorageWrapper>
+                   
+                        <Component {...pageProps} />
+                        <ToastContainer />
+                </StorageWrapper>
+            </Provider>
+        
+    </>
 
     );
 }

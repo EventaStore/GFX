@@ -13,7 +13,9 @@ const Header = ({
 
     const [scroll, setScroll] = useState(0);
     const router = useRouter();
+
     const { i18n, t } = useTranslation();
+    
     const currentLanguage = i18n.language;
 
     const toggleLanguage = () => {

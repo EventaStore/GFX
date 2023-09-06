@@ -5,6 +5,7 @@ import getmode from '../../util/storage'
 import Slider from '../../static_data/slider.json'
 import { useTranslation } from 'react-i18next';
 
+
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 const ProductSlider = () => {
@@ -36,8 +37,8 @@ const ProductSlider = () => {
 
           var target = $('.product-slider__item').eq(index).data('target');
 
-          $('.product-img__item').removeClass('active');
-          $('.product-img__item#' + target).addClass('active');
+          $('.slide-product-img__item').removeClass('active');
+          $('.slide-product-img__item#' + target).addClass('active');
         }
       },
     });
@@ -45,8 +46,8 @@ const ProductSlider = () => {
     swiper.on('slideChange', function () {
       var index = this.activeIndex;
       var target = $('.product-slider__item').eq(index).data('target');
-      $('.product-img__item').removeClass('active');
-      $('.product-img__item#' + target).addClass('active');
+      $('.slide-product-img__item').removeClass('active');
+      $('.slide-product-img__item#' + target).addClass('active');
 
       if (swiper.isEnd) {
         $('.prev').removeClass('disabled');
@@ -84,26 +85,26 @@ const ProductSlider = () => {
             <img src={`${path}/${mode}/car-care.png`} alt="" />
           </div>
 
-          <div className="product-img">
+          <div className="slide-product-img">
 
-            <div className="product-img__item" id="img1">
+            <div className="slide-product-img__item" id="img1">
               <img src={`${path}/${mode}/item-1.png`}
-                alt="star wars" className="product-img__img" />
+                alt="star wars" className="slide-product-img__img" />
             </div>
 
-            <div className="product-img__item" id="img2">
+            <div className="slide-product-img__item" id="img2">
               <img src={`${path}/${mode}/item-2.png`}
-                alt="star wars" className="product-img__img" />
+                alt="star wars" className="slide-product-img__img" />
             </div>
 
-            <div className="product-img__item" id="img3">
+            <div className="slide-product-img__item" id="img3">
               <img src={`${path}/${mode}/item-3.png`}
-                alt="star wars" className="product-img__img" />
+                alt="star wars" className="slide-product-img__img" />
             </div>
 
-            <div className="product-img__item" id="img4">
+            <div className="slide-product-img__item" id="img4">
               <img src={`${path}/${mode}/item-6.png`}
-                alt="star wars" className="product-img__img" />
+                alt="star wars" className="slide-product-img__img" />
             </div>
           </div>
           <div className="product-slider">

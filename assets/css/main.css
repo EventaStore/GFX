@@ -850,8 +850,7 @@ strong,
 .section-title h3 {
   font-weight: 700;
   font-size: 32px;
-  margin-right: 30px;
-}
+  }
 
 .section-title a.show-all {
   font-size: 16px;
@@ -2054,8 +2053,8 @@ label {
   display: flex;
   position: absolute;
   top: -75px;
-  right: 0;
-  max-width: 200px;
+  /* right: 0; */
+  max-width: 130px;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -2261,7 +2260,7 @@ label {
 /*COMPONENTS -> CARD*/
 .card-1 {
   position: relative;
-  background: #F4F6FA;
+  background: var(--card);
   text-align: center;
   border: 1px solid #F4F6FA;
   border-radius: 10px;
@@ -3654,8 +3653,7 @@ table .product-thumbnail img {
 /*SHOP*/
 .product-cart-wrap {
   position: relative;
-  background-color: #fff;
-  border: 1px solid #ececec;
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   overflow: hidden;
   transition: .2s;
@@ -3676,14 +3674,14 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-img-action-wrap {
   position: relative;
-  background-color: #fff;
+  background-color: var(--card);
   overflow: hidden;
   max-height: 320px;
   padding: 25px 25px 0 25px;
 }
 
 .product-cart-wrap .product-img-action-wrap .product-action-1 {
-  background-color: #fff;
+  background-color: var(--card);
   border-radius: 5px;
   border: 1px solid #BCE3C9;
 }
@@ -3902,6 +3900,8 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-content-wrap {
   padding: 0 20px 20px 20px;
+  background-color: var(--card);
+  
 }
 
 .product-cart-wrap .product-content-wrap .product-category {
@@ -3909,7 +3909,7 @@ table .product-thumbnail img {
 }
 
 .product-cart-wrap .product-content-wrap .product-category a {
-  color: #adadad;
+  color: var(--product-color);
   font-size: 12px;
 }
 
@@ -3941,7 +3941,7 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-content-wrap .product-price span.old-price {
   font-size: 14px;
-  color: #adadad;
+  /* color: #adadad; */
   margin: 0 0 0 7px;
   text-decoration: line-through;
 }
@@ -8604,7 +8604,7 @@ footer .mobile-social-icon {
 
 footer .mobile-social-icon h6 {
   display: inline-block;
-  margin-right: 15px;
+  margin-left: 15px;
 }
 
 footer .hotline {
