@@ -5,7 +5,6 @@ import Header from "./header";
 import MobileMenu from "./MobileMenu";
 import '../util/i18n'
 import 'animate.css';
-import Head from "next/head";
 
 const Layout = ({
     children,
@@ -22,21 +21,17 @@ const Layout = ({
         setToggled(!isToggled);
         isToggled
             ? document
-                .querySelector("body")
-                .classList.remove("mobile-menu-active")
+                  .querySelector("body")
+                  .classList.remove("mobile-menu-active")
             : document
-                .querySelector("body")
-                .classList.add("mobile-menu-active");
+                  .querySelector("body")
+                  .classList.add("mobile-menu-active");
     };
-
+   
     return (
         <>
-            <Head>
-                <link rel="apple-touch-icon" sizes="180x180" href="./assets/imgs/favicon/16.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="./assets/imgs/favicon/16.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="./assets/imgs/favicon/16.png" />
-            </Head>
             {isToggled && <div className="body-overlay-1" onClick={toggleClick}></div>}
+
             <Header headerStyle={headerStyle} isToggled={isToggled} toggleClick={toggleClick} />
             <MobileMenu isToggled={isToggled} toggleClick={toggleClick} />
             <main className="main">

@@ -129,24 +129,19 @@ const Footer = () => {
                                         alt=""
                                     />
                                 </a>
-                                <a href="https://instagram.com/Kambooshacar?igshid=MzRlODBiNWFlZA==" >
+                                <a href="https://instagram.com/gxfcar?igshid=MzRlODBiNWFlZA==" >
                                     <img
                                         src="/assets/imgs/theme/icons/icon-instagram-white.svg"
                                         alt=""
                                     />
                                 </a>
-                                <a href="https://www.tiktok.com/@Kambooshacar?_t=8eHlOOrI3Nd&_r=1">
+                                <a href="https://www.tiktok.com/@gxfcar?_t=8eHlOOrI3Nd&_r=1">
                                     <img
                                         src="/assets/imgs/theme/icons/icons-tiktok-white.svg"
                                         alt=""
                                     />
                                 </a>
-                                {/* <a href="#">
-                                    <img
-                                        src="/assets/imgs/theme/icons/icon-youtube-white.svg"
-                                        alt=""
-                                    />
-                                </a> */}
+                              
                             </div>
 
                         </div>

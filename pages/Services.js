@@ -129,7 +129,7 @@ const Services = () => {
             </div>
           </div>
           
-            <a className='contact-cart' href='https://goo.gl/maps/CY1XvAoJK5CCDY9GA' target='_blank'>
+            <a className='contact-cart' href='https://maps.app.goo.gl/BhaDFFoPrS37Qfea6' target='_blank'>
               <h3>
                 {t('ADDRESS')}
               </h3>
