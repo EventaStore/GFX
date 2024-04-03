@@ -394,21 +394,19 @@ textarea {
   --btn-color: #f701016e;
   --focus-field:#2a2626;
   --card:#242527;
-  --product-color:#253D4E;
   --indicator-filter: invert(100%);
   --transition-ball: translateX(0);
 }
 
 :root {
-  --bg-color: #FCBAAD ;
+  --bg-color: #fcfcfc ;
   --text-color: #000;
   --text-active: #e44212;
-  --border-color: #f701016e;
-  --soft_border_color: #f701016e;
+  --border-color: #d2d1d3;
+  --soft_border_color: #e1e1e1;
   --btn-color: #e44212 ;
   --focus-field:#4d4d4d;
-  --card:#E48586;
-  --product-color:#253D4E;
+  --card:#e8e8e8;
   --indicator-filter: invert(0%);
   --transition-ball: translateX(24px);
 }

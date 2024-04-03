@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 // Replace the connection string with your own
-const uri = 'mongodb+srv://admin:k8UnkechGEb9ODNq@Kamboosha.wrcvwp5.mongodb.net/';
+const uri = 'mongodb+srv://admin:k8UnkechGEb9ODNq@gxf.wrcvwp5.mongodb.net/';
 
 async function readBookingData() {
   const client = new MongoClient(uri);

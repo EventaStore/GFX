@@ -7,5 +7,5 @@
 % scroll
 % cockies
 
-    # mongodb+srv://Kambooshacar:<password>@Kamboosha.wrcvwp5.mongodb.net/
+    # mongodb+srv://gxfcar:<password>@gxf.wrcvwp5.mongodb.net/
     # charts+64a65888d88dc975ab0f7ff4@mongodb.com

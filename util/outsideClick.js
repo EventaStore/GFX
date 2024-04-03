@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 
-
 const useClickOutside = (handler) => {
     let domNode = useRef();
 

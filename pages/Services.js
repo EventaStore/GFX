@@ -125,7 +125,7 @@ const Services = () => {
               <a href="tel:+971505108831"><p className='hover:text-slate-800'>+971 50 510 8831</p></a>
             </div>
             <div>
-              <a href="mailto:Kambooshacar@gmail.com"><p>Kambooshacar@gmail.com</p></a>
+              <a href="mailto:gxfcar@gmail.com"><p>gxfcar@gmail.com</p></a>
             </div>
           </div>
           
