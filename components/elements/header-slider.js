@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 import $ from 'jquery'
 import getmode from '../../util/storage'
@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 const ProductSlider = () => {
+  const [isDark, setIsDark] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -72,9 +73,7 @@ const ProductSlider = () => {
     };
   }, []); // Empty dependency array to run the effect only once
 
-  var mode = ""
-  if (typeof window !== "undefined")
-    mode = !getmode() ? "light" : "dark"
+  const  mode = !isDark ? "light" : "dark"
   var path = 'assets/imgs/homepage/slider'
   return (
     <>

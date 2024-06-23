@@ -1,5 +1,5 @@
 const getmode = () => {
-    return typeof window !== "undefined" ? localStorage.getItem('mode') == "true" : false
+    return localStorage.getItem('mode') == "true"
 };
 
 export default getmode;

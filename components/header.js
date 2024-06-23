@@ -6,10 +6,15 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import packages from '../static_data/packages.json'
 import Services from '../static_data/services.json'
+import getmode from "../util/storage";
 
 const Header = ({
     toggleClick,
 }) => {
+    const [isDark, setIsDark] = useState(false);
+    // useEffect(() => {
+    //     setMode(getmode())
+    // }, [])
 
     const [scroll, setScroll] = useState(0);
     const router = useRouter();
@@ -28,17 +33,17 @@ const Header = ({
     };
 
     const setmode = (islight) => {
-        if (typeof window !== "undefined") {
-            if (islight) document.documentElement.classList.add('dark');
-            else document.documentElement.classList.remove('dark');
-            localStorage.setItem('mode', islight);
-        }
-    };
-    const getmode = () => {
-        return typeof window !== "undefined" ? localStorage.getItem('mode') == "true" : true
+
+        if (islight) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        localStorage.setItem('mode', islight);
+
     };
 
-    setmode(getmode())
+    useEffect(() => {
+        setmode(getmode())
+    }, [])
+
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const scrollCheck = window.scrollY >= 100;
@@ -132,8 +137,7 @@ const Header = ({
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
                                 <img src={
-                                    typeof window !== "undefined" &&
-                                        !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                    !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                 } alt="logo" />
                             </Link>
                         </div>
@@ -141,8 +145,7 @@ const Header = ({
                             <div className="logo logo-width-1">
                                 <Link href="/">
                                     <img src={
-                                        typeof window !== "undefined" &&
-                                            !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                        !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                     } alt="logo" />
                                 </Link>
                             </div>
@@ -157,11 +160,11 @@ const Header = ({
                                         <li className="position-static">
                                             <Link href="#">
                                                 {t('services')}
-                                                <i className={`fi-rs-angle-down ${currentLanguage=='en'?"ml-2":"mr-2"}`}></i>
+                                                <i className={`fi-rs-angle-down ${currentLanguage == 'en' ? "ml-2" : "mr-2"}`}></i>
                                             </Link>
                                             <ul className="mega-menu">
                                                 {Services.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-left":"float-right"}`} key={index}>
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage == 'en' ? "float-left" : "float-right"}`} key={index}>
                                                         <h4 className="menu-title">
                                                             {t(item.name)}
                                                         </h4>
@@ -187,7 +190,7 @@ const Header = ({
                                             </Link>
                                             <ul className="mega-menu">
                                                 {packages.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage=='en'?"float-left":"float-right"}`} key={index}>
+                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage == 'en' ? "float-left" : "float-right"}`} key={index}>
                                                         <h4 className="menu-title" href="#">
                                                             {t(item.name)}
                                                         </h4>

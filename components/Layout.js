@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "./Breadcrumb";
 import Footer from "./footer";
 import Header from "./header";
@@ -6,6 +6,7 @@ import MobileMenu from "./MobileMenu";
 import '../util/i18n'
 import 'animate.css';
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 const Layout = ({
     children,
@@ -18,6 +19,13 @@ const Layout = ({
     title
 }) => {
     const [isToggled, setToggled] = useState(false);
+    const { i18n, t } = useTranslation();
+    useEffect(() => {
+        const language = localStorage.getItem('language')
+        if (language)
+            i18n.changeLanguage(language);
+    }, [])
+
     const toggleClick = () => {
         setToggled(!isToggled);
         isToggled

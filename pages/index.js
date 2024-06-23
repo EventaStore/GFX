@@ -49,7 +49,6 @@ export default function Home() {
           <div className="container wow animate__fadeIn animate__animated">
             <div className="flex flex-wrap">
               {
-                typeof window !== "undefined" &&
                 HomeContent['section1'].map(
                   (value, index) => (
                     <div key={index} className="p-5 w-full sm:w-1/2 lg:w-1/4">
@@ -83,7 +82,6 @@ export default function Home() {
             <div className="flex flex-wrap pt-5">
 
               {
-                typeof window !== "undefined" &&
                 entries.slice(0, 6).map((value, index) => {
                   const truncatedText = value['text editor 1']['p1'].length > 140
                     ? t(value['text editor 1']['p1']).substring(0, 140) + "..."
@@ -181,7 +179,6 @@ export default function Home() {
               </div>
               {/*  */}
               {
-                typeof window !== "undefined" &&
                 HomeContent['section3'].map((value, index) => (
                   <div ref={elements[c].ref} key={index} className={"w-1/1 lg:w-1/2 xl:w-1/3 mx-auto lg:mx-0 p-2 " + (elements[c++].inView ? 'animate__animated animate__zoomInDown animate__fast ' : ' opacity-0')}>
                     <div className={`text-shadow text-CS_text_color  text-6xl font-bold relative top-1/3 z-10 h-0 max-w-sm w-full text-center`}>{t('COMING SOON')}</div>
@@ -304,7 +301,6 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap w-full xl:w-2/3">
                 {
-                  typeof window !== "undefined" &&
                   HomeContent['section4'].map((value, index) => (
                     <div key={index} className="section_2_element w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
                       <div className="div_before m-2 p-2">

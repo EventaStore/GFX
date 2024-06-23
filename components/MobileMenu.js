@@ -8,6 +8,8 @@ import getmode from '../util/storage'
 import { useTranslation } from 'react-i18next';
 
 const MobileMenu = ({ isToggled, toggleClick }) => {
+    const [isDark, setIsDark] = useState(false);
+
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
@@ -61,8 +63,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             <a href="#">
                                 <img
                                     src={
-                                        typeof window !== "undefined" &&
-                                            !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                            !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                     }
                                     alt="logo"
                                 />

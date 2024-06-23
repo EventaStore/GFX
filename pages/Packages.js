@@ -25,9 +25,9 @@ const Services = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    
       setData(package_content[path]);
-    }
+    
   }, [path]);
   const cp = (content) => data ? data[content] : ""
   const threshold = .6

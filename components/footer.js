@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import getmode from '../util/storage'
 import Services from '../static_data/services.json'
 import { useTranslation } from 'react-i18next';
 const Footer = () => {
+    const [mode, setMode] = useState(0);
+    useEffect(()=>{
+        setMode(getmode())
+    },[])
     const combinedValues = Services.reduce((values, obj) => {
         return values.concat(obj.values);
     }, []);
@@ -27,8 +31,7 @@ const Footer = () => {
                                             <img
                                                 src=
                                                 {
-                                                    typeof window !== "undefined" &&
-                                                        !getmode() ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                                    mode ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
                                                 }
                                                 alt="logo"
                                             />

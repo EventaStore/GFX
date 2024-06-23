@@ -7,14 +7,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/swiper-bundle.css';
+import store from "../redux/store";
 
 import 'swiper/swiper.min.css';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }) {
 
     return (
-        <Component {...pageProps} />
-
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
     );
 }
 
