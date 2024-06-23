@@ -7,6 +7,7 @@ import Link from 'next/link';
 import packages from '../static_data/packages.json'
 import Services from '../static_data/services.json'
 import getmode from "../util/storage";
+import Search from "./ecommerce/Search";
 
 const Header = ({
     toggleClick,
@@ -60,6 +61,7 @@ const Header = ({
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-xl-3 col-lg-4">
+                            <div className="bg-black"/>
                             <div className="header-info">
                                 <ul dir="ltr">
                                     <li>
@@ -129,10 +131,15 @@ const Header = ({
                     </div>
                 </div>
             </div>
+                <div className="container ">
+                <div className="search-style-2">
+                <Search />
+            </div>
+            </div>
             <div className={"py-1 lg:py-0 bg-CS_card border-1 border-solid border-CS_Soft_border_color menu_shadow " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
                 "header-bottom sticky-bar py-7 md:p-0")}>
-                <div className="container ">
+                <div className="container">
                     <div className="header-wrap header-space-between position-relative">
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
@@ -233,6 +240,7 @@ const Header = ({
                     </div>
                 </div>
             </div>
+
         </header>
     </>);
 };

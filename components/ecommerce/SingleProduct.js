@@ -42,7 +42,7 @@ const SingleProduct = ({
 
                                 <img
                                     className="default-img"
-                                    src={product.productPhotos?.thumbnail}
+                                    src={product.productPhotos?.defaultImages[0]}
                                     alt=""
                                 />
                                 {

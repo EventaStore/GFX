@@ -6,7 +6,7 @@ const Search = () => {
     const router = useRouter();
 
     const handleSearch = () => {
-        
+
         router.push({
             pathname: "/products",
             query: {
@@ -24,7 +24,7 @@ const Search = () => {
     };
     return (
         <>
-            <form>
+            <form >
                 {/* 
                 <select className="select-active">
                     <option>جميع الفئات</option>

@@ -6235,7 +6235,7 @@ h6.post-title {
 }
 
 .logo.logo-width-1 {
-  margin-right: 70px;
+  
 }
 
 .logo.logo-width-1 a img {
@@ -6742,7 +6742,7 @@ h6.post-title {
   width: 100%;
   max-width: 683px;
   font-size: 14px;
-  background-image: url(./search.png);
+  /* background-image: url(./search.png); */
   background-repeat: no-repeat;
   background-position: center right;
   padding-left: 0;
@@ -7469,7 +7469,7 @@ h6.post-title {
 }
 
 .header-style-1 .search-style-2 form {
-  border: 2px solid #BCE3C9;
+  border: 2px solid var(--text-active);
   border-radius: 4px;
   max-width: 700px;
   background-color: #fff;
