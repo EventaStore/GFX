@@ -611,11 +611,10 @@ a {
   font-size: 18px;
 }
 .product-img {
-  position: absolute;
   z-index: 2;
-  width: 500px;
-  left: 25%;
-  transform: translateX(-45%);
+  /* width: 500px; */
+  /* transform: translateX(-45%);  */
+  /* left: 25%; */
   max-height: 500px;
   height: 100%;
   pointer-events: none;

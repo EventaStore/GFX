@@ -26,7 +26,7 @@ const SortSelect = ({ updateProductFilters }) => {
             <div className="sort-by-product-wrap">
                 <div className="sort-by">
                     <strong>
-                        <i className="fi-rs-apps-sort"></i>
+                        <i className="fi-rs-apps-sort mx-2"></i>
                         ترتيب حسب :
                     </strong>
                 </div>

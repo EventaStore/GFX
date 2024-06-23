@@ -339,11 +339,11 @@ textarea {
 }
 
 .background-breadcrumb {
-  background-image: url(./background-breadcrumb.png);
+  /* background-image: url(./background-breadcrumb.png); */
+  /* background-color: var(--card); */
   background-position-y: 66%; 
   background-repeat: no-repeat;
   background-size: 60% auto;
-  background-color: var(--card);
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .hide-that {

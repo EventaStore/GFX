@@ -4,7 +4,7 @@ function SelectOp({ selectChange, showLimit }) {
             <div className="sort-by-product-wrap">
                 <div className="sort-by">
                     <span>
-                        <i className="fi-rs-apps"></i>
+                        <i className="fi-rs-apps mx-2"></i>
                         اظهر :
                     </span>
                 </div>

@@ -153,7 +153,7 @@ const Header = ({
                                 <nav>
                                     <ul>
                                         <li>
-                                            <Link href="/" className={router.pathname == "/" ? "active" : ""}>
+                                            <Link href="/products" className={router.pathname == "/" ? "active" : ""}>
                                                 {t('Home')}
                                             </Link>
                                         </li>

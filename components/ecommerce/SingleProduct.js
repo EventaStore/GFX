@@ -36,24 +36,24 @@ const SingleProduct = ({
             {product &&
                 <div className="product-cart-wrap mb-30" dir="rtl">
                     <div className="product-img-action-wrap">
-                        <div className="">
+                        <div className="product-img product-img-zoom">
                             <Link href={`/products/${product._id}`}
                             >
 
                                 <img
                                     className="default-img"
-                                    src={product.productPhotos?.defaultImages[0]}
+                                    src={product.productPhotos?.thumbnail}
                                     alt=""
                                 />
                                 {
                                     product.productPhotos?.defaultImages.length > 0 ?
                                         <img
-                                            className="hidden hover:block"
+                                            className="hover-img"
                                             src={product.productPhotos.defaultImages[1]}
                                             alt=""
                                         /> :
                                         <img
-                                            className="block hover:hidden"
+                                            className="hover-img"
                                             src={product.productPhotos?.defaultImages[0]}
                                             alt=""
                                         />

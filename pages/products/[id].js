@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ProductDetails from "../../components/ecommerce/ProductDetails";
-import Layout from '../../components/layout/Layout';
-import { ProductsFromUrl } from "../../redux/stores/apis";
 import { useRouter } from "next/router";
 import { GetProduct } from "../../redux/action/apis/products/getOne";
 import { connect } from "react-redux";
+import Layout from "../../components/Layout";
 
 
 const products = ({ GetProduct, getProductRespond }) => {

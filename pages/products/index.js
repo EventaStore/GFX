@@ -68,10 +68,10 @@ return (
         <>
             <Layout noBreadcrumb="d-none">
                 <section className="mt-50 mb-50" dir={dir}>
-                    <div className="container mb-30">
+                    <div className="container my-30">
                         {getProductsRespond &&
                             <div className="row flex-row-reverse">
-                                <div className="col-lg-4-5">
+                                <div className="col-lg-4-5 mt-14">
                                     <div className="shop-product-fillter">
                                         <div className="totall-product">
                                             <p>
@@ -83,7 +83,7 @@ return (
                                             </p>
                                         </div>
                                         <div className="sort-by-product-area">
-                                            <div className="sort-by-cover mr-10">
+                                            <div className="sort-by-cover mx-10">
                                                 <ShowSelect
                                                     selectChange={selectChange}
                                                     showLimit={limit}
@@ -122,14 +122,14 @@ return (
                                         </nav>
                                     </div>
                                 </div>
-                                <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
+                                <div className="col-lg-1-5 primary-sidebar sticky-sidebar mt-32">
                                     <div className="sidebar-widget widget-category-2 mb-30">
                                         <h5 className="section-title style-1 mb-30">
                                             التصنيفات
                                         </h5>
                                         <CategoryProduct />
                                     </div>
-
+                                    <div className="h-4"/>
                                     <div className="sidebar-widget price_range range mb-30">
                                         <h5 className="section-title style-1 mb-30">تصفية حسب السعر</h5>
 

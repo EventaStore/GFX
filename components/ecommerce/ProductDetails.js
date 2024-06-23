@@ -29,17 +29,19 @@ const ProductDetails = ({
         addToCart(product);
         toast("تمت اضافة المنتج إلي السلة");
     };
-
+    
     const handleCompare = (product) => {
         addToCompare(product);
         toast("Added to Compare list !");
     };
-
+    
     const handleWishlist = (product) => {
         addToWishlist(product);
         toast("Added to Wishlist !");
     };
-
+    
+    const [quantity, setQuantity] = useState(1);
+    
     const inCart = cartItems.find((cartItem) => cartItem.id === product._id);
     
     return (
@@ -117,8 +119,8 @@ const ProductDetails = ({
                                             </div>
                                             <div className="bt-1 border-color-1 mt-30 mb-30"></div>
                                             <div className="detail-extralink">
-                                                <div className="detail-qty border radius">
-                                                    <a onClick={(e) => (!inCart ? setQuantity(quantity > 1 ? quantity-- : 1) : decreaseQuantity(product?.id))} className="qty-down">
+                                                <div className="detail-qty border radius" dir="ltr">
+                                                    <a onClick={(e) => (!inCart ? setQuantity(quantity > 1 ? quantity-1 : 1) : decreaseQuantity(product?.id))} className="qty-down">
                                                         <i className="fi-rs-angle-small-down"></i>
                                                     </a>
                                                     <span className="qty-val">{inCart?.quantity || quantity}</span>
