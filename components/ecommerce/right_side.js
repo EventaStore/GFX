@@ -1,15 +1,13 @@
 
 
 import React, { useEffect, useState } from "react";
-import { useMyProducts } from "../../redux/stores/apis";
 import {storage} from '../../util/localStorage'
 
 export default function Side() {
     const [products, setProducts] = useState([]);
 
     const product = async () => {
-        const data = await useMyProducts({})
-        setProducts(data.products);
+        
     };
 
     var gender =  products.length > 0 ? products[0].gender :  -1 

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { fetchByCatagory } from "../../redux/action/product";
+
 import SingleProduct from "./../ecommerce/SingleProduct";
-import { useMyProducts } from "../../redux/stores/apis";
 
 SwiperCore.use([Navigation]);
 
@@ -16,8 +15,7 @@ const RelatedSlider = () => {
 
     const fetchProducts = async () => {
         // With Category
-        const {products} = await useMyProducts({ limit: 12 });
-        setRelated(products);
+        
     };
     if (related.length == 0)
         return (

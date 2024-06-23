@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { fetchByCatagory } from "../../redux/action/product";
-import { useMyProducts } from "../../redux/stores/apis";
 
 const BestSellerSlider = () => {
     const [bestSeller, setBestSeller] = useState([]);
@@ -12,8 +11,6 @@ const BestSellerSlider = () => {
 
     const fetchProducts = async () => {
         // With Category
-        const {products} = await useMyProducts({});
-
         // Best Seller
         const bestSellerProducts = products.sort(function (a, b) {
             return a.totalSell > b.totalSell ? -1 : 1;

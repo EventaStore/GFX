@@ -4,7 +4,6 @@ import Cat1Tab from '../elements/FeaturedTab';
 import Cat2Tab from '../elements/NewArrivalTab';
 import Cat3Tab from '../elements/TrendingTab';
 import Link from "next/link"
-import { useMyProducts } from "../../redux/stores/apis";
 
 import { storage } from '../../util/localStorage';
 
@@ -20,8 +19,7 @@ function CategoryTab() {
 
         async function fetchData() {
             try {
-                const { products } = await useMyProducts({});
-                setProducts(products)
+                
                 setLoading(false)
             } catch (error) {
                 console.error(error);
