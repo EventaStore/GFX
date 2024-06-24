@@ -142,11 +142,11 @@ return (
                                         </div>
 
                                         <div className="list-group">
-                                            <div className="list-group-item mb-10 mt-10">
+                                                <VendorFilter />
+                                            <div className=" mb-10 mt-10 hidden">
                                                 <label className="fw-900">
                                                     اللون
                                                 </label>
-                                                <VendorFilter />
                                                 <label className="fw-900 mt-15">
                                                     الحجم
                                                 </label>

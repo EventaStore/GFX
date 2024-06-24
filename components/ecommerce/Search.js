@@ -38,8 +38,7 @@ const Search = () => {
                     <option>الأمتعة</option>
                     <option>الأحذية</option>
                     <option>الأم والأطفال</option>
-                </select>
-                     */}
+                </select>*/}
                 <input
                     value={searchTerm}
                     onKeyDown={handleInput}

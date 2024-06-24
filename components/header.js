@@ -59,82 +59,63 @@ const Header = ({
         <header dir={dir} className="header-area header-style-1 header-height-2">
             <div className="header-top header-top-ptb-1 d-none d-lg-block">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-xl-3 col-lg-4">
-                            <div className="bg-black"/>
-                            <div className="header-info">
-                                <ul dir="ltr">
-                                    <li>
-                                        <a href="tel:+971563272736">+971 56 327 2736</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+971505108831">+971 50 510 8831</a>
-                                    </li>
-                                </ul>
+                    <div className="flex items-center">
+                        <div className="flex-1">
+                            <div className="bg-black" />
+                            <div className="search-style-2">
+                                <Search />
                             </div>
                         </div>
-                        <div className="col-xl-6 col-lg-4">
-
-                        </div>
-                        <div className="col-xl-2 col-lg-3">
-                            <div className="header-info header-info-right">
-                                <ul dir="ltr">
-                                    <li>
-                                        <div className="language-dropdown-active">
-                                            {currentLanguage == "ar" &&
-                                                <div className="language-li" onClick={toggleLanguage} dir={dir}>
-                                                    <img src="/assets/imgs/theme/flag-ar.png" alt="" />
-                                                    <span>{t('arabic')}</span>
-                                                </div>
-                                            }
-                                            {currentLanguage == "en" &&
-                                                <div className="language-li" onClick={toggleLanguage} dir={dir}>
-                                                    <img src="/assets/imgs/theme/flag-en.png" alt="" />
-                                                    <span className="h-auto">{t('english')}</span>
-                                                </div>
-                                            }
-                                        </div>
-                                        <ul className="language-dropdown">
-                                            {currentLanguage == "en" &&
-                                                <li className="language-li" onClick={toggleLanguage} dir={dir}>
-                                                    <img src="/assets/imgs/theme/flag-ar.png" alt="" />
-                                                    {t('arabic')}
-                                                </li>
-                                            }
-                                            {currentLanguage == "ar" &&
-                                                <li className="language-li" onClick={toggleLanguage} dir={dir}>
-                                                    <img src="/assets/imgs/theme/flag-en.png" alt="" />
-                                                    <span className="h-auto">{t('english')}</span>
-                                                </li>
-                                            }
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a className="language-dropdown-active hidden" href="#" dir={dir}>
-                                            {t('USD')} <i className="fi-rs-angle-small-down"></i>
-                                        </a>
-                                        <ul className="language-dropdown">
-                                            <li>
-                                                <a href="#">
-                                                    <img src="/assets/imgs/theme/united-arab-flag.png" alt="" />
-                                                    {t('DH')}
-                                                </a>
+                        <div className="header-info header-info-right gap-3" dir="ltr">
+                            <ul>
+                                <li>
+                                    <div className="language-dropdown-active">
+                                        {currentLanguage == "ar" &&
+                                            <div className="language-li" onClick={toggleLanguage} dir={dir}>
+                                                <img src="/assets/imgs/theme/flag-ar.png" alt="" />
+                                                <span>{t('arabic')}</span>
+                                            </div>
+                                        }
+                                        {currentLanguage == "en" &&
+                                            <div className="language-li" onClick={toggleLanguage} dir={dir}>
+                                                <img src="/assets/imgs/theme/flag-en.png" alt="" />
+                                                <span className="h-auto">{t('english')}</span>
+                                            </div>
+                                        }
+                                    </div>
+                                    <ul className="language-dropdown">
+                                        {currentLanguage == "en" &&
+                                            <li className="language-li" onClick={toggleLanguage} dir={dir}>
+                                                <img src="/assets/imgs/theme/flag-ar.png" alt="" />
+                                                {t('arabic')}
                                             </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-lg-1">
+                                        }
+                                        {currentLanguage == "ar" &&
+                                            <li className="language-li" onClick={toggleLanguage} dir={dir}>
+                                                <img src="/assets/imgs/theme/flag-en.png" alt="" />
+                                                <span className="h-auto">{t('english')}</span>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a className="language-dropdown-active hidden" href="#" dir={dir}>
+                                        {t('USD')} <i className="fi-rs-angle-small-down"></i>
+                                    </a>
+                                    <ul className="language-dropdown">
+                                        <li>
+                                            <a href="#">
+                                                <img src="/assets/imgs/theme/united-arab-flag.png" alt="" />
+                                                {t('DH')}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                             <DLtoggle handleToggle={togglemode} ckey={1} />
                         </div>
                     </div>
                 </div>
-            </div>
-                <div className="container ">
-                <div className="search-style-2">
-                <Search />
-            </div>
             </div>
             <div className={"py-1 lg:py-0 bg-CS_card border-1 border-solid border-CS_Soft_border_color menu_shadow " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
