@@ -24,7 +24,7 @@ const ProductDetails = ({
 }) => {
 
     
-    
+    console.log(product)
     const handleCart = (product) => {
         addToCart(product);
         toast("تمت اضافة المنتج إلي السلة");

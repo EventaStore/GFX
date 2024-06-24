@@ -7,6 +7,8 @@ import '../util/i18n'
 import 'animate.css';
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { connect } from "react-redux";
+import { breadcrumb } from "../redux/action/Breadcrumb";
 
 const Layout = ({
     children,
@@ -16,6 +18,8 @@ const Layout = ({
     noBreadcrumb,
     headerStyle,
     parentURL,
+    breadcrumbRespond,
+    breadcrumb,
     title
 }) => {
     const [isToggled, setToggled] = useState(false);
@@ -55,5 +59,12 @@ const Layout = ({
         </>
     );
 };
+const mapStateToProps = (state) => ({
+    breadcrumbRespond: state.breadcrumb,
+});
 
-export default Layout;
+const mapDispatchToProps = {
+    breadcrumb
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

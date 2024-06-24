@@ -63,6 +63,8 @@ export const CLOSE_LOGIN_MODAL = "CLOSE_LOGIN_MODAL"
 export const INIT_LOCALSTORAGE = "INIT_LOCALSTORAGE"
 
 //  filter
-
 export const ADD_CATEGORIES = "ADD_CATEGORIES"
 export const REMOVE_CATEGORIES = "REMOVE_CATEGORIES"
+
+//  filter
+export const BRAEDCRUMB = "BRAEDCRUMB"

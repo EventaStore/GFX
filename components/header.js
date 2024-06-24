@@ -143,10 +143,10 @@ const Header = ({
                 {
                     provides.map((value, index) =>
                         providesSelected == index ?
-                            <div key={index} className="p-4 font-bold bg-CS_text_active text-white transition-all w-full flex justify-center">
+                            <div key={index} className="p-4 font-bold bg-CS_text_active text-white transition-all w-full flex justify-center items-center">
                                 {value.title}
                             </div> :
-                            <div key={index} className="p-4 font-bold cursor-pointer transition-all w-full flex justify-center" onClick={() => setProvieds(index)}>
+                            <div key={index} className="p-4 font-bold cursor-pointer transition-all w-full flex justify-center items-center" onClick={() => setProvieds(index)}>
                                 {value.title}
                             </div>
                     )
