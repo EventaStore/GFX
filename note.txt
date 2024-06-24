@@ -1,4 +1,5 @@
 - card , combare , which list               ( 2 hour)
 - filter using category                     ( 1 hour)
 - filter category                           ( 1 hour)
+- توضيحات
 - vendors                                   

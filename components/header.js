@@ -4,26 +4,32 @@ import DLtoggle from "../components/elements/DLtoggle";
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import packages from '../static_data/packages.json'
-import Services from '../static_data/services.json'
+import provides from '../static_data/provieds.json'
 import getmode from "../util/storage";
 import Search from "./ecommerce/Search";
 import { connect } from "react-redux";
 import { GetCategories } from "../redux/action/apis/categoreis/get";
 import { nestChildren } from "../util/util";
-
 const Header = ({
     toggleClick,
     GetCategories,
     GetCategoriesRespond
 }) => {
+    const [isDark, setIsDark] = useState(false);
+    const [providesSelected, setProvieds] = useState(0);
 
     GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null
+    const GetCategoriesFilter = GetCategoriesRespond?.filter((value) => provides[providesSelected].list.includes(value._id)) || []
+    
 
-    const [isDark, setIsDark] = useState(false);
     useEffect(() => {
         GetCategories()
     }, [])
+
+
+    // GetCategoriesRespond.forEach(element => {
+    //     console.log(element.nameAr , element._id)
+    // });
 
     const [scroll, setScroll] = useState(0);
     const router = useRouter();
@@ -61,8 +67,9 @@ const Header = ({
             }
         });
     });
-
+    
     const dir = currentLanguage === "ar" ? "rtl" : "ltr"
+
     return (<>
         <header dir={dir} className="header-area header-style-1 header-height-2">
             <div className="header-top header-top-ptb-1 d-none d-lg-block bg-white">
@@ -132,6 +139,19 @@ const Header = ({
                     </div>
                 </div>
             </div>
+            <div className="container flex justify-between w-full">
+                {
+                    provides.map((value, index) =>
+                        providesSelected == index ?
+                            <div key={index} className="p-4 font-bold bg-CS_text_active text-white transition-all w-full flex justify-center">
+                                {value.title}
+                            </div> :
+                            <div key={index} className="p-4 font-bold cursor-pointer transition-all w-full flex justify-center" onClick={() => setProvieds(index)}>
+                                {value.title}
+                            </div>
+                    )
+                }
+            </div>
             <div className={"py-1 lg:py-0 bg-white " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
                 "header-bottom sticky-bar py-7 md:p-0")}>
@@ -144,15 +164,15 @@ const Header = ({
                                 } alt="logo" />
                             </Link>
                         </div>
-                        <div className="header-nav d-none d-lg-flex">
-                            <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+                        <div className="header-nav d-none d-lg-flex w-full">
+                            <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading w-full">
                                 <nav>
-                                    <ul className="flex flex-wrap gap-3 my-4">
-                                        {GetCategoriesRespond?.map((category) => (
+                                    <ul className="flex gap-20 my-4">
+                                        {GetCategoriesFilter?.map((category) => (
                                             <li key={category._id} className="position-static">
                                                 <Link href={`/products/${category._id}`}>
                                                     {currentLanguage === 'en' ? category.name : category.nameAr}
-                                                    <i className={`fi-rs-angle-down ${currentLanguage === 'en' ? "ml-2" : "mr-2"}`}></i>
+                                                    {/* <i className={`fi-rs-angle-down ${currentLanguage === 'en' ? "ml-2" : "mr-2"}`}></i> */}
                                                 </Link>
                                                 <ul className="mega-menu max-h-[600px] overflow-auto grid grid-cols-2 gap-4 w-full">
                                                     {category.children.map((subCategory) => (

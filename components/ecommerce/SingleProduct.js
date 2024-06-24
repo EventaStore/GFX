@@ -115,8 +115,7 @@ const SingleProduct = ({
                         </div>
                         <h2 className="h-16">
                             <Link
-                                href="/products/[slug]"
-                                as={`/product/${product._id}`}
+                                href={`/product/${product._id}`}
                                 legacyBehavior
                             >
                                 <a>{isEnglish ? (product.name_en || product.name_ar) : (product.name_ar || product.name_en)}</a>
