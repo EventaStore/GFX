@@ -26,7 +26,7 @@ const Products = ({ getProductsRespond, GetProducts }) => {
     let [limit, setLimit] = useState(showLimit);
     let [currentPage, setCurrentPage] = useState(1);
 
-    
+
 
     useEffect(() => {
         GetProducts({ limit: limit, page: currentPage, q: searchTerm });
@@ -64,7 +64,7 @@ const Products = ({ getProductsRespond, GetProducts }) => {
             return [currentPage - 1, currentPage, currentPage + 1].filter(page => page <= totalPages && page > 0);
         }
     };
-return (
+    return (
         <>
             <Layout noBreadcrumb="d-none">
                 <section className="mt-50 mb-50" dir={dir}>
@@ -82,8 +82,8 @@ return (
                                                 منتجات لك!
                                             </p>
                                         </div>
-                                        <div className="sort-by-product-area">
-                                            <div className="sort-by-cover mx-10">
+                                        <div className="sort-by-product-area flex-col sm:flex-row gap-3">
+                                            <div className="sort-by-cover">
                                                 <ShowSelect
                                                     selectChange={selectChange}
                                                     showLimit={limit}
@@ -99,14 +99,16 @@ return (
                                         {getProductsRespond.products.length === 0 && (
                                             <h3>لم يتم العثور على منتجات</h3>
                                         )}
-                                        {getProductsRespond.products.map((item, i) => (
-                                            <div
-                                                className="col-lg-1-5 col-md-4 col-12 col-sm-6"
-                                                key={i}
-                                            >
-                                                <SingleProduct product={item} />
-                                            </div>
-                                        ))}
+                                        <div className="minmax-280">
+                                            {getProductsRespond.products.map((item, i) => (
+                                                <div
+                                                    className=""
+                                                    key={i}
+                                                >
+                                                    <SingleProduct product={item} />
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     <div className="pagination-area mt-15 mb-sm-5 mb-lg-0">
@@ -129,7 +131,7 @@ return (
                                         </h5>
                                         <CategoryProduct />
                                     </div>
-                                    <div className="h-4"/>
+                                    <div className="h-4" />
                                     <div className="sidebar-widget price_range range mb-30">
                                         <h5 className="section-title style-1 mb-30">تصفية حسب السعر</h5>
 
@@ -142,7 +144,7 @@ return (
                                         </div>
 
                                         <div className="list-group">
-                                                <VendorFilter />
+                                            <VendorFilter />
                                             <div className=" mb-10 mt-10 hidden">
                                                 <label className="fw-900">
                                                     اللون

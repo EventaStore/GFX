@@ -11,7 +11,7 @@ function Pagination({
 }) {
     return (
         <>
-            <ul className="pagination justify-content-start">
+            <ul className="pagination justify-content-start mt-10">
                 {getPaginationGroup.length <= 0 ? null : (
                     <li onClick={prev} className="page-item">
                         {currentPage === 1 ? null : (

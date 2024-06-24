@@ -36,8 +36,8 @@ const SingleProduct = ({
             {product &&
                 <div className="product-cart-wrap mb-30" dir="rtl">
                     <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                            <Link href={`/products/${product._id}`}
+                        <div className="product-img product-img-zoom h-60 flex items-center justify-center">
+                            <Link href={`/products/${product._id}`} className="h-full w-fit"
                             >
 
                                 <img
@@ -110,7 +110,7 @@ const SingleProduct = ({
                                 <a>{StaticDb.brand(product.brand)}</a>
                             </Link>
                         </div>
-                        <h2>
+                        <h2 className="h-16">
                             <Link
                                 href="/products/[slug]"
                                 as={`/products/${product._id}`}
@@ -158,7 +158,7 @@ const SingleProduct = ({
                                     className="add"
                                     onClick={(e) => handleCart(product)}
                                 >
-                                    <i className="fi-rs-shopping-cart mr-5"></i> إضافة
+                                    <i className="fi-rs-shopping-cart"></i> إضافة
                                 </a>
                             </div>
                         </div>

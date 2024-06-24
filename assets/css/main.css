@@ -2919,18 +2919,21 @@ label {
   text-align: center;
   /* padding: 0 10px; */
 }
-.-l span::before{
+
+.-l span::before {
   content: "\f111"
 }
-.-r span::before{
+
+.-r span::before {
   content: "\f110"
 }
+
 .breadcrumb span::before {
   font-family: "uicons-regular-straight" !important;
   display: inline-block;
   font-size: 9px;
   @apply mx-3;
-  
+
 }
 
 /*****************************
@@ -5206,7 +5209,7 @@ table .product-thumbnail img {
 
 .shop-product-fillter-header .color-filter {
   border-bottom: 1px solid #ececec;
-  padding-bottom: 20px;  
+  padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
@@ -6234,9 +6237,7 @@ h6.post-title {
   display: block;
 }
 
-.logo.logo-width-1 {
-  
-}
+.logo.logo-width-1 {}
 
 .logo.logo-width-1 a img {
   width: 180px;
@@ -7101,7 +7102,7 @@ h6.post-title {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 20px 30px;
-  
+
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -7137,7 +7138,7 @@ h6.post-title {
   height: 30px;
   line-height: 38px;
   top: 5px;
-  
+
 }
 
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li.menu-item-has-children .menu-expand i {
@@ -7160,7 +7161,7 @@ h6.post-title {
   font-weight: 700;
   position: relative;
   display: inline-block;
-  
+
 }
 
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li a i {
@@ -7297,10 +7298,11 @@ h6.post-title {
   opacity: 0.8;
 }
 
-.flag-container img{
+.flag-container img {
   width: 20px;
   height: 20px;
 }
+
 .mobile-search {
   padding: 0 0 10px 0;
 }
@@ -7590,7 +7592,7 @@ span.fi-rs-apps {
 .main-menu>nav>ul>li>a i {
   font-size: 8px;
   position: relative;
-  
+
 }
 
 .main-menu>nav>ul>li>a.active {
@@ -10226,7 +10228,8 @@ footer .hotline img {
   background-color: var(--bg-color);
 }
 
-.recent-works-card,.our-team-card {
+.recent-works-card,
+.our-team-card {
   position: relative;
 }
 
@@ -10246,7 +10249,7 @@ footer .hotline img {
 }
 
 .our-team-card:hover .info {
-  top:0;
+  top: 0;
   /* Add other transition properties as needed */
 }
 
@@ -10258,13 +10261,24 @@ footer .hotline img {
   transition: 0.7s;
   /* Add other desired styles for the span */
 }
-.our-team-card:hover img{
+
+.our-team-card:hover img {
   @apply scale-110
 }
 
-.text-shadow{
+.text-shadow {
   text-shadow: 0px 0px 100px var(--text-color)
 }
 
-/*# sourceMappingURL=main.css.map */
+.minmax-360 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
 
+.minmax-280 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+/*# sourceMappingURL=main.css.map */
