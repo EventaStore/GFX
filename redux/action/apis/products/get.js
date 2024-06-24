@@ -2,7 +2,7 @@ import * as Types from "../../../constants/actionTypes";
 import { mainApiInstance } from '../axiosInstances'
 
 
-export const GetProducts = ({ page = "1", limit = "", q = "" }) => {
+export const GetProducts = ({ page = "1", limit, q , sortOrder }) => {
   const req = "GetProducts"
   return async dispatch => {
     dispatch({ type: Types.FETCH_DATA_REQUEST, req: req });
@@ -11,6 +11,7 @@ export const GetProducts = ({ page = "1", limit = "", q = "" }) => {
       if (q?.length > 0) params.q = q;
       if (page) params.page = parseInt(page);
       if (limit) params.limit = limit;
+      if (sortOrder) params.sortOrder = sortOrder;
       const queryString = new URLSearchParams(params).toString();
       const response = await mainApiInstance.get(`products?${queryString}`);
       dispatch({ type: Types.FETCH_DATA_SUCCESS, payload: response.data, req: req });

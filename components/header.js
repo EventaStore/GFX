@@ -8,14 +8,18 @@ import packages from '../static_data/packages.json'
 import Services from '../static_data/services.json'
 import getmode from "../util/storage";
 import Search from "./ecommerce/Search";
+import { connect } from "react-redux";
+import { GetCategories } from "../redux/action/apis/categoreis/get";
 
 const Header = ({
     toggleClick,
+    GetCategories,
+    GetCategoriesRespond
 }) => {
     const [isDark, setIsDark] = useState(false);
-    // useEffect(() => {
-    //     setMode(getmode())
-    // }, [])
+    useEffect(() => {
+        GetCategories()
+    }, [])
 
     const [scroll, setScroll] = useState(0);
     const router = useRouter();
@@ -137,79 +141,39 @@ const Header = ({
                                     } alt="logo" />
                                 </Link>
                             </div>
-                            <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block  font-heading">
+                            <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                                 <nav>
-                                    <ul>
-                                        <li>
-                                            <Link href="/products" className={router.pathname == "/" ? "active" : ""}>
-                                                {t('Home')}
-                                            </Link>
-                                        </li>
-                                        <li className="position-static">
-                                            <Link href="#">
-                                                {t('services')}
-                                                <i className={`fi-rs-angle-down ${currentLanguage == 'en' ? "ml-2" : "mr-2"}`}></i>
-                                            </Link>
-                                            <ul className="mega-menu">
-                                                {Services.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage == 'en' ? "float-left" : "float-right"}`} key={index}>
-                                                        <h4 className="menu-title">
+                                    <ul className="flex flex-wrap gap-3 my-4">
+                                        {GetCategoriesRespond?.map((item, index) => (
+                                            <li key={item._id} className="position-static">
+                                                <Link href="#">
+                                                    {currentLanguage === 'en' ? item.name : item.nameAr}
+                                                    <i className={`fi-rs-angle-down ${currentLanguage === 'en' ? "ml-2" : "mr-2"}`}></i>
+                                                </Link>
+                                                <ul className="mega-menu">
+                                                    <li className={` ${currentLanguage === 'en' ? "float-left" : "float-right"}`} key={index}>
+                                                        {/* <h4 className="menu-title">
                                                             {t(item.name)}
-                                                        </h4>
-                                                        <ul>
-                                                            {item.values.map((value, index) =>
-                                                                <li key={index}>
-                                                                    <Link href="/Services" as={value.href} >
+                                                        </h4> */}
+                                                        <ul className="flex flex-wrap gap-3">
+                                                            {item.children.map((value) => (
+                                                                <li key={value._id}>
+                                                                    <Link href={`/products?search=${value.name}`} >
                                                                         <div className="hover:text-CS_text_active">
-                                                                            {t(value.text)}
+                                                                            {currentLanguage === 'en' ? value.name : value.nameAr}
                                                                         </div>
                                                                     </Link>
                                                                 </li>
-                                                            )}
+                                                            ))}
                                                         </ul>
                                                     </li>
-                                                )}
-                                            </ul>
-                                        </li>
-                                        <li className="position-static">
-                                            <Link href="#">
-                                                {t("packages")}
-                                                <i className={`fi-rs-angle-down m${dir[0]}-2`}></i>
-                                            </Link>
-                                            <ul className="mega-menu">
-                                                {packages.map((item, index) =>
-                                                    <li className={`sub-mega-menu sub-mega-menu-width-22 ${currentLanguage == 'en' ? "float-left" : "float-right"}`} key={index}>
-                                                        <h4 className="menu-title" href="#">
-                                                            {t(item.name)}
-                                                        </h4>
-                                                        <ul>
-                                                            {item.values.map((value, index) =>
-                                                                <li key={index}>
-                                                                    <Link href="/Services" as={value.href} >
-                                                                        <div className="hover:text-CS_text_active">
-                                                                            {t(value.text)}
-                                                                        </div>
-                                                                    </Link>
-                                                                </li>
-                                                            )}
-                                                        </ul>
-                                                    </li>
-                                                )}
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <Link href="/about" className={router.pathname == "/about" ? "active" : ""}>
-                                                {t("about us")}
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/contact" className={router.pathname == "/contact" ? "active" : ""}>
-                                                {t("contact")}
-                                            </Link>
-                                        </li>
+                                                </ul>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </nav>
                             </div>
+
                         </div>
                         <div className="header-action-icon-2 d-block d-lg-none">
                             <div className="burger-icon burger-icon-white" onClick={toggleClick}>
@@ -226,6 +190,14 @@ const Header = ({
     </>);
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+    GetCategoriesRespond: state.api.GetCategories,
+});
+
+const mapDispatchToProps = {
+    GetCategories
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 

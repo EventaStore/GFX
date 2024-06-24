@@ -13,24 +13,26 @@ import QuickView from "./../../components/ecommerce/QuickView";
 import { GetProducts } from "../../redux/action/apis/products/get";
 import SingleProduct from "../../components/ecommerce/SingleProduct";
 import Layout from "../../components/Layout";
+import Preloader from "../../components/elements/Preloader";
 
-const Products = ({ getProductsRespond, GetProducts }) => {
+const Products = ({ getProductsRespond, GetProducts, api }) => {
 
     const dir = 'rtl'
 
     let Router = useRouter(),
         searchTerm = Router.query.search,
-        showLimit = 10;
+        showLimit = 12;
 
     let [pagination, setPagination] = useState([]);
     let [limit, setLimit] = useState(showLimit);
+    let [sort, setPrder] = useState();
     let [currentPage, setCurrentPage] = useState(1);
 
 
 
     useEffect(() => {
-        GetProducts({ limit: limit, page: currentPage, q: searchTerm });
-    }, [limit, currentPage, searchTerm]);
+        GetProducts({ limit: limit, page: currentPage, q: searchTerm, sortOrder: sort });
+    }, [limit, currentPage, searchTerm,sort]);
 
     const next = () => {
         setCurrentPage((page) => page + 1);
@@ -48,6 +50,11 @@ const Products = ({ getProductsRespond, GetProducts }) => {
         setLimit(Number(e.target.value));
         setCurrentPage(1);
     };
+
+    const handleSortOrder = (value) => {
+        setPrder(value);
+    };
+
     const getPaginationGroup = () => {
         const totalPages = getProductsRespond.totalPages;
 
@@ -64,6 +71,7 @@ const Products = ({ getProductsRespond, GetProducts }) => {
             return [currentPage - 1, currentPage, currentPage + 1].filter(page => page <= totalPages && page > 0);
         }
     };
+
     return (
         <>
             <Layout noBreadcrumb="d-none">
@@ -90,26 +98,33 @@ const Products = ({ getProductsRespond, GetProducts }) => {
                                                 />
                                             </div>
                                             <div className="sort-by-cover">
-                                                <SortSelect />
+                                                <SortSelect updateProductFilters={handleSortOrder} />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="row product-grid">
-                                        {getProductsRespond.products.length === 0 && (
-                                            <h3>لم يتم العثور على منتجات</h3>
-                                        )}
-                                        <div className="minmax-280">
-                                            {getProductsRespond.products.map((item, i) => (
-                                                <div
-                                                    className=""
-                                                    key={i}
-                                                >
-                                                    <SingleProduct product={item} />
-                                                </div>
-                                            ))}
+                                    {api.loading && api.req == "GetProducts" ?
+                                    <Preloader />:
+                                        <div className="row product-grid">
+                                            {getProductsRespond.products.length === 0 && (
+                                                <h3>لم يتم العثور على منتجات</h3>
+                                            )}
+                                            <div className="minmax-280">
+                                                {
+                                                    getProductsRespond.products.map((item, i) => (
+                                                        <div
+                                                            className=""
+                                                            key={i}
+                                                        >
+                                                            <SingleProduct product={item} />
+                                                        </div>
+
+                                                    ))}
+                                            </div>
                                         </div>
-                                    </div>
+                                        
+                                        
+                                    }
 
                                     <div className="pagination-area mt-15 mb-sm-5 mb-lg-0">
                                         <nav aria-label="Page navigation example">
@@ -171,7 +186,8 @@ const Products = ({ getProductsRespond, GetProducts }) => {
 };
 
 const mapStateToProps = (state) => ({
-    getProductsRespond: state.api.GetProducts
+    getProductsRespond: state.api.GetProducts,
+    api: state.api
 });
 
 const mapDidpatchToProps = {

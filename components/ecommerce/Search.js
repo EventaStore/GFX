@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -22,6 +22,11 @@ const Search = () => {
             handleSearch();
         }
     };
+    useEffect(()=>{
+        if(router.query.search)
+            setSearchTerm(router.query.search)
+    },[router.query.search])
+    
     return (
         <>
             <form >
