@@ -121,6 +121,9 @@ body {
   line-height: 1;
   overflow-x: hidden;
 }
+.main{
+  background-color: rgba(250, 250, 250, 256);
+}
 
 ol,
 ul {
@@ -1232,13 +1235,12 @@ textarea:-ms-input-placeholder {
   opacity: 1;
 }
 
-input {
+.searchInput {
   border: 1px solid #ececec;
-  border-radius: 10px;
+  /* background-image: url('/assets/css/search.png'); */
   height: 64px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  padding-left: 20px;
   font-size: 16px;
   width: 100%;
 }

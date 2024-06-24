@@ -385,6 +385,42 @@ textarea {
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+.scroll-m-0::-webkit-scrollbar-track {
+  margin: 0;
+}
+
+.scroll-w-0::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  margin-top: var(--header-height);
+  margin-bottom: 2.25rem;
+}
+
+.popup .content::-webkit-scrollbar-track {
+  
+}
+
+.dialog::-webkit-scrollbar-track {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 300px;
+}
+
+
 :root.dark {
   --bg-color: #18191B;
   --text-color: #edededde;
@@ -409,4 +445,5 @@ textarea {
   --card:#e8e8e8;
   --indicator-filter: invert(0%);
   --transition-ball: translateX(24px);
+  --body: rgba(250, 250, 250, 256)
 }

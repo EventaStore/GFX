@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        CS_body: 'var(--body)',
         CS_bg_color: 'var(--bg-color)',
         CS_text_color: 'var(--text-color)',
         CS_text_active: 'var(--text-active)',

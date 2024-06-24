@@ -10,12 +10,16 @@ import getmode from "../util/storage";
 import Search from "./ecommerce/Search";
 import { connect } from "react-redux";
 import { GetCategories } from "../redux/action/apis/categoreis/get";
+import { nestChildren } from "../util/util";
 
 const Header = ({
     toggleClick,
     GetCategories,
     GetCategoriesRespond
 }) => {
+
+    GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null
+
     const [isDark, setIsDark] = useState(false);
     useEffect(() => {
         GetCategories()
@@ -61,9 +65,16 @@ const Header = ({
     const dir = currentLanguage === "ar" ? "rtl" : "ltr"
     return (<>
         <header dir={dir} className="header-area header-style-1 header-height-2">
-            <div className="header-top header-top-ptb-1 d-none d-lg-block">
+            <div className="header-top header-top-ptb-1 d-none d-lg-block bg-white">
                 <div className="container">
                     <div className="flex items-center">
+                        <div className="logo logo-width-1">
+                            <Link href="/">
+                                <img src={
+                                    !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
+                                } alt="logo" />
+                            </Link>
+                        </div>
                         <div className="flex-1">
                             <div className="bg-black" />
                             <div className="search-style-2">
@@ -121,7 +132,7 @@ const Header = ({
                     </div>
                 </div>
             </div>
-            <div className={"py-1 lg:py-0 bg-CS_card border-1 border-solid border-CS_Soft_border_color menu_shadow " + (scroll ?
+            <div className={"py-1 lg:py-0 bg-white " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
                 "header-bottom sticky-bar py-7 md:p-0")}>
                 <div className="container">
@@ -134,44 +145,43 @@ const Header = ({
                             </Link>
                         </div>
                         <div className="header-nav d-none d-lg-flex">
-                            <div className="logo logo-width-1">
-                                <Link href="/">
-                                    <img src={
-                                        !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
-                                    } alt="logo" />
-                                </Link>
-                            </div>
                             <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                                 <nav>
                                     <ul className="flex flex-wrap gap-3 my-4">
-                                        {GetCategoriesRespond?.map((item, index) => (
-                                            <li key={item._id} className="position-static">
-                                                <Link href="#">
-                                                    {currentLanguage === 'en' ? item.name : item.nameAr}
+                                        {GetCategoriesRespond?.map((category) => (
+                                            <li key={category._id} className="position-static">
+                                                <Link href={`/products/${category._id}`}>
+                                                    {currentLanguage === 'en' ? category.name : category.nameAr}
                                                     <i className={`fi-rs-angle-down ${currentLanguage === 'en' ? "ml-2" : "mr-2"}`}></i>
                                                 </Link>
-                                                <ul className="mega-menu">
-                                                    <li className={` ${currentLanguage === 'en' ? "float-left" : "float-right"}`} key={index}>
-                                                        {/* <h4 className="menu-title">
-                                                            {t(item.name)}
-                                                        </h4> */}
-                                                        <ul className="flex flex-wrap gap-3">
-                                                            {item.children.map((value) => (
-                                                                <li key={value._id}>
-                                                                    <Link href={`/products?search=${value.name}`} >
-                                                                        <div className="hover:text-CS_text_active">
-                                                                            {currentLanguage === 'en' ? value.name : value.nameAr}
-                                                                        </div>
-                                                                    </Link>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </li>
+                                                <ul className="mega-menu max-h-[600px] overflow-auto grid grid-cols-2 gap-4 w-full">
+                                                    {category.children.map((subCategory) => (
+                                                        <li key={subCategory._id}>
+                                                            <Link href={`/products/${subCategory._id}`}>
+                                                                <h4 className="menu-title hover:text-CS_text_active cursor-pointer w-min whitespace-nowrap">
+                                                                    {currentLanguage === 'en' ? subCategory.name : subCategory.nameAr}
+                                                                </h4>
+                                                            </Link>
+                                                            <ul className="flex flex-wrap gap-1">
+                                                                {subCategory.children.map((child) => (
+                                                                    <li key={child._id}>
+                                                                        <Link href={`/products/${child._id}`}>
+                                                                            <div className="hover:text-CS_text_active border rounded-lg flex justify-center gap-2 items-center flex-col p-2 size-36 text-center">
+                                                                                <img className="size-20" src={child.thumbnail} alt="category img" />
+                                                                                {currentLanguage === 'en' ? child.name : child.nameAr}
+                                                                            </div>
+                                                                        </Link>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </li>
+                                                    ))}
                                                 </ul>
                                             </li>
                                         ))}
                                     </ul>
                                 </nav>
+
                             </div>
 
                         </div>

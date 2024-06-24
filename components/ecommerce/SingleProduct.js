@@ -7,6 +7,7 @@ import { addToCompare } from "../../redux/action/compareAction";
 import { openQuickView } from "../../redux/action/quickViewAction";
 import { addToWishlist } from "../../redux/action/wishlistAction";
 import { StaticDb } from '../../util/localStorage';
+import { useTranslation } from "react-i18next";
 
 const SingleProduct = ({
     product,
@@ -15,6 +16,8 @@ const SingleProduct = ({
     addToWishlist,
     openQuickView,
 }) => {
+    const { i18n, t } = useTranslation();
+    const isEnglish = i18n.language == "en" ? true : false;
 
     const handleCart = (product) => {
         addToCart(product);
@@ -113,10 +116,10 @@ const SingleProduct = ({
                         <h2 className="h-16">
                             <Link
                                 href="/products/[slug]"
-                                as={`/products/${product._id}`}
+                                as={`/product/${product._id}`}
                                 legacyBehavior
                             >
-                                <a>{product.name_ar || product.name_en}</a>
+                                <a>{isEnglish ? (product.name_en || product.name_ar) : (product.name_ar || product.name_en)}</a>
                             </Link>
                         </h2>
 

@@ -1,5 +1,4 @@
-- search instead of numbers
-- card , combare , which list
-- order product
-- category filter
-- vendors
+- card , combare , which list               ( 2 hour)
+- filter using category                     ( 1 hour)
+- filter category                           ( 1 hour)
+- vendors                                   

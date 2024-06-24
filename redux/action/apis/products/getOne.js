@@ -9,9 +9,7 @@ export const GetProduct = (id) => {
     try {
       const response = await mainApiInstance.get(`products/${id}`);
       dispatch({ type: Types.FETCH_DATA_SUCCESS, payload: response.data, req: req });
-      dispatch({ type: Types.SET_DATA, payload: response.data.data });
-      
-    } catch (error) {
+      } catch (error) {
       dispatch({ type: Types.FETCH_DATA_FAILURE, payload: JSON.stringify(error.response), req: req });
     }
   };
