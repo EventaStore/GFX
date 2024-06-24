@@ -40,6 +40,7 @@ const Search = () => {
                     <option>الأم والأطفال</option>
                 </select>*/}
                 <input
+                className="p-3"
                     value={searchTerm}
                     onKeyDown={handleInput}
                     onChange={(e) => setSearchTerm(e.target.value)}
