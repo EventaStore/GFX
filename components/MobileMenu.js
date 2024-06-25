@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from "react-redux";
 import { nestChildren } from "../util/util";
 
-const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond = staticValues }) => {
+const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
     const [isDark, setIsDark] = useState(true);
     const [providesSelected, setProvides] = useState(0);
     const [openCategories, setOpenCategories] = useState(null);
@@ -19,7 +19,6 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond = staticValue
     const { i18n, t } = useTranslation();
     const currentLanguage = i18n.language;
 
-    GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null;
     GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null;
     const GetCategoriesFilter = GetCategoriesRespond?.filter((value) => provides[providesSelected].list.includes(value._id)) || [];
 
@@ -119,7 +118,7 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond = staticValue
                                                         <a href={`/products/${subCategory._id}`}>
                                                             {currentLanguage === 'en' ? subCategory.name : subCategory.nameAr}
                                                         </a>
-                                                        <ul className={openSubCategories === subCategory.name ? "dropdown" : "dropdown-close"}>
+                                                        <ul className={`flex flex-wrap ${openSubCategories === subCategory._id ? "dropdown" : "dropdown-close"}`}>
                                                             {subCategory.children.map((child) => (
                                                                 <li key={child._id}>
                                                                     <a href={`/products/${child._id}`}>
@@ -131,11 +130,13 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond = staticValue
                                                                 </li>
                                                             ))}
                                                         </ul>
+
                                                     </li>
                                                 ))}
                                             </ul>
                                         </li>
                                     ))}
+
                                 </ul>
                             </nav>
                         </div>
