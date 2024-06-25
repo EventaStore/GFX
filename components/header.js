@@ -16,11 +16,12 @@ const Header = ({
     GetCategoriesRespond
 }) => {
     const [isDark, setIsDark] = useState(false);
-    const [providesSelected, setProvieds] = useState(0);
+    const [providesSelected, setProvides] = useState(0);
+    const [menuVisible, setMenuVisible] = useState(true);
 
     GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null
     const GetCategoriesFilter = GetCategoriesRespond?.filter((value) => provides[providesSelected].list.includes(value._id)) || []
-    
+
 
     useEffect(() => {
         GetCategories()
@@ -68,18 +69,27 @@ const Header = ({
         });
     });
     
+    const handleCategoryClick = () => {
+        setMenuVisible(false);
+        setTimeout(() => {
+            setMenuVisible(true);
+        }, 100);
+    };
+
     const dir = currentLanguage === "ar" ? "rtl" : "ltr"
 
     return (<>
         <header dir={dir} className="header-area header-style-1 header-height-2">
             <div className="header-top header-top-ptb-1 d-none d-lg-block bg-white">
                 <div className="container">
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-3">
                         <div className="logo logo-width-1">
                             <Link href="/">
                                 <img src={
                                     !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
-                                } alt="logo" />
+                                } alt="logo"
+                                    className="h-20 object-cover"
+                                />
                             </Link>
                         </div>
                         <div className="flex-1">
@@ -120,48 +130,26 @@ const Header = ({
                                         }
                                     </ul>
                                 </li>
-                                <li>
-                                    <a className="language-dropdown-active hidden" href="#" dir={dir}>
-                                        {t('USD')} <i className="fi-rs-angle-small-down"></i>
-                                    </a>
-                                    <ul className="language-dropdown">
-                                        <li>
-                                            <a href="#">
-                                                <img src="/assets/imgs/theme/united-arab-flag.png" alt="" />
-                                                {t('DH')}
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                             <DLtoggle handleToggle={togglemode} ckey={1} />
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="container flex justify-between w-full">
-                {
-                    provides.map((value, index) =>
-                        providesSelected == index ?
-                            <div key={index} className="p-4 font-bold bg-CS_text_active text-white transition-all w-full flex justify-center items-center">
-                                {value.title}
-                            </div> :
-                            <div key={index} className="p-4 font-bold cursor-pointer transition-all w-full flex justify-center items-center" onClick={() => setProvieds(index)}>
-                                {value.title}
-                            </div>
-                    )
-                }
-            </div>
+            
             <div className={"py-1 lg:py-0 bg-white " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
                 "header-bottom sticky-bar py-7 md:p-0")}>
                 <div className="container">
-                    <div className="header-wrap header-space-between position-relative">
+                    <div className="header-wrap header-space-between position-relative my-6">
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
                                 <img src={
                                     !isDark ? "/assets/imgs/theme/light-logo.png" : "/assets/imgs/theme/dark-logo.png"
-                                } alt="logo" />
+                                } alt="logo"
+                                    className="h-24 object-cover"
+
+                                />
                             </Link>
                         </div>
                         <div className="header-nav d-none d-lg-flex w-full">
@@ -170,14 +158,13 @@ const Header = ({
                                     <ul className="flex gap-20 my-4">
                                         {GetCategoriesFilter?.map((category) => (
                                             <li key={category._id} className="position-static">
-                                                <Link href={`/products/${category._id}`}>
+                                                <Link href={`/products/${category._id}`} onClick={handleCategoryClick}>
                                                     {currentLanguage === 'en' ? category.name : category.nameAr}
-                                                    {/* <i className={`fi-rs-angle-down ${currentLanguage === 'en' ? "ml-2" : "mr-2"}`}></i> */}
                                                 </Link>
-                                                <ul className="mega-menu max-h-[600px] overflow-auto grid grid-cols-2 gap-4 w-full">
+                                                <ul className={"mega-menu max-h-[600px] overflow-auto grid grid-cols-2 gap-4 w-full " + (menuVisible ? "block" : "hidden")}>
                                                     {category.children.map((subCategory) => (
                                                         <li key={subCategory._id}>
-                                                            <Link href={`/products/${subCategory._id}`}>
+                                                            <Link href={`/products/${subCategory._id}`} onClick={handleCategoryClick}>
                                                                 <h4 className="menu-title hover:text-CS_text_active cursor-pointer w-min whitespace-nowrap">
                                                                     {currentLanguage === 'en' ? subCategory.name : subCategory.nameAr}
                                                                 </h4>
@@ -185,7 +172,7 @@ const Header = ({
                                                             <ul className="flex flex-wrap gap-1">
                                                                 {subCategory.children.map((child) => (
                                                                     <li key={child._id}>
-                                                                        <Link href={`/products/${child._id}`}>
+                                                                        <Link href={`/products/${child._id}`} onClick={handleCategoryClick}>
                                                                             <div className="hover:text-CS_text_active border rounded-lg flex justify-center gap-2 items-center flex-col p-2 size-36 text-center">
                                                                                 <img className="size-20" src={child.thumbnail} alt="category img" />
                                                                                 {currentLanguage === 'en' ? child.name : child.nameAr}
@@ -229,5 +216,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-

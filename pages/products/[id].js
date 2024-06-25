@@ -171,7 +171,6 @@ const Products = ({ getProductsRespond, GetProducts, api }) => {
                                         </div>
                                         <br />
                                     </div>
-                                    <side />
                                 </div>
                             </div>}
 

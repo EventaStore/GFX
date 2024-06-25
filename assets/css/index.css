@@ -420,7 +420,9 @@ textarea {
   border-radius: 300px;
 }
 
-
+.provides{
+  
+}
 :root.dark {
   --bg-color: #18191B;
   --text-color: #edededde;
