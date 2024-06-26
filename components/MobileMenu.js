@@ -9,6 +9,7 @@ import getmode from '../util/storage';
 import { useTranslation } from 'react-i18next';
 import { connect } from "react-redux";
 import { nestChildren } from "../util/util";
+import Search from "./ecommerce/Search";
 
 const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
     const [isDark, setIsDark] = useState(true);
@@ -21,7 +22,7 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
 
     GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null;
     const GetCategoriesFilter = GetCategoriesRespond?.filter((value) => provides[providesSelected].list.includes(value._id)) || [];
-    
+
     const toggleLanguage = () => {
         const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
         i18n.changeLanguage(newLanguage);
@@ -75,7 +76,7 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
                             </div>
                         ))}
                     </div>
-
+                    <Search />
                     <div className="mobile-header-content-area">
                         <div className="mobile-menu-wrap mobile-header-border">
                             <nav>
