@@ -33,7 +33,7 @@ const SingleProduct = ({
         addToWishlist(product);
         toast("تمت الإضافة إلى قائمة الرغبات !");
     };
-
+console.log(product)
     return (
         <>
             {product &&
@@ -147,7 +147,7 @@ const SingleProduct = ({
 
                         <div className="product-card-bottom">
                             <div className="product-price">
-                                <span>{product.price} ج.م</span>
+                                <span>{product.price||0} ج.م</span>
                                 {product.oldPrice && (
                                     <span className="old-price">
                                         <br />

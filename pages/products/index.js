@@ -19,7 +19,8 @@ const Products = ({ getProductsRespond, GetProducts, api }) => {
 
     const dir = 'rtl'
 
-    let Router = useRouter();
+    let Router = useRouter(),
+        searchTerm = Router.query.search;
     let [limit, setLimit] = useState(12);
     let [sort, setPrder] = useState();
     let [currentPage, setCurrentPage] = useState(1);
@@ -27,9 +28,9 @@ const Products = ({ getProductsRespond, GetProducts, api }) => {
 
 
     useEffect(() => {
-        if (Router.query.id)
-            GetProducts({ limit: limit, page: currentPage, sortOrder: sort, categoryId: Router.query.id });
-    }, [limit, currentPage, sort, Router.query.id]);
+        if(searchTerm)
+        GetProducts({ limit: limit, page: currentPage, q: searchTerm, sortOrder: sort });
+    }, [limit, currentPage, searchTerm, sort]);
 
     const next = () => {
         setCurrentPage((page) => page + 1);

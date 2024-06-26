@@ -12,7 +12,7 @@ export const GetProducts = ({ page = "1", limit, q, sortOrder, categoryId }) => 
       if (page) params.page = parseInt(page);
       if (limit) params.limit = limit;
       if (sortOrder) params.sortOrder = sortOrder;
-      params.categoryId = categoryId
+      if (categoryId) params.categoryId = categoryId
       const queryString = new URLSearchParams(params).toString();
       const response = await mainApiInstance.get(`products?${queryString}`);
       dispatch({ type: Types.FETCH_DATA_SUCCESS, payload: response.data, req: req });
