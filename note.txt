@@ -5,3 +5,5 @@
 - vendors                                   
 - search
 - landing page
+- شكاوي و اقتراحات و سيب رقمك وهنكملك
+- wishlist

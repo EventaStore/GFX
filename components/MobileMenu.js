@@ -21,7 +21,7 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
 
     GetCategoriesRespond = GetCategoriesRespond ? nestChildren(GetCategoriesRespond) : null;
     const GetCategoriesFilter = GetCategoriesRespond?.filter((value) => provides[providesSelected].list.includes(value._id)) || [];
-
+    
     const toggleLanguage = () => {
         const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
         i18n.changeLanguage(newLanguage);
@@ -80,29 +80,6 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
                         <div className="mobile-menu-wrap mobile-header-border">
                             <nav>
                                 <ul className="mobile-menu" ref={domNode}>
-                                    <li className={`menu-item-has-children ${openCategories === 'services' ? 'active' : ''}`}>
-                                        <span className={`menu-expand ${dropDir}`} onClick={() => toggleCategory('services')}>
-                                            <i className="fi-rs-angle-small-down" />
-                                        </span>
-                                        <a href="#">{t('Services')}</a>
-                                        <ul className={openCategories === 'services' ? "dropdown" : "dropdown-close"}>
-                                            {services.map((item, index) => (
-                                                <li key={index} className={`menu-item-has-children ${openSubCategories === item.name ? 'active' : ''}`}>
-                                                    <span className={`menu-expand ${dropDir}`} onClick={() => toggleSubcategory(item.name)}>
-                                                        <i className="fi-rs-angle-small-down"></i>
-                                                    </span>
-                                                    <a href="#">{t(item.name)}</a>
-                                                    <ul className={openSubCategories === item.name ? "dropdown" : "dropdown-close"}>
-                                                        {item.values.map((value, valueIndex) => (
-                                                            <li key={valueIndex}>
-                                                                <a href={value.href}>{t(value.text)}</a>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </li>
                                     {GetCategoriesFilter.map((category) => (
                                         <li key={category._id} className="menu-item-has-children">
                                             <span className={`menu-expand ${dropDir}`} onClick={() => toggleCategory(category._id)}>
@@ -120,14 +97,14 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
                                                         </a>
                                                         <ul className={`flex flex-wrap ${openSubCategories === subCategory._id ? "dropdown" : "dropdown-close"}`}>
                                                             {subCategory.children.map((child) => (
-                                                                <li key={child._id}>
+                                                                <div key={child._id}>
                                                                     <a href={`/products/${child._id}`}>
                                                                         <div className="hover:text-CS_text_active border rounded-lg flex justify-center gap-2 items-center flex-col p-2 size-36 text-center">
                                                                             <img className="size-20" src={child.thumbnail} alt="category img" />
                                                                             {currentLanguage === 'en' ? child.name : child.nameAr}
                                                                         </div>
                                                                     </a>
-                                                                </li>
+                                                                </div>
                                                             ))}
                                                         </ul>
 
@@ -140,29 +117,7 @@ const MobileMenu = ({ isToggled, toggleClick, GetCategoriesRespond }) => {
                                 </ul>
                             </nav>
                         </div>
-                        <div className="my-3 p-4 border-l border-r border-b border-t border-solid rounded-md border-CS_Soft_border_color">
-                            <div className="pb-3">
-                                <a href="tel:+971563272736">+971 56 327 2736</a>
-                            </div>
-                            <div>
-                                <a href="tel:+971505108831">+971 50 510 8831</a>
-                            </div>
-                        </div>
-                        <div className="mobile-social-icon">
-                            <h6 className="pb-2">{t('Follow Us')}</h6>
-                            <a href="https://www.facebook.com/gxfcar?mibextid=2JQ9o">
-                                <img src="/assets/imgs/theme/icons/icon-facebook-white.svg" alt="" />
-                            </a>
-                            <a href="#">
-                                <img src="/assets/imgs/theme/icons/icon-twitter-white.svg" alt="" />
-                            </a>
-                            <a href="https://instagram.com/gxfcar?igshid=MzRlODBiNWFlZA==">
-                                <img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt="" />
-                            </a>
-                            <a href="https://www.tiktok.com/@gxfcar?_t=8eHlOOrI3Nd&_r=1">
-                                <img src="/assets/imgs/theme/icons/icons-tiktok-white.svg" alt="" />
-                            </a>
-                        </div>
+
                         <div className="py-6" dir="ltr">
                             <input onChange={toggleLanguage} type="checkbox" className="DL_checkbox checkbox w-min h-min" id="lang-checkbox" />
                             <label htmlFor="lang-checkbox" className="checkbox-label flag-container">
