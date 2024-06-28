@@ -27,11 +27,6 @@ const Header = ({
         GetCategories()
     }, [])
 
-
-    // GetCategoriesRespond.forEach(element => {
-    //     console.log(element.nameAr , element._id)
-    // });
-
     const [scroll, setScroll] = useState(0);
     const router = useRouter();
     const { i18n, t } = useTranslation();
@@ -68,7 +63,7 @@ const Header = ({
             }
         });
     });
-    
+
     const handleCategoryClick = () => {
         setMenuVisible(false);
         setTimeout(() => {
@@ -79,7 +74,7 @@ const Header = ({
     const dir = currentLanguage === "ar" ? "rtl" : "ltr"
 
     return (<>
-        <header dir={dir} className="header-area header-style-1 header-height-2">
+        <header dir={dir}>
             <div className="header-top header-top-ptb-1 d-none d-lg-block bg-white">
                 <div className="container">
                     <div className="flex items-center gap-3">
@@ -136,12 +131,24 @@ const Header = ({
                     </div>
                 </div>
             </div>
-            
+            <div className="container hidden lg:flex w-full ">
+                {
+                    provides.map((value, index) =>
+                        providesSelected == index ?
+                            <div key={index} className="p-4 font-bold bg-CS_text_active text-white transition-all flex justify-center">
+                                {value.title}
+                            </div> :
+                            <div key={index} className="p-4 font-bold cursor-pointer transition-all flex justify-center" onClick={() => setProvides(index)}>
+                                {value.title}
+                            </div>
+                    )
+                }
+            </div>
             <div className={"py-1 lg:py-0 bg-white " + (scroll ?
                 "header-bottom sticky-bar stick py-7 md:p-0" :
                 "header-bottom sticky-bar py-7 md:p-0")}>
                 <div className="container">
-                    <div className="header-wrap header-space-between position-relative my-6">
+                    <div className="header-wrap header-space-between position-relative">
                         <div className="logo logo-width-1 d-block d-lg-none">
                             <Link href="/">
                                 <img src={
@@ -202,7 +209,6 @@ const Header = ({
                     </div>
                 </div>
             </div>
-
         </header>
     </>);
 };

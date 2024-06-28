@@ -1245,7 +1245,9 @@ textarea:-ms-input-placeholder {
 
 .searchInput {
   border: 1px solid #ececec;
-  /* background-image: url('/assets/css/search.png'); */
+  background-image: url('./search.png');
+  background-repeat: no-repeat;
+  background-position: right center;
   height: 64px;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -6688,7 +6690,7 @@ h6.post-title {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 10;
   left: 0;
   -webkit-transition: all .3s ease 0s;
   transition: all .3s ease 0s;

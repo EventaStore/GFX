@@ -21,8 +21,8 @@ const ThumbSlider = ({ product }) => {
                 thumbs={{ swiper: thumbsSwiper }}
                 className="mySwiper2"
             >
-                {product.productPhotos.defaultImages.map((item) => (
-                    <SwiperSlide>
+                {product.productPhotos.defaultImages.map((item,index) => (
+                    <SwiperSlide key={index}>
                         <img src={item} />
                         {/* <Zoom
                             img={item.thumb}

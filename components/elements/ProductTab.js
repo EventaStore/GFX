@@ -14,19 +14,7 @@ const ProductTab = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            try {
-                const response = await fetch(`${server}/static/details.json`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setDescription(data.Description);
-                    setTableData(data.tableData);
-                    setVendor(data.Vendor);
-                } else {
-                    throw new Error('Failed to fetch data');
-                }
-            } catch (error) {
-                console.error(error);
-            }
+            
         };
 
         fetchData();
@@ -146,7 +134,7 @@ const ProductTab = () => {
                                         <div className="single-comment justify-content-between d-flex">
                                             <div className="user justify-content-between d-flex">
                                                 <div className="thumb text-center">
-                                                    <img src="/assets/imgs/blog/author-2.png" alt="" />
+                                                    {/* <img src="/assets/imgs/blog/author-2.png" alt="" /> */}
                                                     <h6>
                                                         <a href="#">Jacky Chan</a>
                                                     </h6>
@@ -178,7 +166,7 @@ const ProductTab = () => {
                                         <div className="single-comment justify-content-between d-flex">
                                             <div className="user justify-content-between d-flex">
                                                 <div className="thumb text-center">
-                                                    <img src="/assets/imgs/blog/author-3.png" alt="" />
+                                                    {/* <img src="/assets/imgs/blog/author-3.png" alt="" /> */}
                                                     <h6>
                                                         <a href="#">Ana Rosie</a>
                                                     </h6>
@@ -210,7 +198,7 @@ const ProductTab = () => {
                                         <div className="single-comment justify-content-between d-flex">
                                             <div className="user justify-content-between d-flex">
                                                 <div className="thumb text-center">
-                                                    <img src="/assets/imgs/blog/author-4.png" alt="" />
+                                                    {/* <img src="/assets/imgs/blog/author-4.png" alt="" /> */}
                                                     <h6>
                                                         <a href="#">Steven Keny</a>
                                                     </h6>

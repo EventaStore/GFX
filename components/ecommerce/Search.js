@@ -58,31 +58,29 @@ const Search = () => {
     };
     return (
         <>
-            <div className="flex">
-                <input
-                    className="searchInput border border-[#00000040] dark:border-[#3E3E3E] hover:border-transparent hover:bg-[#EAEEF0] focus:border-2 focus:border-primary focus:bg-transparent text-sm h-9 w-1/2 bg-[#F5F5F5] rounded-full px-5"
-                    value={searchTerm || ""}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onFocus={() => handleFocus(true)}
-                    onBlur={() => setTimeout(() => handleFocus(false), 200)}
-                    onKeyDown={handleInput}
-                    type="text"
-                    placeholder={`${t("Search")}...`}
-                />
-                {searchDropdownVisible && searchHistory.length > 0 && (
-                    <div className="dialog-history absolute w-[400px] min-h-32 active z-40 bg-gray-100 border rounded-[10px]">
-                        <ul className="gap-1 flex flex-wrap p-5 rounded-full ">
-                            {searchHistory.map((item, index) => (
-                                <li className="py-1 px-2 border border-[#0000004D] dark:border-[#FFFFFF4D] rounded-full" key={index}>
-                                    <Link href={item ? `/products?search=${item}` : '/project'}>
-                                        <div className="text-lg mx-4">{item}</div>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-            </div>
+            <input
+                className="searchInput border border-[#00000040] dark:border-[#3E3E3E] hover:border-transparent hover:bg-[#EAEEF0] focus:border-2 focus:border-primary focus:bg-transparent text-sm h-9 w-1/2 bg-[#F5F5F5] rounded-full px-12"
+                value={searchTerm || ""}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={() => handleFocus(true)}
+                onBlur={() => setTimeout(() => handleFocus(false), 200)}
+                onKeyDown={handleInput}
+                type="text"
+                placeholder={`${t("Search")}...`}
+            />
+            {searchDropdownVisible && searchHistory.length > 0 && (
+                <div className="dialog-history absolute w-[400px] min-h-32 active z-40 bg-gray-100 border rounded-[10px]">
+                    <ul className="gap-1 flex flex-wrap p-5 rounded-full ">
+                        {searchHistory.map((item, index) => (
+                            <li className="py-1 px-2 border border-[#0000004D] dark:border-[#FFFFFF4D] rounded-full" key={index}>
+                                <Link href={item ? `/products?search=${item}` : '/project'}>
+                                    <div className="text-lg mx-4">{item}</div>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </>
     );
 };
