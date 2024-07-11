@@ -5,7 +5,7 @@ import Drawer from '../elements/drawer';
 
 
 
-function EditDrawer({}) {
+function DrawerExample({}) {
 
 
     return (
@@ -24,4 +24,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
 
 };
-export default connect(mapStateToProps, mapDispatchToProps)(EditDrawer);
+export default connect(mapStateToProps, mapDispatchToProps)(DrawerExample);

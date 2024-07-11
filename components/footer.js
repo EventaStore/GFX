@@ -49,10 +49,10 @@ const Footer = () => {
                                 <h4 className="text-2xl py-4">{t("Company")}</h4>
                                 <ul className="footer-list mb-sm-5 mb-md-0">
                                     {[
-                                        { name: 'ABOUT US', url: '/about' },
-                                        { name: 'OUR TEAM', url: '/team' },
-                                        { name: 'OUR WORKS', url: '/works' },
-                                        { name: 'FQA', url: '/FQA' }
+                                        { name: 'ABOUT US', url: '#' },
+                                        { name: 'OUR TEAM', url: '#' },
+                                        { name: 'OUR WORKS', url: '#' },
+                                        { name: 'FQA', url: '#' }
                                     ].map((e, index) => (
                                         <li key={index}>
                                             <a href={e.url}>{t(e.name)}</a>
@@ -68,7 +68,7 @@ const Footer = () => {
                                 <ul className="sec-footer columns-1 lg:columns-2 footer-list mb-sm-5 mb-md-0">
                                     {combinedValues.slice(0, 8).map((value, index) => (
                                         <li key={index}>
-                                            <a href={value.href}>{t(value.text)}</a>
+                                            <a>{t(value.text)}</a>
                                         </li>
 
                                     ))}

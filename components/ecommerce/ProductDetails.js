@@ -9,8 +9,8 @@ import {
 import { addToCompare } from "../../redux/action/compareAction";
 import { addToWishlist } from "../../redux/action/wishlistAction";
 import ProductTab from "../elements/ProductTab";
-import RelatedSlider from "../sliders/Related";
 import ThumbSlider from "../sliders/Thumb";
+// import RelatedSlider from "../sliders/Related";
 import EditProfile from "../drawer/EditProfile";
 import { openDrawer } from "../../util/util";
 import Drawer from "../elements/drawer";
